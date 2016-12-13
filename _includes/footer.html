@@ -1,0 +1,250 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+
+      {% if page.title == "Mes réalisations" : %}
+
+          <div class="footer-col footer-col-3" style="margin-top: 200px;">
+
+      {% else : %}
+          <div class="footer-col footer-col-3">
+      {% endif %}
+
+
+          <span>
+            {% include icon-rss.html  %}
+          </span>
+
+          {% if site.github_username %}
+          <span>
+            {% include icon-github.html  %}
+          </span>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <span>
+            {% include icon-twitter.html %}
+          </span>
+          {% endif %}
+
+          {% if site.linkedin_username %}
+          <span>
+            {% include icon-linkedin.html %}
+          </span>
+          {% endif %}
+
+      </div>
+
+
+  </div>
+
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-61886861-2', 'auto');
+
+
+    var title = "{{ page.title }}";
+
+    title.replace(/'/g , "\'");
+
+    ga('send', 'event', 'article', 'read', title);
+
+    $('.language-cli').each(function(index, element){
+
+    
+            $(element).parent().addClass('blackBackground');
+            $(element).addClass('cli');
+       
+
+    });
+
+    myChart();
+    setInterval(myChart , 60000);
+
+    function myChart() {
+
+        var ok = false;
+        var d_Article;
+
+        $("meta").each(function(index, element){
+            if( $(element).attr('property') == "timerArticle" ) {
+
+                d_Article = new Date($(element).attr('time'));
+
+                ok = true;
+
+            }
+        });
+
+        $("meta").each(function(index, element){
+
+            if( $(element).attr('property') == "timerNextArticle" ) {
+
+                var d_nextArticle = new Date($(element).attr('time'));
+                var now = new Date();
+
+                var d_nextArticle_m = d_nextArticle.getTime();
+                var now_ms = now.getTime();
+
+                var  d_nextArticle_day = d_nextArticle.getDate() ;
+                var  d_nextArticle_minute = d_nextArticle.getMinutes();
+                var  d_nextArticle_hour = d_nextArticle.getHours();
+                var  d_nextArticle_month = d_nextArticle.getMonth();
+                var  d_nextArticle_year = d_nextArticle.getFullYear();
+
+                var  now_day = now.getDate() ;
+                var  now_minute = now.getMinutes();
+                var  now_hour = now.getHours();
+                var  now_month = now.getMonth();
+                var  now_year = now.getFullYear();
+
+
+                //console.log("now                                        : " + now_day + " " + now_hour + " " + now_minute );
+                //console.log("nextArticle                                : " + d_nextArticle_day + " " + d_nextArticle_hour + " " + d_nextArticle_minute );
+
+                var displayD = d_nextArticle_day - now_day;
+                var displayH = d_nextArticle_hour - now_hour;
+                var displayM = d_nextArticle_minute - now_minute;
+
+                //console.log("time between now and next article          : " + displayD + " " + displayH + " " + displayM );
+
+                //if(displayD < 0)
+                //    displayD = 31 + displayD;
+
+                if(displayM < 0) {
+                    displayH = displayH - 1;
+                    displayM = displayM + 60;
+                }
+
+                if(displayM == 0 && displayH > 0) {
+                    displayH = displayH - 1;
+                    displayM = displayM + 60;
+                }
+
+                if(displayH < 0) {
+                    displayD = displayD - 1;
+                    displayH = displayH + 24;
+                }
+
+                if(displayH == 0 && displayD > 0) {
+                    displayD = displayD - 1;
+                    displayH = displayH + 24;
+                }
+
+
+
+
+                var  d_Article_day      = d_Article.getDate() ;
+                var  d_Article_minute   = d_Article.getMinutes();
+                var  d_Article_hour     = d_Article.getHours();
+
+                //console.log("article                                    : " + d_Article_day + " " + d_Article_hour + " " + d_Article_minute );
+
+                var displayDD = d_nextArticle_day - d_Article_day ;
+                var displayHD = d_nextArticle_hour - d_Article_hour ;
+                var displayMD = d_nextArticle_minute - d_Article_minute;
+
+                //console.log("time between article and next article      : " + displayDD + " " + displayHD + " " + displayMD );
+
+
+                if(displayDD < 0)
+                    displayDD = 31 + displayDD;
+
+
+
+                if(displayMD < 0) {
+                    displayHD = displayHD - 1;
+                    displayMD = displayMD + 60;
+                }
+
+                if(displayMD == 0 && displayHD > 0) {
+                    displayHD = displayHD - 1;
+                    displayMD = displayMD + 60;
+                }
+
+                if(displayHD < 0) {
+                    displayDD = displayDD - 1;
+                    displayHD = displayHD + 24;
+                }
+
+                if(displayHD == 0 && displayDD > 0) {
+                    displayDD = displayDD - 1;
+                    displayHD = displayHD + 24;
+                }
+
+
+
+                //console.log("time between article and next article      : " + displayDD + " " + displayHD + " " + displayMD );
+                //console.log("time between now and next article          : " + displayD + " " + displayH + " " + displayM );
+
+
+                var displayDP =  100 - ((displayD * 100) / displayDD );
+                var displayHP =  100 - ((displayH * 100) / displayHD );
+                var displayMP =  100 - ((displayM * 100) / 60 );
+
+
+
+                //console.log("(displayD * 100) / displayDD               : " + displayD + " * 100  / " + displayDD + " = " + ((displayD * 100) / displayDD)  );
+                //console.log("(displayH * 100) / displayHD               : " + displayH + " * 100  / " + displayHD + " = " + ((displayH * 100) / displayHD)  );
+                //console.log("(displayM * 100) / 60               : " + displayM + " * 100  / " + 60 + " = " + ((displayM * 100) / 60)  );
+
+                //console.log("Pourcentage                                : " + displayDP + " " + displayHP + " " + displayMP );
+
+                var content = $("#content-wrapper-inner");
+
+                $( "#ulChart" ).remove();
+
+                //console.log(now_month)
+                //console.log(d_nextArticle_month)
+                if(displayD >= 0 && displayH >= 0 && displayM >= 0 && now_month <= d_nextArticle_month && now_year <= d_nextArticle_year && displayD >= 0) {
+                    $(content).append('<ul id="ulChart"><li class="chart" data-percent="'+displayDP+'"><span id="jour">'+ displayD +'</span>Jours</li><li class="chart" data-percent="'+displayHP+'"><span id="heure">'+displayH+'</span>Heures</li><li class="chart" data-percent="'+displayMP+'"><span id="minute">'+displayM+'</span>Minutes</li></ul>');
+                    !function(){var a=function(a,b){var c=document.createElement("canvas");"undefined"!=typeof G_vmlCanvasManager&&G_vmlCanvasManager.initElement(c);var d=c.getContext("2d");if(c.width=c.height=b.size,a.appendChild(c),window.devicePixelRatio>1){var e=window.devicePixelRatio;c.style.width=c.style.height=[b.size,"px"].join(""),c.width=c.height=b.size*e,d.scale(e,e)}d.translate(b.size/2,b.size/2),d.rotate((-0.5+b.rotate/180)*Math.PI);var f=(b.size-b.lineWidth)/2;b.scaleColor&&b.scaleLength&&(f-=b.scaleLength+2);var g=function(a,b,c){c=Math.min(Math.max(0,c||1),1),d.beginPath(),d.arc(0,0,f,0,2*Math.PI*c,!1),d.strokeStyle=a,d.lineWidth=b,d.stroke()},h=function(){var a,c,e=24;d.lineWidth=1,d.fillStyle=b.scaleColor,d.save();for(var e=24;e>=0;--e)0===e%6?(c=b.scaleLength,a=0):(c=.6*b.scaleLength,a=b.scaleLength-c),d.fillRect(-b.size/2+a,0,c,1),d.rotate(Math.PI/12);d.restore()};Date.now=Date.now||function(){return+new Date};var i=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1e3/60)}}();this.clear=function(){d.clearRect(b.size/-2,b.size/-2,b.size,b.size)},this.draw=function(a){this.clear(),b.scaleColor&&h(),b.trackColor&&g(b.trackColor,b.lineWidth),d.lineCap=b.lineCap;var c;c="function"==typeof b.barColor?b.barColor(a):b.barColor,a>0&&g(c,b.lineWidth,a/100)}.bind(this),this.animate=function(a,c){var d=Date.now();b.onStart(a,c);var e=function(){var f=Math.min(Date.now()-d,b.animate),g=b.easing(this,f,a,c-a,b.animate);this.draw(g),b.onStep(a,c,g),f>=b.animate?b.onStop(a,c):i(e)}.bind(this);i(e)}.bind(this)},b=function(b,c){var d,e={barColor:"#ef1e25",trackColor:"#f9f9f9",scaleColor:"#dfe0e0",scaleLength:5,lineCap:"round",lineWidth:3,size:110,rotate:0,animate:1e3,renderer:a,easing:function(a,b,c,d,e){return(b/=e/2)<1?d/2*b*b+c:-d/2*(--b*(b-2)-1)+c},onStart:function(){},onStep:function(){},onStop:function(){}},f={},g=0,h=function(){this.el=b,this.options=f;for(var a in e)e.hasOwnProperty(a)&&(f[a]=c&&"undefined"!=typeof c[a]?c[a]:e[a],"function"==typeof f[a]&&(f[a]=f[a].bind(this)));f.easing="string"==typeof f.easing&&"undefined"!=typeof jQuery&&jQuery.isFunction(jQuery.easing[f.easing])?jQuery.easing[f.easing]:e.easing,d=new f.renderer(b,f),d.draw(g),b.dataset&&b.dataset.percent&&this.update(parseInt(b.dataset.percent,10))}.bind(this);this.update=function(a){return a=parseInt(a,10),f.animate?d.animate(g,a):d.draw(a),g=a,this}.bind(this),h()};window.EasyPieChart=b}();
+
+                    var options = {
+                      scaleColor: false,
+                      trackColor: 'rgba(255,255,255,0.3)',
+                      barColor: '#1976D2',
+                      lineWidth: 6,
+                      lineCap: 'butt',
+                      size: 95
+                    };
+
+                      var charts = [];
+                      [].forEach.call(document.querySelectorAll('.chart'),  function(el) {
+                        charts.push(new EasyPieChart(el, options));
+                      });
+
+                } else {
+                    $(content).append('<div id="ulChart" class="literalblock text-center"><div class="content"><pre>Disponible !</pre></div></div>');
+                }
+
+
+            }
+        });
+    }
+
+</script>
+<script>
+        var options = {
+          scaleColor: false,
+          trackColor: 'rgba(255,255,255,0.3)',
+          barColor: '#1976D2',
+          lineWidth: 6,
+          lineCap: 'butt',
+          size: 95
+        };
+
+        window.addEventListener('DOMContentLoaded', function() {
+          var charts = [];
+          [].forEach.call(document.querySelectorAll('.chart'),  function(el) {
+            charts.push(new EasyPieChart(el, options));
+          });
+        });
+</script>

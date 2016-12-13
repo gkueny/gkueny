@@ -1,0 +1,84 @@
+---
+layout: default
+description: "Web & Mobile Developer in Toulouse"
+---
+
+<div id="homepage-intro-wrapper">
+    <div class="container">
+        <div class="wrapper">
+            <div id="homepage-intro" class="col-md-16">
+                <h1 style="text-align: center;">Web developer</h1>
+                <p style="text-align: center;">Etudiant en 3ième année de licence informatique, je suis passioné par la programmation web, et particulièrement par Symfony, WordPress et React.</p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="wrapper"> -->
+
+<div id="content" class="col-md-24 isotope" role="main">
+
+    <div id="index-content" class="row" style="position: relative; ">
+        {% for post in paginator.posts %}
+
+            <div class="col-md-4 p-normal col-sm-24 blog-listing anim fadeInUp ">
+                <article class="article post type-post status-publish format-standard hentry category-thoughts tag-blogging tag-writing ">
+
+                    <a style="display: block;" href="{{ post.url | prepend: site.baseurl }}">
+
+                        <div class="entry-content ">
+
+                            <h2>
+                                {{ post.title }}
+                            </h2>
+
+
+                            <span class="post-meta ">{{ post.date | date: " %-d/%m/%Y " }} par {{ post.author }}</span>
+
+                            <p>
+                                {{ post.excerpt }}
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                </article>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+
+    <!-- Pager -->
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Précédent</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Suivant &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61886861-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- </div> -->

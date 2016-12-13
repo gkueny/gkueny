@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+<div class="container">
+    <div class="row">
+        {{ content }}
+    </div>
+</div>
+
+
+
+
+    {% include footer.html %}
+
+
+    <script>
+        $(".img-lazy").on("load", function() {
+            $("#"+this.dataset.id)[0].style.opacity = 0;
+            this.style.opacity = 1;
+        });
+    </script>
+
+  </body>
+
+</html>
