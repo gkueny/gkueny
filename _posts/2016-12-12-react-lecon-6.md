@@ -13,7 +13,7 @@ Une application `React` c'est cool, mais pouvoir naviguer entre plusieurs pages 
 <!-- more -->
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>
-[github lecon_5](https://github.com/gkueny/HappyDrink/tree/Lecon_5)
+[github lecon 5](https://github.com/gkueny/HappyDrink/tree/Lecon_5)
 
 *[12/12/2016]* Petite info avant de commencer : J'ai fait une petite erreur (maintenant corrigée) dans le fichier `./src/reducers/establishmensReducer.js` lors de la dernière leçon, ainsi il faut écrire :
 
