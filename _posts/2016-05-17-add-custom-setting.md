@@ -5,6 +5,7 @@ date:   2016-05-16 22:05:35 +0200
 author: Gkueny
 featured_image: /assets/wordpress-code.png
 comments: true
+keywords: "wordpress, custom setting, ajouter champs"
 excerpt_separator: <!-- more -->
 ---
 Introduit par Wordpress 3.4, le customizer de Wordpress offre une interface visuelle afin de modifier l'apparence du thème. Nous allons ici apprendre à ajouter et récupérer des champs à ce customizer.

@@ -5,6 +5,7 @@ date:   2016-04-24 14:54:54 +0200
 author: Gkueny
 featured_image: /assets/symfony.jpg
 comments: true
+keywords: "symfony, redirection, login, connexion"
 excerpt_separator: <!--more-->
 ---
 Par défaut, l'utilisateur est redirigé vers la dernière page visité ou la page par défaut spécifié. Mais comment diriger nos utilisateurs différamment selon leur ROLE ?

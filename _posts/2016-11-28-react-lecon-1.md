@@ -7,6 +7,7 @@ featured_image: /assets/react_lecon_1.png
 comments: true
 timerArticle: Mon Nov 28 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Wed Nov 30 2016 20:00:00 GMT+0100 (CET)
+keywords: "react, tutorial, react lecon 1, props, component"
 excerpt_separator: <!-- more -->
 ---
 Cela fait maintenant quelques mois que je me suis mis à la librairie React et à son association avec Redux. Il est temps pour moi de vous en montrer un aperçu !

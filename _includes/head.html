@@ -64,6 +64,12 @@
     {% endfor %}
   {% endif %}
 
+    {% if page.keywords %}
+        <meta name="keywords" content="{{ page.keywords }}" />
+    {% else %}
+        <meta name="keywords" content="freelance, developer, web , development, freelance developer, front-end developer, Gaetan Kueny, gkueny, react, react-native, wordpress, symphony" />
+    {% endif %}
+
 
  {% if page.url == "/404.html" %}
     <meta  http-equiv="refresh" content="5; url=/">

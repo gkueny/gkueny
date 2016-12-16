@@ -5,6 +5,7 @@ date:   2016-05-05 21:39:54 +0200
 author: Gkueny
 featured_image: /assets/wordpress.png
 comments: true
+keywords: "wordpress, custom post, custom post type"
 excerpt_separator: <!-- more -->
 ---
 Par défaut Worpress comporte deux types de post : les pages et les articles. Mais cela n'est pas toujours suffisant, surtout dans le cas de sites complexes.

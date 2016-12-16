@@ -5,6 +5,7 @@ author: Gkueny
 date:   2016-06-08 10:44:25 +0200
 featured_image: /assets/monPremierBundle.png
 comments: true
+keywords: "symfony, symfony 3, bundle, externalisation, composer, crawler bundle"
 excerpt_separator: <!-- more -->
 ---
 Si comme moi, vous êtes novices dans l'externalisation d'un bundle, alors bienvenue !

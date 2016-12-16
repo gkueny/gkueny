@@ -5,6 +5,7 @@ author: Gkueny
 date:   2016-08-02 23:50:35 +0200
 featured_image: /assets/multiple-collections.jpeg
 comments: true
+keywords: "titanium, collections, collection, mobile"
 excerpt_separator: <!-- more -->
 ---
 Avez-vous déjà eu besoin d'utiliser plusieurs fois la même collection dans votre vue afin de réaliser différents traitements sur celle-ci ?

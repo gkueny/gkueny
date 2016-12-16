@@ -5,6 +5,7 @@ author: Gkueny
 date:   2016-05-23 10:44:25 +0200
 featured_image: /assets/testflight.jpg
 comments: true
+keywords: "titanium, testflight, apple, beta, test"
 excerpt_separator: <!--more-->
 ---
 Vous voulez déployer votre application titanium en Beta, ou encore la distribuer à plusieurs milliers d'utilisateurs sans passer par l'App Store ? TestFlight est fait pour vous !
