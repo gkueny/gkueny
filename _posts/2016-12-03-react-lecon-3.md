@@ -12,6 +12,8 @@ excerpt_separator: <!-- more -->
 Aller ! Aujourd'hui, on va avancer notre superbe application :)
 <!-- more -->
 
+<div id="toc"></div>
+
 Mais tout d'abord, voyons comment réaliser les différentes tâches laissées en suspens lors de la précédente leçon.
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante :</b> [github lecon_2](https://github.com/gkueny/HappyDrink/tree/Lecon_2)
@@ -604,4 +606,3 @@ pour utiliser "$" dans un `component`
     ↓ Prochaine leçon dans ↓
 
 </center>
-

@@ -12,6 +12,8 @@ excerpt_separator: <!-- more -->
 Cela fait maintenant quelques mois que je me suis mis à la librairie React et à son association avec Redux. Il est temps pour moi de vous en montrer un aperçu !
 <!-- more -->
 
+<div id="toc"></div>
+
 ## Introduction
 
 Pour tout vous dire, je suis tombé amoureux de React (et également de React-native, mais cela sera pour une autre fois ;) ) et c'est pour cela qu'il m'est venu l'envie de partager mes connaissances à ce sujet.
@@ -135,7 +137,7 @@ class App extends Component {
 export default App;
 {% endhighlight %}
 
-Regardons d'un peu plus près la méthode `render`. Au premier coup d'oeil on a l'impression que l'on retourne du code `html`. 
+Regardons d'un peu plus près la méthode `render`. Au premier coup d'oeil on a l'impression que l'on retourne du code `html`.
 *Attention*, ici on utilise la syntaxe `JSX`, qui est très proche du `HTML`. Il y a quelques différences, comme l'utilisation de l'attribut `className` à la place de `class`. Cela vient du fait que `JSX` est du Javascript et que `class` est un mot-clé réservé.
 
 le code JSX ci-dessous :
@@ -458,4 +460,3 @@ Nous corrigerons cela dans la prochaine leçon !
     ↓ Prochaine leçon dans ↓
 
 </center>
-

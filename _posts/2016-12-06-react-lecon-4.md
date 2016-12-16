@@ -12,6 +12,8 @@ excerpt_separator: <!-- more -->
 Aujourd'hui on attaque REDUX !!!!
 <!-- more -->
 
+<div id="toc"></div>
+
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3)
 
 ## 1. Rappel de l'organisation du projet
@@ -1025,4 +1027,3 @@ Ce que je vous propose maintenant, c'est de filtrer notre liste de bars par leur
     ↓ Prochaine leçon dans ↓
 
 </center>
-

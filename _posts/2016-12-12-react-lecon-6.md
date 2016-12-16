@@ -12,6 +12,8 @@ excerpt_separator: <!-- more -->
 Une application `React` c'est cool, mais pouvoir naviguer entre plusieurs pages c'est mieux non ?
 <!-- more -->
 
+<div id="toc"></div>
+
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>
 [github lecon 5](https://github.com/gkueny/HappyDrink/tree/Lecon_5)
 

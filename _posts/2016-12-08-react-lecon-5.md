@@ -12,6 +12,8 @@ excerpt_separator:  <!-- more -->
 Aujourd'hui, on termine notre application et on regarde comment persister nos données.
  <!-- more -->
 
+<div id="toc"></div>
+
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4)
 
 ## 1. Rappel de l'organisation du projet

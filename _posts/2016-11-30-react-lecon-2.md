@@ -12,6 +12,8 @@ excerpt_separator:  <!-- more -->
 C'est parti pour découvrir le *state* d'un composant React !
  <!-- more -->
 
+<div id="toc"></div>
+
 Mais tout d'abord, voyons une façon de réaliser les deux points laissés en suspens lors de la dernière leçon :
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : <b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1)
@@ -326,8 +328,7 @@ Nous corrigerons cela dans la prochaine leçon !
 </center>
 
 <center>
-    
+
     ↓ Prochaine leçon dans ↓
 
 </center>
-    
