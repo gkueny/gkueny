@@ -1,4 +1,9 @@
+{% if page.author %}
+<header class="site-header" style="position: absolute; margin-bottom: 0px;">
+{% else %}
 <header class="site-header">
+{% endif %}
+
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-default">
@@ -23,7 +28,7 @@
                                 {% if my_page.title %}
                                 {% if my_page.weight > 0 %}
                                     <li class=""><a href="{{ my_page.url }}">{{ my_page.title }}</a></li>
-                                {% endif %} 
+                                {% endif %}
                                 {% endif %}
                             {% endfor %}
                         </ul>
