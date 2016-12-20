@@ -25,4 +25,4 @@ highlighter: rouge
 permalink: /:title
 paginate: 3
 
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-compose]
