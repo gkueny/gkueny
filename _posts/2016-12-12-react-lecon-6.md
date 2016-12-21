@@ -16,7 +16,7 @@ Une application `React` c'est cool, mais pouvoir naviguer entre plusieurs pages 
 <div id="toc"></div>
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>
-[github lecon 5](https://github.com/gkueny/HappyDrink/tree/Lecon_5)
+[github lecon 5](https://github.com/gkueny/HappyDrink/tree/Lecon_5){:target="\_blank"}
 
 *[12/12/2016]* Petite info avant de commencer : J'ai fait une petite erreur (maintenant corrigée) dans le fichier `./src/reducers/establishmensReducer.js` lors de la dernière leçon, ainsi il faut écrire :
 
@@ -150,10 +150,10 @@ persistStore(store)
 ReactDOM.render(
 
     <Provider store={ store }>
-        {/*  On créé notre router en lui passant en paramètre notre historique modifié */}
+{/*  On créé notre router en lui passant en paramètre notre historique modifié \*/}
         <Router history={history}>
 
-            {/* On définit notre route */}
+            {/* On définit notre route \*/}
             <Route path="/" component={(props) => <AppContainer {...props} title="HappyDrink"/>}></Route>
 
         </Router>
@@ -294,7 +294,7 @@ class Home extends Component {
 
                 </div>
 
-                {/* On affiche l'enfant courant */}
+                {/* On affiche l'enfant courant \*/}
                 { this.props.children }
 
             </div>
@@ -444,7 +444,7 @@ ReactDOM.render(
             <Route path="/" component={(props) => <HomeContainer {...props} title="HappyDrink"/>}>
                 <IndexRoute component={AppContainer}/>
 
-                {/* :id est un paramètre  */}
+            {/* :id est un paramètre  \*/}
                 <Route path="/happyhour/:id" component={HappyhourContainer} />
             </Route>
         </Router>
@@ -644,7 +644,7 @@ src
 
 On a fini notre application !!!
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_6](https://github.com/gkueny/HappyDrink/tree/Lecon_6)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_6](https://github.com/gkueny/HappyDrink/tree/Lecon_6){:target="\_blank"}
 
 ## 5. Pour la suite
 

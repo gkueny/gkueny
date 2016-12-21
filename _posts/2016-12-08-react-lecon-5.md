@@ -15,7 +15,7 @@ Aujourd'hui, on termine notre application et on regarde comment persister nos do
 
 <div id="toc"></div>
 
-<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4)
+<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4){:target="\_blank"}
 
 ## 1. Rappel de l'organisation du projet
 
@@ -520,7 +520,7 @@ src
 - <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
 - <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_5](https://github.com/gkueny/HappyDrink/tree/Lecon_5)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_5](https://github.com/gkueny/HappyDrink/tree/Lecon_5){:target="\_blank"}
 
     Bientôt fini !
 

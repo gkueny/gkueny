@@ -52,7 +52,7 @@ Nous pourrons :
 
 ### Initialisation
 
-Si vous avez déjà essayé de réaliser un projet React, vous avez dû rencontrer des difficultés avec [`Babel`](https://babeljs.io/) et [`Webpack`](http://putaindecode.io/fr/articles/js/webpack/).
+Si vous avez déjà essayé de réaliser un projet React, vous avez dû rencontrer des difficultés avec [`Babel`](https://babeljs.io/){:target="\_blank"} et [`Webpack`](http://putaindecode.io/fr/articles/js/webpack/){:target="\_blank"}.
 
 Facebook l'a bien compris et nous permet de nous abstenir de toute cette configuration, qui peut être difficile/incompréhensible, grâce au package npm `create-react-app`.
 
@@ -77,7 +77,7 @@ Pour voir l'application dans votre navigateur :
 $ cd HappyDrink
 $ npm start
 {% endhighlight %}
-    Cela lance pour vous le serveur : http://localhost:3000/ et le mettra à jour à chaque modification de fichier.
+    Cela lance pour vous le serveur : [ http://localhost:3000/](http://localhost:3000/){:target="\_blank"} et le mettra à jour à chaque modification de fichier.
 
 
 ### Notre premier composant React
@@ -318,7 +318,7 @@ const listEstablishment = establishments.map( (establishment) => {
 {% endhighlight %}
 
 > La méthode `map()` crée un nouveau tableau composé des images des éléments d'un tableau par une fonction donnée en argument. <br>
-[https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map)
+[https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map){:target="\_blank"}
 
 Ici, avec la fonction anonyme `(establishment) => {}` (notation es6), nous retournons l'élément JSX `<li ... > ... </li>` <br/>
 Ce qui permet par la suite d'afficher les établissements sous forme de liste avec la variable `{ listEstablishment }`.
@@ -441,7 +441,7 @@ _Petit bémol : Nous ne récupérons pas les établissements d'une api pour l'in
 
 
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante :</b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante :</b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1){:target="\_blank"}
 
 ## 5. Pour la suite
 

@@ -17,7 +17,7 @@ Aller ! Aujourd'hui, on va avancer notre superbe application :)
 
 Mais tout d'abord, voyons comment réaliser les différentes tâches laissées en suspens lors de la précédente leçon.
 
-<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante :</b> [github lecon_2](https://github.com/gkueny/HappyDrink/tree/Lecon_2)
+<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante :</b> [github lecon_2](https://github.com/gkueny/HappyDrink/tree/Lecon_2){:target="\_blank"}
 
 ## 1. Rappel de l'organisation du projet
 
@@ -392,8 +392,7 @@ Et on met à jour le css :
 Jetons un coup d'oeil aux fonctions, de notre `component`, qui sont appelées par `React` à l'initialisation de celui-ci :
 
 {% highlight cli %}
-|
-|__constructor()
+\__constructor()
 |
 |__componentWillMount()
 |
@@ -573,7 +572,7 @@ Regardons un peu l'avancement de notre projet HappyDrink :
 On a bien avancé cette fois-ci !
 
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3){:target="\_blank"}
 
 ## 5. Pour la suite
 

@@ -13,7 +13,7 @@ Notre application `React` est finie ! Ou pas ?
 <div id="toc"></div>
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>
-[github lecon 6](https://github.com/gkueny/HappyDrink/tree/Lecon_6)
+[github lecon 6](https://github.com/gkueny/HappyDrink/tree/Lecon_6){:target="\_blank"}
 
 ## 1. Rappel de l'organisation du projet
 
@@ -149,7 +149,7 @@ Il ne nous manque plus qu'à lancer le serveur de l'API (pensez à lancer `json-
 $ json-server --watch db.json
 {% endhighlight %}
 
-Et voilà, vos données sont maintenant accessibles à l'adresse suivante : [http://localhost:3000/establishments](http://localhost:3000/establishments)
+Et voilà, vos données sont maintenant accessibles à l'adresse suivante : [http://localhost:3000/establishments](http://localhost:3000/establishments){:target="\_blank"}
 
 ### b. Récupérer les données depuis l'API
 
@@ -161,7 +161,7 @@ Nous allons également en profiter pour récupérer le nombre de `like` et `disl
 
 ##### Actions et reducers
 
-Vous vous rappelez quand nous avions parlé de l'action "ADDESTABLISHMENT" pour récupérer les établissements depuis une API dans la [leçon sur redux]({{site.url}}/react-lecon-4/#42-création-des-reducers) ? Eh bien, c'est le moment d'implémenter cette fonctionnalité.
+Vous vous rappelez quand nous avions parlé de l'action "ADDESTABLISHMENT" pour récupérer les établissements depuis une API dans la [leçon sur redux]({{site.url}}/react-lecon-4/#42-création-des-reducers){:target="\_blank"} ? Eh bien, c'est le moment d'implémenter cette fonctionnalité.
 
 Mettons donc à jour nos `actions` et nos `reducers` :
 
@@ -522,7 +522,7 @@ Je vous propose donc de réaliser un loader qui disparaîtra ,pour laisser place
 
 ##### Le gif
 
-Nous allons utiliser le loader suivant : [ring.gif]({{site.url}}/assets/ring.gif).
+Nous allons utiliser le loader suivant : [ring.gif]({{site.url}}/assets/ring.gif){:target="\_blank"}.
 
 Placez le dans le dossier `assets`.
 
@@ -837,11 +837,11 @@ Dans notre application, nous pourrions l'utiliser afin de réaliser les appels A
 
 Voici les principaux liens de mes sources, n'hésitez pas à les visiter pour en apprendre plus :
 
-- [react : tutoriel officiel](https://facebook.github.io/react/tutorial/tutorial.html)
-- [redux (todo list)](http://redux.js.org/docs/basics/ExampleTodoList.html) (je me suis pas mal inspirer de cet exemple)
-- [react-router : github](https://github.com/ReactTraining/react-router)
-- [react-router-redux : github](https://github.com/reactjs/react-router-redux)
-- [redux-persist : github](https://github.com/rt2zz/redux-persist)
+- [react : tutoriel officiel](https://facebook.github.io/react/tutorial/tutorial.html){:target="\_blank"}
+- [redux (todo list)](http://redux.js.org/docs/basics/ExampleTodoList.html){:target="\_blank"} (je me suis pas mal inspirer de cet exemple)
+- [react-router : github](https://github.com/ReactTraining/react-router){:target="\_blank"}
+- [react-router-redux : github](https://github.com/reactjs/react-router-redux){:target="\_blank"}
+- [redux-persist : github](https://github.com/rt2zz/redux-persist){:target="\_blank"}
 
 
 ## 4. Récapitulatif
@@ -918,7 +918,7 @@ src
 
 - <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   Afficher un `loader` lors du chargement de la page.
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_7](https://github.com/gkueny/HappyDrink/tree/Lecon_7)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_7](https://github.com/gkueny/HappyDrink/tree/Lecon_7){:target="\_blank"}
 
 ## 5. Fin
 

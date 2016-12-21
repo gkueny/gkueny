@@ -15,7 +15,7 @@ Aujourd'hui on attaque REDUX !!!!
 
 <div id="toc"></div>
 
-<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3)
+<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3){:target="\_blank"}
 
 ## 1. Rappel de l'organisation du projet
 
@@ -1010,7 +1010,7 @@ Bonus :
 
 - <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  Implémenter Redux
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante :</b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante :</b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4){:target="\_blank"}
 
 ## 6. Pour la suite
 

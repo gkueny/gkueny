@@ -25,6 +25,6 @@ highlighter: rouge
 permalink: /:title
 paginate: 3
 
-environment: prod
+environment: dev
 
 gems: [jekyll-paginate, jekyll-compose]

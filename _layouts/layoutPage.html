@@ -29,7 +29,11 @@
 
     </script>
 
-    {% include analytics.html %}
+
+    {% if site.environment == "prod" %}
+    <p>{{site.environment }}</p>
+        {% include analytics.html %}
+    {% endif %}
 
 </body>
 

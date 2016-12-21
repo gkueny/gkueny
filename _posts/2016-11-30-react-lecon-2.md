@@ -17,7 +17,7 @@ C'est parti pour découvrir le *state* d'un composant React !
 
 Mais tout d'abord, voyons une façon de réaliser les deux points laissés en suspens lors de la dernière leçon :
 
-<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : <b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1)
+<b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : <b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1){:target="\_blank"}
 
 
 ## 1. Proposition de correction
@@ -79,7 +79,7 @@ export default Establishment;
 
 On appelle cela un component `stateless`, car, comme son nom l'indique, il n'a pas de `state`. Et c'est pour cela que l'on peut l'écrire sous cette forme "plus légère", qui est aussi (de mon avis) plus facilement compréhensible. <br/>
 
-En savoir plus : [React Stateless Functional Components: Nine Wins You Might Have Overlooked](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.1tjsc34mf)
+En savoir plus : [React Stateless Functional Components: Nine Wins You Might Have Overlooked](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.1tjsc34mf){:target="\_blank"}
 
     Mais... Mais... On ne sait même pas ce que c'est le "state" ...
 
@@ -152,7 +152,7 @@ $ cd HappyDrink
 $ npm start
 {% endhighlight %}
 
-## 2. Utilisation du `state` d'un `component`
+## 3. Utilisation du `state` d'un `component`
 
 Bon, j'avoue, je vous ai menti...
 
@@ -284,9 +284,9 @@ Quand vous construisez un component, posez-vous ces questions :
 
 * Ma variable ne remplie aucun des cas ci-dessus ? <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Alors sa place est surement dans le `state`
 
-En savoir plus : [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+En savoir plus : [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html){:target="\_blank"}
 
-## 3. Récapitulatif
+## 4. Récapitulatif
 
 Regardons un peu l'avancement de notre projet HappyDrink :
 
@@ -306,9 +306,9 @@ Bonus :
 
 Ne vous inquiétez pas, cela arrive ;).
 
-<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_2](https://github.com/gkueny/HappyDrink/tree/Lecon_2)
+<b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_2](https://github.com/gkueny/HappyDrink/tree/Lecon_2){:target="\_blank"}
 
-## 4. Pour la suite
+## 5. Pour la suite
 
 Maintenant que nous avons vu les deux principaux fondements de `React`, nous sommes capables de construire entièrement notre application ! <br/>
 Mais allons-y pas à pas, tout en découvrant au fur et à mesure différents autres aspects de `React`.
