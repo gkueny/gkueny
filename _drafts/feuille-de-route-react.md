@@ -37,17 +37,21 @@ Prenons comme un exemple une bonne vielle application `Todo-list`. Vous allez av
 
 Le `state` initial se déclare dans le `constructeur` de votre composant comme-ci :
 
-{% highlight javascript %}
+
+{% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 init-state.js %}
+
+<!-- {% highlight javascript %}
 // initialisation du state
 this.state = {
     todos : [],     // le tableau de nos todos
     message : ""    // un message
 }
-{% endhighlight %}
+{% endhighlight %} -->
 
 et se met à jour via la fonction `setState()`.
 
-{% highlight javascript %}
+{% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 update-state.js %}
+<!-- {% highlight javascript %}
 // Ajout d'une nouvelle todo
 this.setState({
     todos : [
@@ -55,7 +59,7 @@ this.setState({
         newTodo
       ]
 })
-{% endhighlight %}
+{% endhighlight %} -->
 
 Pour voir l'implémentation et l'utilisation du `state` dans un composant, c'est par ici : [lecon-2](http://gkueny.fr/react-lecon-2){:target="\_blank"} :)
 
@@ -78,7 +82,7 @@ De plus, à chaque modification du `state`, `React` appelle les fonctions suivan
 
 J'ai également listé la fonction `componentWillReceiveProps(nextProps)`, mais celle-ci n'est appelée que lorsque le composant parent modifie les `props` de notre composant.
 
-Avec la fonction `shouldComponentUpdate(nextProps, nextState)`, vous pourrez indiquer à `React` si vous voulez que les fonctions suivantes soit appelées ou pas. Cela nous permet ainsi d'améliorer la performance de notre application dans le cas où un composant est "re-rendu" à chaque modification alors que cela n'est pas nécéssaire.
+Avec la fonction `shouldComponentUpdate(nextProps, nextState)`, vous pourrez indiquer à `React` si vous voulez que les fonctions qui suivent soit appelées ou pas. Cela nous permet ainsi d'améliorer la performance de notre application dans le cas où un composant est "re-rendu" à chaque modification alors que cela n'est pas nécéssaire.
 
 Pour une explication plus détaillée de chaque fonction et de leur implémentation, c'est par ici que cela se passe : [lecon-3](http://gkueny.fr/react-lecon-3){:target="\_blank"} :)
 
@@ -110,7 +114,7 @@ Pour voir son implémentation, c'est par ici : [lecon-5](http://gkueny.fr/react-
 - La première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via l'url.
 - La seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
 
-Pour vois un exemple d'utilisation, c'est par ici que cela se passe : [lecon-6](http://gkueny.fr/react-lecon-6){:target="\_blank"} :)
+Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [lecon-6](http://gkueny.fr/react-lecon-6){:target="\_blank"} :)
 
 ### 7. En apprendre un peu plus
 

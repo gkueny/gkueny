@@ -460,3 +460,11 @@ p.comment {
     align-items: center;
     justify-content: space-between;
 }
+
+.gist .blob-num {
+    min-width: 40px !important;
+    text-align: center !important;
+}
+.gist {
+    margin: 0 -50px;
+}
