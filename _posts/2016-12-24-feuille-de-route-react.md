@@ -2,13 +2,15 @@
 layout: post
 title: Feuille de route d'une application React
 author: Gkueny
-date: Tue Dec 19 2016 20:00:00 GMT+0100 (CET)
+date: Sat Dec 24 2016 18:00:00 GMT+0100 (CET)
 featured_image: /assets/react_nowwwel.png
 comments: true
 excerpt_separator: <!-- more -->
 ---
-Récemment, j'ai réalisé une série de leçons sur la réalisation d'une application `React`. Il est temps pour moi de vous en faire un petit résumé, et ainsi vous livrer une petite feuille de route pour réaliser une première application `React` :) .
+Lorsque j'ai voulu commencer à coder une application `React`, j'ai passé un petit bout de temps à `googler` "React c'est quoi ?", "Quelle librairie utiliser pour le routing ?" etc... C'est pourquoi je vous livre ici, une petite feuille de route pour réaliser votre première application `React` sans vous perde dans les méandres de `google` :).
 <!-- more -->
+
+cc [#nowwwel](https://twitter.com/search?f=tweets&vertical=default&q=%23nowwwel) ;)
 
 <div id="toc"></div>
 
@@ -24,18 +26,18 @@ Récemment, j'ai réalisé une série de leçons sur la réalisation d'une appli
 
 Un composant `React` contient des `props` (variables passées et définies par le composant parent) et un `state`, (variable définie par le composant lui-même). Chaque modification de l'une d'entre elles entraîne la mise à jour du composant et de ses enfants.
 
-Celui-ci contient également la fonction `render()`. Elle a pour charge de retourner la structure du `DOM` virtuel prise en charge par votre composant.
+Celui-ci contient également la fonction `render()`. Elle retourne la structure du `DOM` virtuel prise en charge par votre composant.
 
-Si vous voulez avoir un meilleur aperçu de son fonctionnement, c'est par ici que cela se passe : [lecon-1](http://gkueny.fr/react-lecon-1){:target="\_blank"} :) <br/>
+Si vous voulez avoir un meilleur aperçu du fonctionnement d'un composant, c'est par ici que cela se passe : [lecon-1]({{site.url}}/react-lecon-1){:target="\_blank"} :) <br/>
 Vous y trouverez :
-- plus d'informations sur les bases de `React`
+- plus d'information sur les bases de `React`
 - la réalisation, pas à pas, d'un composant `React`
 
 ### 2. Gérer le state
 
 Prenons comme un exemple une bonne vielle application `Todo-list`. Vous allez avoir besoin de `créer`, `modifier`, `supprimer` vos `todos` et mettre à jour l'affichage en conséquence. Pour cela, rien de mieux que le `state` de votre application.
 
-Le `state` initial se déclare dans le `constructeur` de votre composant comme-ci :
+Le `state` initial se déclare dans le `constructeur` de votre composant, comme-ci :
 
 
 {% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 init-state.js %}
@@ -61,7 +63,7 @@ this.setState({
 })
 {% endhighlight %} -->
 
-Pour voir l'implémentation et l'utilisation du `state` dans un composant, c'est par ici : [lecon-2](http://gkueny.fr/react-lecon-2){:target="\_blank"} :)
+Pour voir l'implémentation et l'utilisation du `state` dans un composant, c'est par ici : [lecon-2]({{site.url}}/react-lecon-2){:target="\_blank"} :)
 
 ### 3. Prendre en main le cycle de vie d'un composant React
 
@@ -84,7 +86,7 @@ J'ai également listé la fonction `componentWillReceiveProps(nextProps)`, mais 
 
 Avec la fonction `shouldComponentUpdate(nextProps, nextState)`, vous pourrez indiquer à `React` si vous voulez que les fonctions qui suivent soit appelées ou pas. Cela nous permet ainsi d'améliorer la performance de notre application dans le cas où un composant est "re-rendu" à chaque modification alors que cela n'est pas nécéssaire.
 
-Pour une explication plus détaillée de chaque fonction et de leur implémentation, c'est par ici que cela se passe : [lecon-3](http://gkueny.fr/react-lecon-3){:target="\_blank"} :)
+Pour une explication plus détaillée de chaque fonction et de leur implémentation, c'est par ici que cela se passe : [lecon-3]({{site.url}}/react-lecon-3){:target="\_blank"} :)
 
 ### 4. Redux
 
@@ -95,7 +97,7 @@ Pour une explication plus détaillée de chaque fonction et de leur implémentat
 - d'`actions`, qui sont prédéfinies et envoyées par vos composants
 - de `containers`, qui ont pour charge de lier vos composant à `Redux`
 
-Si vous voulez en savoir plus sur chaque élément de `redux` et leur implémentation : [lecon-4](http://gkueny.fr/react-lecon-4){:target="\_blank"} :) <br/>
+Si vous voulez en savoir plus sur chaque élément de `redux` et leur implémentation : [lecon-4]({{site.url}}/react-lecon-4){:target="\_blank"} :) <br/>
 Vous pourrez également y voir un exemple d'appel `API`.
 
 ### 5. Persister ses données
@@ -106,15 +108,15 @@ Celle-ci va sauvegarder votre `state` à chaque modification et le charger lors 
 
 Je n'ai pas beaucoup de choses à rajouter, si ce n'est que cela va vous faciliter la vie ;).
 
-Pour voir son implémentation, c'est par ici : [lecon-5](http://gkueny.fr/react-lecon-5){:target="\_blank"} :)
+Pour voir son implémentation, c'est par ici : [lecon-5]({{site.url}}/react-lecon-5){:target="\_blank"} :)
 
 ### 6. La navigation
 
 À moins que votre application ne contienne qu'une seul page, vous allez avoir besoin d'y naviguer. Pour cela je vous propose les librairies `react-router` et `react-router-redux`.
-- La première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via l'url.
+- La première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via celle-ci.
 - La seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
 
-Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [lecon-6](http://gkueny.fr/react-lecon-6){:target="\_blank"} :)
+Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [lecon-6]({{site.url}}/react-lecon-6){:target="\_blank"} :)
 
 ### 7. En apprendre un peu plus
 
