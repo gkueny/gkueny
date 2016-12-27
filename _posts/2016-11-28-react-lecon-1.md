@@ -77,7 +77,8 @@ Pour voir l'application dans votre navigateur :
 $ cd HappyDrink
 $ npm start
 {% endhighlight %}
-    Cela lance pour vous le serveur : [ http://localhost:3000/](http://localhost:3000/){:target="\_blank"} et le mettra à jour à chaque modification de fichier.
+
+Cela lance pour vous le serveur : [ http://localhost:3000/](http://localhost:3000/){:target="\_blank"} et le mettra à jour à chaque modification de fichier.
 
 
 ### Notre premier composant React
