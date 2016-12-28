@@ -342,7 +342,7 @@ Ce qui permet par la suite d'afficher les établissements sous forme de liste av
 </div>
 {% endhighlight %}
 
-##### css
+##### CSS
 
 Faisons également un petit ajout dans notre fichier css pour que cela soit un petit peu plus "beau" (notez les guillemets ;) )
 
