@@ -101,8 +101,8 @@ Pour voir son implémentation, c'est par ici : [Persister ses données]({{site.u
 
 À moins que votre application ne contienne qu'une seul page, vous allez avoir besoin d'y naviguer. Pour cela je vous propose les librairies `react-router` et `react-router-redux`.
 
-- La première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via celle-ci.
-- La seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
+- la première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via celle-ci.
+- la seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
 
 Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [Naviguer dans son application]({{site.url}}/react-lecon-6){:target="\_blank"} :)
 
@@ -110,6 +110,6 @@ Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [Naviguer 
 
 Je vous liste ici quelques liens utiles pour en savoir un peu plus sur `React` :)
 
-- PropTypes : [https://facebook.github.io/react/docs/typechecking-with-proptypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html){:target="\_blank"}
+- propTypes : [https://facebook.github.io/react/docs/typechecking-with-proptypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html){:target="\_blank"}
 - les tests :) : [https://facebook.github.io/react/docs/test-utils](https://facebook.github.io/react/docs/test-utils.html){:target="\_blank"}
-- Thinking in React : [https://facebook.github.io/react/docs/thinking-in-react](https://facebook.github.io/react/docs/thinking-in-react.html){:target="\_blank"}
+- thinking in React : [https://facebook.github.io/react/docs/thinking-in-react](https://facebook.github.io/react/docs/thinking-in-react.html){:target="\_blank"}
