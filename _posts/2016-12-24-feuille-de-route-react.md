@@ -7,7 +7,7 @@ featured_image: /assets/react_nowwwel.png
 comments: true
 excerpt_separator: <!-- more -->
 ---
-Lorsque j'ai commencé à coder une application `React`, j'ai passé un petit bout de temps à `googler` "React c'est quoi ?", "Quelle librairie utiliser pour le routing ?" etc... C'est pourquoi je vous livre ici, une petite feuille de route pour réaliser votre première application `React` sans vous perde dans les méandres de `google` :).
+Lorsque j'ai commencé à coder une application `React`, j'ai passé un petit bout de temps à `googler` "React c'est quoi ?", "Quelle librairie utiliser pour le routing ?" etc... C'est pourquoi je vous livre ici, une petite feuille de route pour réaliser votre première application `React` sans vous perdre dans les méandres de `google` :).
 <!-- more -->
 
 cc [#nowwwel](https://twitter.com/search?f=tweets&vertical=default&q=%23nowwwel) ;)
@@ -26,10 +26,11 @@ cc [#nowwwel](https://twitter.com/search?f=tweets&vertical=default&q=%23nowwwel)
 
 Un composant `React` contient des `props` (variables passées et définies par le composant parent) et un `state`, (variable définie par le composant lui-même). Chaque modification de l'une d'entre elles entraîne la mise à jour du composant et de ses enfants.
 
-Celui-ci contient également la fonction `render()`. Elle retourne la structure du `DOM` virtuel prise en charge par votre composant.
+Celui-ci contient également la fonction `render()` qui retourne la structure du `DOM` virtuel prise en charge par votre composant.
 
-Si vous voulez avoir un meilleur aperçu du fonctionnement d'un composant, c'est par ici que cela se passe : [lecon-1]({{site.url}}/react-lecon-1){:target="\_blank"} :) <br/>
+Si vous voulez avoir un meilleur aperçu du fonctionnement d'un composant, c'est par ici que cela se passe : [introduction à React]({{site.url}}/react-lecon-1){:target="\_blank"} :) <br/>
 Vous y trouverez :
+
 - plus d'information sur les bases de `React`
 - la réalisation, pas à pas, d'un composant `React`
 
@@ -42,40 +43,25 @@ Le `state` initial se déclare dans le `constructeur` de votre composant, comme-
 
 {% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 init-state.js %}
 
-<!-- {% highlight javascript %}
-// initialisation du state
-this.state = {
-    todos : [],     // le tableau de nos todos
-    message : ""    // un message
-}
-{% endhighlight %} -->
-
 et se met à jour via la fonction `setState()`.
 
 {% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 update-state.js %}
-<!-- {% highlight javascript %}
-// Ajout d'une nouvelle todo
-this.setState({
-    todos : [
-        ...this.state.todos,
-        newTodo
-      ]
-})
-{% endhighlight %} -->
 
-Pour voir l'implémentation et l'utilisation du `state` dans un composant, c'est par ici : [lecon-2]({{site.url}}/react-lecon-2){:target="\_blank"} :)
+Pour voir l'implémentation et l'utilisation du `state` dans un composant, c'est par ici : [Découverte du state]({{site.url}}/react-lecon-2){:target="\_blank"} :)
 
 ### 3. Prendre en main le cycle de vie d'un composant React
 
 Lors de l'initialisation d'un composant, `React` appelle successivement quatre fonctions :
+
 - `constructor()`
 - `componentWillMount()`
 - `render()`
 - `componentDidMount()`
 
-C'est dans le `contructor` que vous initialiserez le `state`. La fonction `componentDidMount`, quant à elle, vous permettra de faire des appels `API`.
+C'est dans le `contructor` que vous initialiserez le `state`. La fonction `componentDidMount()`, quant à elle, vous permettra de faire des appels `API`.
 
 De plus, à chaque modification du `state`, `React` appelle les fonctions suivantes :
+
 - `componentWillReceiveProps(nextProps)`
 - `shouldComponentUpdate(nextProps, nextState)`
 - `componentWillUpdate(nextProps, nextState)`
