@@ -28,7 +28,7 @@ Un composant `React` contient des `props` (variables passées et définies par l
 
 Celui-ci contient également la fonction `render()` qui retourne la structure du `DOM` virtuel prise en charge par votre composant.
 
-Si vous voulez avoir un meilleur aperçu du fonctionnement d'un composant, c'est par ici que cela se passe : [introduction à React]({{site.url}}/react-lecon-1){:target="\_blank"} :) <br/>
+Si vous voulez avoir un meilleur aperçu du fonctionnement d'un composant, c'est par ici que cela se passe : [Introduction à React]({{site.url}}/react-lecon-1){:target="\_blank"} :) <br/>
 Vous y trouverez :
 
 - plus d'information sur les bases de `React`
@@ -72,7 +72,7 @@ J'ai également listé la fonction `componentWillReceiveProps(nextProps)`, mais 
 
 Avec la fonction `shouldComponentUpdate(nextProps, nextState)`, vous pourrez indiquer à `React` si vous voulez que les fonctions qui suivent soit appelées ou pas. Cela nous permet ainsi d'améliorer la performance de notre application dans le cas où un composant est "re-rendu" à chaque modification alors que cela n'est pas nécéssaire.
 
-Pour une explication plus détaillée de chaque fonction et de leur implémentation, c'est par ici que cela se passe : [lecon-3]({{site.url}}/react-lecon-3){:target="\_blank"} :)
+Pour une explication plus détaillée de chaque fonction et de leur implémentation, c'est par ici que cela se passe : [En savoir un peu plus sur le cycle de vie d'un composant React]({{site.url}}/react-lecon-3){:target="\_blank"} :)
 
 ### 4. Redux
 
@@ -95,7 +95,7 @@ Celle-ci va sauvegarder votre `state` à chaque modification et le charger lors 
 
 Je n'ai pas beaucoup de choses à rajouter, si ce n'est que cela va vous faciliter la vie ;).
 
-Pour voir son implémentation, c'est par ici : [lecon-5]({{site.url}}/react-lecon-5){:target="\_blank"} :)
+Pour voir son implémentation, c'est par ici : [Persister ses données]({{site.url}}/react-lecon-5){:target="\_blank"} :)
 
 ### 6. La navigation
 
@@ -104,7 +104,7 @@ Pour voir son implémentation, c'est par ici : [lecon-5]({{site.url}}/react-leco
 - La première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via celle-ci.
 - La seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
 
-Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [lecon-6]({{site.url}}/react-lecon-6){:target="\_blank"} :)
+Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [Naviguer dans son application]({{site.url}}/react-lecon-6){:target="\_blank"} :)
 
 ### 7. En apprendre un peu plus
 
