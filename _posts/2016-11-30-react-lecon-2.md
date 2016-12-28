@@ -193,7 +193,7 @@ class App extends Component {
         for( let i=0; i < size; i++ )
             randomPseudo += possible.charAt(Math.floor(Math.random() * possible.length))
 
-        // On met à jour le state via la fonction "setState" hérité de la classe Component
+        // On met à jour le state via la fonction "setState" héritée de la classe Component
         this.setState({
             pseudo : randomPseudo
         })
