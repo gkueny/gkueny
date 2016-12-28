@@ -5,9 +5,11 @@ permalink: /realisations/
 weight: 1
 ---
 
-<img class="img-lazy image-project" data-id="1" src="{{  site.url }}/assets/iloveyoubeach_psd.png" style="
- margin-top: 30px; ">
- <!-- <img class="gif" id="1" src="{{  site.url }}/assets/ring.gif" /> -->
+<div id="project-1">
+    <img class="img-lazy image-project" data-id="1" src="{{  site.url }}/assets/iloveyoubeach_psd.png" style="
+     margin-top: 30px; ">
+     <img class="gif" id="1" src="{{  site.url }}/assets/ring.gif" style="z-index: -1"/>
+ </div>
 
 <div class="center div-project">
     <div class="col-sm-7 col-xs-12">
@@ -25,8 +27,10 @@ weight: 1
     </div>
 </div>
 
-<img class="img-lazy image-project" data-id="2"  src="{{  site.url }}/assets/font_mars_psd.png" style="margin-top: 50px;">
-<!-- <img class="gif" id="2" src="{{  site.url }}/assets/ring.gif" /> -->
+<div id="project-2">
+    <img class="img-lazy image-project" data-id="2"  src="{{  site.url }}/assets/font_mars_psd.png" style="margin-top: 50px;" />
+    <img class="gif" id="2" src="{{  site.url }}/assets/ring.gif" style="z-index: -1"/>
+</div>
 
 <div class="center div-project">
     <div class="col-sm-7 col-xs-12">
@@ -43,3 +47,19 @@ weight: 1
 
         </div>
 </div>
+
+<script>
+
+     document.addEventListener("DOMContentLoaded", function(event) {
+        var gifs = document.getElementsByClassName("gif");
+        Array.prototype.forEach.call(gifs, function(gif) {
+            console.log(gif);
+            console.log(gif.parentElement.scrollHeight);
+            gif.style.marginTop = "-" + (gif.parentElement.scrollHeight) + "px";
+        });
+    });
+
+
+
+
+</script>
