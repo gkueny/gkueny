@@ -218,7 +218,7 @@ Et voilà, c'est comme cela que l'on définit/utilise les `props`.
 ![Screenshot 1](/assets/HappyDrink_Lecon_1_change_title.gif)
 
 
-    Okey pour l'amusement on repassera, mais bon, je l'avais bien mis entre guillemet non ?
+    Okey pour l'amusement on repassera, mais bon, je l'avais bien mis entre guillemets non ?
 
 
 ## 2. Et HappyDrink dans tout ça ?
