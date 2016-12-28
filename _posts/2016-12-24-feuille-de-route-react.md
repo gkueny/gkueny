@@ -84,7 +84,7 @@ Pour une explication plus détaillée de chaque fonction et de leur implémentat
 - d'`actions`, qui sont prédéfinies et envoyées par vos composants
 - de `containers`, qui ont pour charge de lier vos composant à `Redux`
 
-Si vous voulez en savoir plus sur chaque élément de `redux` et leur implémentation : [lecon-4]({{site.url}}/react-lecon-4){:target="\_blank"} :) <br/>
+Si vous voulez en savoir plus sur chaque élément de `redux` et leur implémentation : [Implémenter Redux dans une application React]({{site.url}}/react-lecon-4){:target="\_blank"} :) <br/>
 Vous pourrez également y voir un exemple d'appel `API`.
 
 ### 5. Persister ses données
