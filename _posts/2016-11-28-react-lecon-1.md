@@ -26,7 +26,7 @@ React part d'une simple constatation : le DOM, c'est  *L E N T* et en plus il ch
 - Cela change tout le temps ? Appelons la méthode `render` à chaque modification !
 - Le DOM c'est lent         ? Implémentons notre propre `DOM virtuel` très rapide ! Et mettons à jour le `DOM` par des opérations simples en le comparant avec notre nouveau `DOM virtuel`.
 
-### De quoi est composé une classe React ?
+### De quoi est composée une classe React ?
 
 Chaque `classe React` est composée au minimum d'un `state` (état), de `props` (propriétés) et d'une méthode `render`.
 
