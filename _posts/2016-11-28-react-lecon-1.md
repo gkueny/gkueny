@@ -321,7 +321,7 @@ const listEstablishment = establishments.map( (establishment) => {
 > La méthode `map()` crée un nouveau tableau composé des images des éléments d'un tableau par une fonction donnée en argument. <br>
 [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map){:target="\_blank"}
 
-Ici, avec la fonction anonyme `(establishment) => {}` (notation es6), nous retournons l'élément JSX `<li ... > ... </li>` <br/>
+Ici, avec la fonction `(establishment) => {}` (notation es6), nous retournons l'élément JSX `<li ... > ... </li>` <br/>
 Ce qui permet par la suite d'afficher les établissements sous forme de liste avec la variable `{ listEstablishment }`.
 
 {% highlight html %}
