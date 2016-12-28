@@ -19,16 +19,6 @@
     {% include footer.html %}
 
 
-    <script>
-        $(".img-lazy").on("load", function() {
-            //$("#" + this.dataset.id)[0].style.opacity = 0;
-            this.style.opacity = 1;
-        });
-        $(".bg-lazy").lazyload({
-            effect: "fadeIn"
-        });
-
-    </script>
     {% if site.environment == "prod" %}
         {% include analytics.html %}
     {% endif %}
