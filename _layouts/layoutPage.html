@@ -19,6 +19,12 @@
 
     <script>
 
+        $(".img-lazy").one("load", function() {
+            this.style.opacity = 1;
+        }).each(function() {
+            if(this.complete) $(this).load();
+        });
+
         $(".bg-lazy").lazyload({
             effect: "fadeIn"
         });
