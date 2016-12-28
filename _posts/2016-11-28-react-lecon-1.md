@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 1"
+title:  "Introduction à React"
 author: Gkueny
 date: Mon Nov 28 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_1.png
@@ -118,10 +118,9 @@ import './App.css';
 class App extends Component {
 
     // Notre fameuse méthode render()
-    // On utilise dans cette méthode la syntaxe JSX qui nous permet d'écrire  avec une syntaxe xml
+    // On utilise dans cette méthode la syntaxe JSX
     render() {
         return (
-
             <div className="App">
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
@@ -131,7 +130,6 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
             </div>
-
         );
     }
 }
