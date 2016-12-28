@@ -23,16 +23,16 @@ Pour tout vous dire, je suis tombé amoureux de React (et également de React-na
 
 React part d'une simple constatation : le DOM, c'est  *L E N T* et en plus il change tout le temps.
 
-- Cela change tout le temps ? Appelons la méthode `render` à chaque modification !
+- Cela change tout le temps ? Appelons la méthode `render()` à chaque modification !
 - Le DOM c'est lent         ? Implémentons notre propre `DOM virtuel` très rapide ! Et mettons à jour le `DOM` par des opérations simples en le comparant avec notre nouveau `DOM virtuel`.
 
 ### De quoi est composée une classe React ?
 
-Chaque `classe React` est composée au minimum d'un `state` (état), de `props` (propriétés) et d'une méthode `render`.
+Chaque `classe React` est composée au minimum d'un `state` (état), de `props` (propriétés) et d'une méthode `render()`.
 
 - Le `state` est défini à l'initialisation de la classe par la méthode `getInitialState` et l'on peut le mettre à jour par la méthode `setState`.
 - Les `props` sont passées à l'initialisation et sont définies en dehors de la classe.
-- La méthode `render` retourne un objet représentant une partie du `DOM virtuel`.
+- La méthode `render()` retourne un objet représentant une partie du `DOM virtuel`.
 
 
 ## 1. Commençons notre projet React !
@@ -95,7 +95,7 @@ import ReactDOM from 'react-dom';
 import App      from './App'; //on import le composant App
 import './index.css';
 
-// On utilise la méthode render de ReactDOM pour décrire DOM ,
+// On utilise la méthode render() de ReactDOM pour décrire DOM ,
 // le premier paramètre correspond à ce que l'on veut rendre
 // et le deuxième l'endroit où "accrocher" le DOM que l'on crée.
 //      ici : l'élément d'id root dans le fichier ./public/index.html
@@ -114,10 +114,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// Un Component implémente la méthode render et reçoit en paramètre ses props
+// Un Component implémente la méthode render() et reçoit en paramètre ses props
 class App extends Component {
 
-    // Notre fameuse méthode render
+    // Notre fameuse méthode render()
     // On utilise dans cette méthode la syntaxe JSX qui nous permet d'écrire  avec une syntaxe xml
     render() {
         return (
@@ -139,7 +139,7 @@ class App extends Component {
 export default App;
 {% endhighlight %}
 
-Regardons d'un peu plus près la méthode `render`. Au premier coup d'oeil on a l'impression que l'on retourne du code `html`.
+Regardons d'un peu plus près la méthode `render()`. Au premier coup d'oeil on a l'impression que l'on retourne du code `html`.
 *Attention*, ici on utilise la syntaxe `JSX`, qui est très proche du `HTML`. Il y a quelques différences, comme l'utilisation de l'attribut `className` à la place de `class`. Cela vient du fait que `JSX` est du Javascript et que `class` est un mot-clé réservé.
 
 le code JSX ci-dessous :
