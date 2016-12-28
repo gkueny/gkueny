@@ -81,7 +81,7 @@ $ npm start
 Cela lance pour vous le serveur : [ http://localhost:3000/](http://localhost:3000/){:target="\_blank"} et le mettra à jour à chaque modification de fichier.
 
 
-### Notre premier composant React
+### Notre premier component React
 
 Allons voir un peu ce que React nous a créé par défaut.
 
@@ -92,7 +92,7 @@ Nous avons tout d'abord le fichier `index.js` qui est notre point d'entrée.
 
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import App      from './App'; //on import le composant App
+import App      from './App'; //on import le component App
 import './index.css';
 
 // On utilise la méthode render() de ReactDOM pour décrire DOM ,
@@ -105,7 +105,7 @@ ReactDOM.render(
 );
 {% endhighlight %}
 
-Regardons maintenant le composant App
+Regardons maintenant le component App
 
 {% highlight javascript %}
 // Fichier : ./src/App.js
@@ -176,7 +176,7 @@ On admettra facilement, que la syntaxe `JSX` est plus plaisante à lire et à é
 
 ...
 
-// On ajoute le paramètre title à notre composant
+// On ajoute le paramètre title à notre component
 ReactDOM.render(
     <App title = "HappyDrink"/>,
     document.getElementById('root')
