@@ -140,12 +140,12 @@ export default App;
 Regardons d'un peu plus près la méthode `render()`. Au premier coup d'oeil on a l'impression que l'on retourne du code `html`.
 *Attention*, ici on utilise la syntaxe `JSX`, qui est très proche du `HTML`. Il y a quelques différences, comme l'utilisation de l'attribut `className` à la place de `class`. Cela vient du fait que `JSX` est du Javascript et que `class` est un mot-clé réservé.
 
-le code JSX ci-dessous :
+Le code JSX ci-dessous :
 
 {% highlight javascript %}
 render() {
     return (
-        <h1 class='large'>Hello World</h1>
+        <h1 className='large'>Hello World</h1>
     )
 }
 {% endhighlight %}
