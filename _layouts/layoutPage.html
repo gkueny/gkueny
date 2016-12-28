@@ -20,6 +20,7 @@
     <script>
 
         $(".img-lazy").on("load", function() {
+            console.log("load");
             //$("#" + this.dataset.id)[0].style.opacity = 0;
             this.style.opacity = 1;
         });
