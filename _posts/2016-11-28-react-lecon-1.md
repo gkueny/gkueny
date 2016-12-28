@@ -221,6 +221,8 @@ Et voilà, c'est comme cela que l'on définit/utilise les `props`.
     Okey pour l'amusement on repassera, mais bon, je l'avais bien mis entre guillemets non ?
 
 
+<br/>
+
 ## 2. Et HappyDrink dans tout ça ?
 
 Okey, commençons à donner forme à notre application.
