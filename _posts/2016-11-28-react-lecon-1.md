@@ -30,7 +30,7 @@ React part d'une simple constatation : le DOM, c'est  *L E N T* et en plus il ch
 
 Chaque `classe React` est composée au minimum d'un `state` (état), de `props` (propriétés) et d'une méthode `render()`.
 
-- Le `state` est défini à l'initialisation de la classe par la méthode `getInitialState` et l'on peut le mettre à jour par la méthode `setState`.
+- Le `state` est défini à l'initialisation de la classe par la méthode `getInitialState()` et l'on peut le mettre à jour par la méthode `setState`.
 - Les `props` sont passées à l'initialisation et sont définies en dehors de la classe.
 - La méthode `render()` retourne un objet représentant une partie du `DOM virtuel`.
 
@@ -44,11 +44,11 @@ Nous allons donc construire une application listant des bars ainsi que leur happ
 
 Nous pourrons :
 
-- `Lister` les bars.
+- `lister` les bars.
 - `filtrer` la liste.
 - `mettre en favori` un bar.
 - `visualiser l'happy-hour` de celui-ci.
-- `Liker/disliker` ce bar.
+- `liker/disliker` ce bar.
 
 ### Initialisation
 
@@ -230,7 +230,7 @@ Okey, commençons à donner forme à notre application.
 
 ###  Nos Bars
 
-Je vous propose, pour commencer, de créer un fichier `fixtures.js` dans lequel nous allons stocker nos établissements, tels que nous pourrions les recevoir via une api.
+Je vous propose, pour commencer, de créer un fichier `fixtures.js` dans lequel nous allons stocker nos établissements, tels que nous pourrions les recevoir via une `API`.
 
 {% highlight javascript %}
 // Fichier : ./src/fixtures.js
