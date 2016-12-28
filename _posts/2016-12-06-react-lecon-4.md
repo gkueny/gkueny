@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 4"
+title:  "Implémenter Redux dans une application React"
 author: Gkueny
 date: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_1.png

@@ -104,7 +104,7 @@ Pour voir son implémentation, c'est par ici : [Persister ses données]({{site.u
 - la première nous permet de synchroniser notre interface React avec l’url et donc de naviguer dans notre application, via celle-ci.
 - la seconde, quant à elle, nous permet de synchroniser tout cela avec Redux.
 
-Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [Naviguer dans son application]({{site.url}}/react-lecon-6){:target="\_blank"} :)
+Pour voir un exemple d'utilisation, c'est par ici que cela se passe : [Naviguer dans son application React]({{site.url}}/react-lecon-6){:target="\_blank"} :)
 
 ### 7. En apprendre un peu plus
 

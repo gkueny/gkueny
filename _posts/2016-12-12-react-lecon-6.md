@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 6"
+title:  "Naviguer dans son application React"
 author: Gkueny
 date: Mon Dec 12 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png

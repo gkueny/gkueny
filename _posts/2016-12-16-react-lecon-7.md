@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 7"
+title:  "Un dernier mot sur React"
 author: Gkueny
 date: Thu Dec 16 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png

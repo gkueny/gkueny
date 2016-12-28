@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 2"
+title:  "Découverte du state"
 author: Gkueny
 date: Wed Nov 30 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png

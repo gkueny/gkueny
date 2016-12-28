@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React - Leçon 3"
+title:  "En savoir un peu plus sur le cycle de vie d'un composant React"
 author: Gkueny
 date: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
