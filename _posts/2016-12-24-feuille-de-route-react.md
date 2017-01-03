@@ -36,10 +36,9 @@ Vous y trouverez :
 
 ### 2. Gérer le state
 
-Prenons comme un exemple une bonne vielle application `Todo-list`. Vous allez avoir besoin de `créer`, `modifier`, `supprimer` vos `todos` et mettre à jour l'affichage en conséquence. Pour cela, rien de mieux que le `state` de votre application.
+Prenons comme exemple un simple texte modifiable par l'utilisateur. Vous allez avoir besoin de modifier ce texte selon les actions de l'utilisateur et mettre à jour l’affichage en conséquence.  Pour cela, rien de mieux que le state de votre application.
 
 Le `state` initial se déclare dans le `constructeur` de votre composant, comme-ci :
-
 
 {% gist gkueny/58c27914de0eb2422ffabfcd28f10b82 init-state.js %}
 
