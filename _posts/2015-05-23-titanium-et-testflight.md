@@ -27,7 +27,7 @@ Rendez-vous ici : [itunesconnect](https://itunesconnect.apple.com/)
 
 Dans "Mes app" crée une nouvelle application et choisissez le même nom et le même identifiant que votre application titanium
 
-![Image of create a new app]({{site.github.url}}assets/new_app.png)
+![Image of create a new app]({{site.github.url}}/assets/new_app.png)
 
 
 ### 2e étape : compiler votre application pour la distribution
@@ -57,7 +57,7 @@ Choisissez ensuite le profil précédemment crée et le répertoire ou ce situer
 
 Ouvrez "Application Loader" et cliquez sur "Distribuer votre app", sélectionner votre fichier `.ipa` et laissez faire.
 
-![Image of create a new app]({{site.github.url}}assets/distrib_app.png)
+![Image of create a new app]({{site.github.url}}/assets/distrib_app.png)
 
 Une fois terminé, vous pourrez retrouver votre "build" dans l'application créé sur Itunes Connect.
 
