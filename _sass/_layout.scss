@@ -341,6 +341,17 @@ article a:hover {
     padding: 0 !important;
     margin: 0 !important;
 }
+.block-github {
+    height: 350px;
+    padding: 0px !important;
+    margin: 50px 0 !important ;
+}
+
+.block-github p {
+    padding: 0 50px;
+    text-align: justify;
+}
+
 .block {
     height: 450px;
     padding: 0px !important;
@@ -353,13 +364,21 @@ article a:hover {
         background-color: white;
         color: black;
     }
-        .block-1-cv h3 {
+    .block-1-github {
+        background-color: white;
+        color: black;
+    }
+        .block-1-cv h3, .block-1-github h3 {
             line-height: 30px;
         }
     .block-2-cv {
         background-color: rgb(39,43,49);
         color: white;
+    }
 
+    .block-2-github {
+        background-color: white;
+        color: black;
     }
         .block-2-cv h3 {
             line-height: 380px;
@@ -378,10 +397,10 @@ article a:hover {
         color: white;
         float: right !important;
     }
-    .block h3 {
+    .block h3, .block-github h3 {
         text-align: center;
     }
-.block h2 {
+.block h2, .block-github h2 {
     line-height: 350px;
     text-align: center;
     color: white;
@@ -415,6 +434,7 @@ h3 a:hover {
 .my-btn-download {
     width: 100%;
     padding: 50px !important;
+
     border-radius: 0 !important;
 }
 
@@ -463,10 +483,94 @@ p.comment {
     justify-content: space-between;
 }
 
+.div-to-flex-github {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.div-margin {
+    margin-bottom: 100px;
+    padding: 0;
+}
 .gist .blob-num {
     min-width: 40px !important;
     text-align: center !important;
 }
 .gist {
     margin: 0 -50px;
+}
+
+.text-editor-wrap {
+    margin: 150px auto 50px auto;
+    display: block;
+    width : 90%;
+    max-width: 1300px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 70px;
+    clear: both;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.title-bar {
+    padding: 5px 0;
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 0.75em;
+    text-align: center;
+    text-shadow: rgba(255, 255, 255, 0.8) 0px 1px 0px;
+    background-color: #f8f8f8;
+    background-image: -webkit-linear-gradient(top, #e8e8e8, #bcbbbc);
+    background-image: -moz-linear-gradient(top, #e8e8e8, #bcbbbc);
+    background-image: linear-gradient(top, #e8e8e8, #bcbbbc);
+    box-shadow: inset rgba(255, 255, 255, 0.7) 0px 1px 1px;
+    border-bottom: #6a6a6a 1px solid;
+}
+.shift-text .text-body {
+    height: 120px;
+}
+
+.text-body {
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 10px;
+    color: #f0f0f0;
+    text-shadow: #000 0px 1px 0px;
+    font-family: "Consolas", "Courier New", "Courier";
+    font-size: 1.2em;
+    line-height: 1.40em;
+    font-weight: 500;
+    text-align: left;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }

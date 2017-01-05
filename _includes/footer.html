@@ -70,6 +70,18 @@
 {% endfor %}
 
 <script>
+  $(function(){
+      $("#typed").typed({
+        strings: ["git clone https://github.com/gkueny/my-awesome-project.git", "git clone https://github.com/gkueny/my-other-awesome-project.git"],
+        typeSpeed: 0
+      });
+
+      $("#terminal-height").text($("#terminal").height());
+      $("#terminal-width").text($("#terminal").width());
+  });
+</script>
+
+<script>
 
 
     var title = "{{ page.title }}";
