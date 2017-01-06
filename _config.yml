@@ -27,4 +27,4 @@ paginate: 3
 
 environment: prod
 
-gems: [jekyll-paginate, jekyll-compose, jekyll-gist]
+gems: [jekyll-paginate, jekyll-compose, jekyll-gist, jekyll-sitemap]
