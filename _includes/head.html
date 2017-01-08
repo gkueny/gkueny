@@ -33,11 +33,11 @@
 
 
   {% if page.excerpt %}
-    <meta content="{{ page.excerpt| xml_escape | normalize_whitespace  }}" property="og:description">
-    <meta name="twitter:description" content="{{ page.excerpt | xml_escape | normalize_whitespace   }}" />
+    <meta content="{{ page.excerpt| | strip_html | strip_newlines | truncate: 160  }}" property="og:description">
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160   }}" />
   {% else %}
-    <meta content="{{ site.description }}" property="og:description">
-    <meta name="twitter:description" content="{{ page.description }}" />
+    <meta content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}" property="og:description">
+    <meta name="twitter:description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}" />
   {% endif %}
 
   {% if page.url %}

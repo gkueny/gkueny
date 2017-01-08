@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   je suis passioné par la programmation web,
   et particulièrement par Symfony et WordPress.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://gkueny.fr" # the base hostname & protocol for your site
+url: "https://gkueny.fr" # the base hostname & protocol for your site
 twitter_username: gaetankueny
 github_username:  gkueny
 linkedin_username: gaëtan-kueny-017b87b7
