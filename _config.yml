@@ -23,7 +23,7 @@ linkedin_username: gaëtan-kueny-017b87b7
 markdown: kramdown
 highlighter: rouge
 permalink: /:title
-paginate: 3
+paginate: 7
 
 environment: prod
 

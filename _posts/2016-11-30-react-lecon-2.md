@@ -8,6 +8,7 @@ comments: true
 timerArticle: Wed Nov 30 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
 keywords: "react, tutorial, react lecon 2, state, setState"
+subtitle: react - leçon 2
 excerpt_separator:  <!-- more -->
 ---
 C'est parti pour découvrir le *state* d'un composant React !

@@ -8,6 +8,7 @@ comments: true
 timerArticle: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Fri Dec 09 2016 20:00:00 GMT+0100 (CET)
 keywords: "react, redux, tutorial, react lecon 4, state"
+subtitle: react - leçon 4
 excerpt_separator: <!-- more -->
 ---
 Aujourd'hui on attaque REDUX !!!!

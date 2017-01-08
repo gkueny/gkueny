@@ -8,6 +8,7 @@ comments: true
 timerArticle: Fri Dec 09 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Mon Dec 12 2016 22:00:00 GMT+0100 (CET)
 keywords: "react, redux, tutorial, react lecon 5, persister, sauvegarder, state, persist state, redux-persist"
+subtitle: react - leçon 5
 excerpt_separator:  <!-- more -->
 ---
 Aujourd'hui, on termine notre application et on regarde comment persister nos données.

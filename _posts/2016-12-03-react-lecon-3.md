@@ -8,6 +8,7 @@ comments: true
 timerArticle: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
 keywords: "react, tutorial, react lecon 3, state, lifecycle, cycle de vie"
+subtitle: react - leçon 3
 excerpt_separator: <!-- more -->
 ---
 Aller ! Aujourd'hui, on va avancer notre superbe application :)
