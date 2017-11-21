@@ -14,6 +14,7 @@
     var sendEvent3 = false;
 
     var topBegin = document.querySelector('#content-wrapper-inner').offsetTop;
+    
     var w = window,
       d = document,
       e = d.documentElement,
@@ -26,21 +27,20 @@
 
       var c = top === 0 ? 0 : (top / height) * 100;
 
-
       if(c < 50 && !sendEvent1) {
         sendEvent1 = true;
         console.log('0');
-        ga('send', 'event', "reading", "begin", "Début de la lecture");
+        ga('send', 'event', "reading", "begin", "article 1% lu");
       }
       if(c > 50 && !sendEvent2) {
         sendEvent2 = true;
         console.log('50');
-        ga('send', 'event', "reading", "middle", "A la moitié de la lecture");
+        ga('send', 'event', "reading", "middle", "article 50% lu");
       }
       if(c > 90 && !sendEvent3) {
         sendEvent3 = true;
         console.log('90');
-        ga('send', 'event', "reading", "end", "A la fin de la lecture");
+        ga('send', 'event', "reading", "end", "article 100% lu");
       }
     }
   }
