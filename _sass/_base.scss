@@ -28,7 +28,10 @@ body {
     width: 100%;
 }
 
-
+.navbar-default {
+    background-color: inherit !important;
+    border-color: inherit !important;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
