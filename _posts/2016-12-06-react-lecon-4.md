@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "Implémenter Redux dans une application React"
+title: 'Implémenter Redux dans une application React'
 author: Gkueny
 date: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_1.png
 comments: true
 timerArticle: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Fri Dec 09 2016 20:00:00 GMT+0100 (CET)
-keywords: "react, redux, tutorial, react lecon 4, state"
+keywords: 'react, redux, tutorial, react lecon 4, state'
 subtitle: react - leçon 4
 excerpt_separator: <!-- more -->
 ---
+
 Aujourd'hui on attaque REDUX !!!!
+
 <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
@@ -22,29 +26,29 @@ Aujourd'hui on attaque REDUX !!!!
 
 {% highlight cli %}
 src
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|_**css
+| |
+| |**_App.css
+| |
+| |_**index.css
 |
-|___App.test.js
+|**_App.test.js
 |
-|___index.js
+|_**index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -53,7 +57,6 @@ On n'oublie pas de lancer l'application afin de voir les changements dans notre 
 $ cd HappyDrink
 $ npm start
 {% endhighlight %}
-
 
 ## 2. Proposition de correction
 
@@ -70,7 +73,6 @@ $ npm install --save jquery
 {% endhighlight %}
 
 Comme nous l'avions vue, le meilleur endroit pour faire un appel API est la fonction `componentDidMount` :
-
 
 {% highlight javascript %}
 // Fichier : ./src/components.App.js [extrait]
@@ -148,6 +150,7 @@ class App extends Component {
             </div>
         );
     }
+
 }
 
 export default App;
@@ -173,12 +176,12 @@ componentDidMount () {
         .catch((error) => {
             console.error(error);
         });
+
 }
 
 {% endhighlight %}
 
 Personnellement je préfère utiliser `fetch`, car cela m'évite de m'encombrer avec `Jquery`. Mais vous pouvez utiliser ce avec quoi vous êtes le plus familier.
-
 
 ## 3. REDUX
 
@@ -195,16 +198,16 @@ Mais laissez-moi tout de même vous expliquer pourquoi j'ai adopté Redux, et co
 
 `Redux` part de plusieurs principes fondamentaux :
 
-- Il offre `un seul et même container` pour tout le `state` de votre application. C'est-à-dire que celui-ci  va être géré au même endroit.
+- Il offre `un seul et même container` pour tout le `state` de votre application. C'est-à-dire que celui-ci va être géré au même endroit.
 - Le state `ne peut être modifié`. Chaque changement que nous opérerons se concrétise par la création d'un nouvel objet `state` reprenant l'ancien et en y apportant des modifications.
 - Chaque changement est décrit par une `action`. Les `components` ne connaissent pas la façon dont le `state` va changer. Ils `dispatchent` (envoient) seulement une action qui décrit le changement à effectuer.
 
 #### Ce que j'y vois de bien
 
 - Tout d'abord, `Redux` permet de séparer la logique du state de vos `components`.
-Ceux-ci vont se contenter d'afficher les variables du `state` et de `dispatcher` des `actions` afin de le modifier.
-Ils ne savent pas comment cela se passe et tant mieux.
-Nous pourrons changer toute la logique derrière sans toucher aux components eux-mêmes.
+  Ceux-ci vont se contenter d'afficher les variables du `state` et de `dispatcher` des `actions` afin de le modifier.
+  Ils ne savent pas comment cela se passe et tant mieux.
+  Nous pourrons changer toute la logique derrière sans toucher aux components eux-mêmes.
 - Tout le `state` de l'application se trouve au même endroit. Cela nous permet de mieux nous y retrouver et par la suite de plus facilement sauvegarder celui-ci.
 - Le `state` devient immuable. À chaque `action dispatchée`, nous pourrons voir l'ancien et le nouveau `state`. Et ainsi déboguer plus facilement.
 
@@ -223,7 +226,7 @@ Cette action est un objet, qui décrit le changement à effectuer.
 {% highlight javascript %}
 // Exemple d'action
 {
-    type : "INCREMENT"
+type : "INCREMENT"
 }
 {% endhighlight %}
 
@@ -238,10 +241,10 @@ Par exemple, pour nos "like" et "dislike", il nous faudrait également préciser
 {% highlight javascript %}
 // Exemple d'action plus détaillée
 {
-    type : "LIKE",
-    data : {
-        id : 1
-    }
+type : "LIKE",
+data : {
+id : 1
+}
 }
 {% endhighlight %}
 
@@ -251,12 +254,11 @@ Une fois l'action " `dispatchée` ", nous avons besoin de fonctions qui écouten
 Ce sont les `reducers`. <br/>
 Chaque `reducer` prend en charge une partie du `state`. Un `reducer` a pour but de décrire le `state` initial et de retourner le nouveau `state` pour les différents types d'actions qu'il prend en charge :
 
-
 {% highlight javascript %}
 // Exemple de reducer
 
 const initialState = {
-    test: "test"
+test: "test"
 }
 
 const testReducer = (state = initialState, action) => {
@@ -273,6 +275,7 @@ const testReducer = (state = initialState, action) => {
 
             return state
     }
+
 }
 
 export default testReducer
@@ -280,8 +283,6 @@ export default testReducer
 {% endhighlight %}
 On définit une fonction qui prend en paramètre le `state` actuel et l'action qui a été " `dispatchée` ". Si le paramètre `state` de notre fonction vaut `undefined`, alors on l'initialise en indiquant une valeur par défaut.
 Enfin, on retourne le nouveau `state` selon le type de l'action.
-
-
 
 <b>Il est important de ne pas modifier le state courant et de retourner un nouvel objet !</b> <br/>
 C'est pourquoi on utilise la notation `{ ...state, test : action.data.test }` qui nous permet de retourner un nouvel objet à partie de celui indiqué après `...` (ici : `state`) et de modifier les paramètres spécifiés. <br/>
@@ -295,28 +296,28 @@ Le container a pour but de faire le lien entre le `state` géré par `Redux` et 
 // Exemple d'un container
 
 // On installera cela après, ne vous inquiétez pas ;)
-import { connect }              from 'react-redux'
+import { connect } from 'react-redux'
 
-import EstablishmentComponent   from '../components/establihment/Establihment'
-import * as testAction          from '../actions/testAction'
+import EstablishmentComponent from '../components/establihment/Establihment'
+import \* as testAction from '../actions/testAction'
 
 const mapStateToProps = (state) => {
-    return {
-        state: {
-            test : state.test
-        }
-    }
+return {
+state: {
+test : state.test
+}
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        test : dispatch(testAction.test)
-    }
+return {
+test : dispatch(testAction.test)
+}
 }
 
 const EstablishmentContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(EstablishmentComponent)
 
 export default EstablishmentContainer
@@ -325,9 +326,9 @@ export default EstablishmentContainer
 
 - `mapStateToProps` a pour rôle de retourner le `state` qui sera "attaché" aux `props` du component. <br/>
 - `mapDispatchToProps`, quant à elle, définit plusieurs fonctions qui seront accessible via les `props` du component. <br/>
-Celles-ci ont pour but de `dispatcher` une action.
+  Celles-ci ont pour but de `dispatcher` une action.
 - enfin, on " `connecte` " le container à son component. <br/>
-Le state et les fonctions définies plus haut seront ainsi accessibles par le component "connecté" (ici `EstablishmentComponent`) via ses `props`
+  Le state et les fonctions définies plus haut seront ainsi accessibles par le component "connecté" (ici `EstablishmentComponent`) via ses `props`
 
 p.s : on reparlera de la fonction `connect`.
 
@@ -335,7 +336,7 @@ p.s : on reparlera de la fonction `connect`.
 
 Vous avez surement la tête tout embrouillée après le petit cours ci-dessus. Je vous propose donc de mettre en place l'architecture `Redux` dans notre application afin d'avoir un exemple concret.
 
-*`/!\SPOILER/!\`* cela peut paraître un peu long, *Accrochez-vous, je vous jure ce n'est pas compliqué du tout !* :)  *`/!\SPOILER/!\`*
+_`/!\SPOILER/!\`_ cela peut paraître un peu long, _Accrochez-vous, je vous jure ce n'est pas compliqué du tout !_ :) _`/!\SPOILER/!\`_
 
 ### Installation de redux
 
@@ -354,13 +355,13 @@ Dans un premier temps, définissons les types d'actions que réalise notre appli
 // Fichier : ./src/actions/actionsTypes.js [nouveau fichier]
 
 // establishments
-export const LIKE           = "LIKE"
-export const DISLIKE        = "DISLIKE"
-export const FAVORI         = "FAVORI"
+export const LIKE = "LIKE"
+export const DISLIKE = "DISLIKE"
+export const FAVORI = "FAVORI"
 
 // App
 export const SETDATAFROMAPI = "SETDATAFROMAPI"
-export const SETPSEUDO      = "SETPSEUDO"
+export const SETPSEUDO = "SETPSEUDO"
 {% endhighlight %}
 
 Maintenant que nous avons défini les types d'actions, écrivons les actions elles-mêmes :
@@ -368,7 +369,7 @@ Maintenant que nous avons défini les types d'actions, écrivons les actions ell
 {% highlight javascript %}
 // Fichier : ./src/actions/establishmentActions.js [nouveau fichier]
 
-import * as types from './actionsTypes'
+import \* as types from './actionsTypes'
 
 export function like(idEstablishment) {
 
@@ -378,6 +379,7 @@ export function like(idEstablishment) {
             idEstablishment : idEstablishment
         }
     }
+
 }
 
 export function dislike(idEstablishment) {
@@ -388,6 +390,7 @@ export function dislike(idEstablishment) {
             idEstablishment : idEstablishment
         }
     }
+
 }
 
 export function favori(idEstablishment) {
@@ -398,13 +401,14 @@ export function favori(idEstablishment) {
             idEstablishment : idEstablishment
         }
     }
+
 }
 {% endhighlight %}
 
 {% highlight javascript %}
 // Fichier : ./src/actions/appActions.js [nouveau fichier]
 
-import * as types from './actionsTypes'
+import \* as types from './actionsTypes'
 
 export function setDataFromApi(text) {
 
@@ -414,6 +418,7 @@ export function setDataFromApi(text) {
             text : text
         }
     }
+
 }
 
 export function setPseudo(pseudo) {
@@ -424,6 +429,7 @@ export function setPseudo(pseudo) {
             pseudo : pseudo
         }
     }
+
 }
 {% endhighlight %}
 
@@ -436,18 +442,18 @@ Ici, rien de bien compliqué. Nous définissons une fonction par action, qui ret
 
 Ici, nous allons créer trois reducers.
 
- - le premier prendra en charge le state de notre `component` App
- - le second celui de Establishment.
- - le troisième combinera les deux en un seul
+- le premier prendra en charge le state de notre `component` App
+- le second celui de Establishment.
+- le troisième combinera les deux en un seul
 
 {% highlight javascript %}
 // Fichier : ./src/reducers/appReducer.js [nouveau fichier]
 
-import * as types from '../actions/actionsTypes'
+import \* as types from '../actions/actionsTypes'
 
 const initialState = {
-    dataFromAPI : "",
-    pseudo      : "Inconnu"
+dataFromAPI : "",
+pseudo : "Inconnu"
 }
 
 const appReducer = (state = initialState, action) => {
@@ -472,6 +478,7 @@ const appReducer = (state = initialState, action) => {
 
             return state
     }
+
 }
 
 export default appReducer
@@ -480,26 +487,25 @@ export default appReducer
 {% highlight javascript %}
 // Fichier : ./src/reducers/establishmentReducer.js [nouveau fichier]
 
-import * as types from '../actions/actionsTypes'
+import \* as types from '../actions/actionsTypes'
 
 import { establishments } from '../components/establishments/fixtures'
 
 let initialState = []
 
 establishments.map((establishment) => {
-    initialState.push({
-        id              : establishment.id,
-        name            : establishment.name,
-        description     : establishment.description,
-        isLiked         : false,
-        isDisliked      : false,
-        likeCounter     : 0,
-        dislikeCounter  : 0,
-        favori          : false
-    })
-    return establishment
+initialState.push({
+id : establishment.id,
+name : establishment.name,
+description : establishment.description,
+isLiked : false,
+isDisliked : false,
+likeCounter : 0,
+dislikeCounter : 0,
+favori : false
 })
-
+return establishment
+})
 
 const establishment = (state = {}, action) => {
 
@@ -542,8 +548,8 @@ const establishment = (state = {}, action) => {
         default:
             return state
     }
-}
 
+}
 
 const establishmentsReducer = (state = initialState, action) => {
 
@@ -588,17 +594,17 @@ import { establishments } from '../components/establishments/fixtures'
 let initialState = []
 
 establishments.map((establishment) => {
-    initialState.push({
-        id              : establishment.id,
-        name            : establishment.name,
-        description     : establishment.description,
-        isLiked         : false,
-        isDisliked      : false,
-        likeCounter     : 0,
-        dislikeCounter  : 0,
-        favori          : false
-    })
-    return establishment
+initialState.push({
+id : establishment.id,
+name : establishment.name,
+description : establishment.description,
+isLiked : false,
+isDisliked : false,
+likeCounter : 0,
+dislikeCounter : 0,
+favori : false
+})
+return establishment
 })
 {% endhighlight %}
 
@@ -627,14 +633,14 @@ Il ne nous manque plus qu'à connecter nos deux `reducers` en un seul et même `
 {% highlight javascript %}
 // Fichier : ./src/reducers/index.js [nouveau fichier]
 
-import { combineReducers }  from 'redux'
+import { combineReducers } from 'redux'
 
-import appReducer           from './appReducer'
+import appReducer from './appReducer'
 import establishmentReducer from './establishmentReducer'
 
 const allReducers = combineReducers({
-    app : appReducer,
-    establishments : establishmentReducer
+app : appReducer,
+establishments : establishmentReducer
 })
 
 export default allReducers
@@ -651,13 +657,13 @@ Maintenant que nous avons créé notre nouveau `state`, il faut le rendre access
 {% highlight javascript %}
 // Fichier : ./src/index.js
 
-import React    from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore }  from 'redux'
-import { Provider }     from 'react-redux'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-import allReducers  from './reducers'
+import allReducers from './reducers'
 import App from './components/App';
 
 import './css/index.css';
@@ -665,13 +671,14 @@ import './css/index.css';
 const store = createStore(allReducers)
 
 ReactDOM.render(
-    <Provider store={ store }>
+<Provider store={ store }>
 
         <App title="HappyDrink"/>
 
     </Provider>,
 
     document.getElementById('root')
+
 )
 {% endhighlight %}
 
@@ -690,24 +697,24 @@ Maintenant que nous avons construit toute l'architecture `Redux`, il est temps d
 {% highlight javascript %}
 // Fichier : ./src/containers/appContainer.js
 
-import { connect }      from 'react-redux'
+import { connect } from 'react-redux'
 
-import * as appActions  from '../actions/appActions'
+import \* as appActions from '../actions/appActions'
 
-import App              from '../components/App'
+import App from '../components/App'
 
 const mapStateToProps = (state) => {
-    return {
-        state: {
-            app : state.app,
-            establishments : state.establishments
-        }
-    }
+return {
+state: {
+app : state.app,
+establishments : state.establishments
+}
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        getDataFromApi : () => {
+return {
+getDataFromApi : () => {
 
             console.log("getDataFromApi");
             const random = Math.floor(Math.random() * 99) + 1
@@ -734,11 +741,12 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(appActions.setPseudo(randomPseudo))
         }
     }
+
 }
 
 const AppContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(App)
 
 export default AppContainer
@@ -747,44 +755,45 @@ export default AppContainer
 {% highlight javascript %}
 // Fichier : ./src/containers/establishmentContainer.js
 
-import { connect }                  from 'react-redux'
+import { connect } from 'react-redux'
 
-import * as establishmentActions    from '../actions/establishmentActions'
+import \* as establishmentActions from '../actions/establishmentActions'
 
-import Establishment                from '../components/establishments/Establishment'
+import Establishment from '../components/establishments/Establishment'
 
 const mapStateToProps = (state) => {
-    return {
-        state: {
-            establishment : state.establishments
-        }
-    }
+return {
+state: {
+establishment : state.establishments
+}
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
+return {
 
         like : (idEstablishment)    => {
 
-			dispatch(establishmentActions.like(idEstablishment))
+    		dispatch(establishmentActions.like(idEstablishment))
 
-		},
+    	},
         dislike : (idEstablishment)    => {
 
-			dispatch(establishmentActions.dislike(idEstablishment))
+    		dispatch(establishmentActions.dislike(idEstablishment))
 
-		},
+    	},
         favori : (idEstablishment)    => {
 
-			dispatch(establishmentActions.favori(idEstablishment))
+    		dispatch(establishmentActions.favori(idEstablishment))
 
-		}
+    	}
     }
+
 }
 
 const EstablishmentContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(Establishment)
 
 export default EstablishmentContainer
@@ -811,13 +820,14 @@ import AppContainer from './containers/appContainer';
 ...
 
 ReactDOM.render(
-    <Provider store={ store }>
+<Provider store={ store }>
 
         <AppContainer title="HappyDrink"/>
 
     </Provider>,
 
     document.getElementById('root')
+
 );
 
 {% endhighlight %}
@@ -829,7 +839,7 @@ Eh oui, maintenant on utilise les `containers`. Ce sont eux qui se chargent d'in
 
 ...
 
-import EstablishmentContainer   from '../containers/establishmentContainer'
+import EstablishmentContainer from '../containers/establishmentContainer'
 
 class App extends Component {
 
@@ -876,6 +886,7 @@ class App extends Component {
             </div>
         )
     }
+
 }
 
 export default App;
@@ -926,6 +937,7 @@ class Establishment extends Component {
             </div>
         );
     }
+
 }
 
 ...
@@ -943,53 +955,52 @@ class Establishment extends Component {
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
-
 
 ### Laborieux ?
 
@@ -998,18 +1009,17 @@ Cependant, on a maintenant tout notre `state` au même endroit et géré de la m
 
 Si je pouvais rajouter un avantage de `Redux`, c'est celui de permettre à plusieurs `components` de partager le même `state` sans n'avoir aucune relation entre eux. Ici nous n'en avions pas besoin, mais dans des applications complexes, il n'est pas exclu de modifier le même élément du `state` à plusieurs endroits.
 
-
 ### Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `filtrer` la liste.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 Bonus :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  Implémenter Redux
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Implémenter Redux
 
 <b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante :</b> [github lecon_4](https://github.com/gkueny/HappyDrink/tree/Lecon_4){:target="\_blank"}
 

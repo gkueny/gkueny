@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "Persister ses données"
+title: 'Persister ses données'
 author: Gkueny
 date: Fri Dec 09 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
 comments: true
 timerArticle: Fri Dec 09 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Mon Dec 12 2016 22:00:00 GMT+0100 (CET)
-keywords: "react, redux, tutorial, react lecon 5, persister, sauvegarder, state, persist state, redux-persist"
+keywords: 'react, redux, tutorial, react lecon 5, persister, sauvegarder, state, persist state, redux-persist'
 subtitle: react - leçon 5
-excerpt_separator:  <!-- more -->
+excerpt_separator: <!-- more -->
 ---
+
 Aujourd'hui, on termine notre application et on regarde comment persister nos données.
+
  <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
@@ -22,51 +26,51 @@ Aujourd'hui, on termine notre application et on regarde comment persister nos do
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -75,7 +79,6 @@ On n'oublie pas de lancer l'application afin de voir les changements dans notre 
 $ cd HappyDrink
 $ npm start
 {% endhighlight %}
-
 
 ## 2. Proposition de correction
 
@@ -88,7 +91,7 @@ Dans la leçon précédente, nous avions laissé en suspens le filtrage de nos �
 
 ...
 
-export const FILTER         = "FILTER"
+export const FILTER = "FILTER"
 {% endhighlight %}
 
 {% highlight javascript %}
@@ -104,10 +107,11 @@ export function filter(text) {
             text : text
         }
     }
+
 }
 {% endhighlight %}
 
-###  Modifions notre reducer
+### Modifions notre reducer
 
 {% highlight javascript %}
 // Fichier : ./src/reducers/establishmentReducer.js [extrait]
@@ -115,18 +119,18 @@ export function filter(text) {
 ...
 
 establishments.map((establishment) => {
-    initialState.push({
-        id              : establishment.id,
-        name            : establishment.name,
-        description     : establishment.description,
-        isLiked         : false,
-        isDisliked      : false,
-        likeCounter     : 0,
-        dislikeCounter  : 0,
-        favori          : false,
-        visible         : true // On ajoute la variable visible pour pouvoir filtrer
-    })
-    return establishment
+initialState.push({
+id : establishment.id,
+name : establishment.name,
+description : establishment.description,
+isLiked : false,
+isDisliked : false,
+likeCounter : 0,
+dislikeCounter : 0,
+favori : false,
+visible : true // On ajoute la variable visible pour pouvoir filtrer
+})
+return establishment
 })
 
 const establishment = (state = {}, action) => {
@@ -142,6 +146,7 @@ const establishment = (state = {}, action) => {
 
         ...
     }
+
 }
 
 const establishmentsReducer = (state = initialState, action) => {
@@ -166,23 +171,22 @@ export default establishmentsReducer
 
 Ajoutons une fonction dans notre `appContainer`, afin de dispatcher notre nouvelle action :
 
-
 {% highlight javascript %}
 // Fichier : ./src/containers/appContainer.js [extrait]
 
 ...
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        ...
+return {
+...
 
         filter : (text) => dispatch(appActions.filter(text))
     }
+
 }
 
 ...
 {% endhighlight %}
-
 
 #### Stocker le texte de la recherche :
 
@@ -191,12 +195,12 @@ Profitons de l'action `filter` qui est `dispatchée` pour mettre à jour la vari
 {% highlight javascript %}
 // Fichier : ./src/reducers/appReducer.js [extrait]
 
-import * as types from '../actions/actionsTypes'
+import \* as types from '../actions/actionsTypes'
 
 const initialState = {
-    dataFromAPI : "",
-    pseudo      : "Inconnu",
-    textFilter  : "" // on ajoute notre variable
+dataFromAPI : "",
+pseudo : "Inconnu",
+textFilter : "" // on ajoute notre variable
 }
 
 const appReducer = (state = initialState, action) => {
@@ -215,6 +219,7 @@ const appReducer = (state = initialState, action) => {
 
             return state
     }
+
 }
 
 export default appReducer
@@ -280,6 +285,7 @@ class App extends Component {
             ...
         )
     }
+
 }
 
 export default App;
@@ -380,6 +386,7 @@ const appReducer = (state = initialState, action) => {
         ...
 
     }
+
 }
 
 export default appReducer
@@ -387,7 +394,6 @@ export default appReducer
 {% endhighlight %}
 
 Ici, nous indiquons à notre `reducer` de mettre à jour tout notre `state` avec ce que nous donne `redux-persist`, à l'exception du `textFilter` qui est remis à vide.
-
 
 On n'oublie pas de modifier également notre `establishmentsReducer` afin de remettre à zéro la variable `visible` :
 
@@ -409,8 +415,8 @@ const establishment = (state = {}, action) => {
 
         ...
     }
-}
 
+}
 
 const establishmentsReducer = (state = initialState, action) => {
 
@@ -444,12 +450,11 @@ persistStore(store)
 ...
 {% endhighlight %}
 
-
 ![ScreenShot2](/assets/HappyDrink_lecon_5_2.gif)
 
 #### Utiliser le `state` "local"
 
-Même si nous utilisons `Redux`, rien ne nous empêche d'utiliser le `state` “local” de nos `components`. J'entends par  `state "local"` le state définit par la variable `this.state` et modifiable par la fonction `setState`. <br/>
+Même si nous utilisons `Redux`, rien ne nous empêche d'utiliser le `state` “local” de nos `components`. J'entends par `state "local"` le state définit par la variable `this.state` et modifiable par la fonction `setState`. <br/>
 En procédant ainsi, ce `state` ne sera pas sauvegardé. Cependant, vous perdrez les avantages liés à `Redux` dont nous avions parlé dans la précédente leçon.
 
 Personnellement j'utilise `Redux` pour :
@@ -465,61 +470,60 @@ Pour les autres, j'utilise le `state` "local".
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
-
 
 ### Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `filtrer` la liste.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 <b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_5](https://github.com/gkueny/HappyDrink/tree/Lecon_5){:target="\_blank"}
 

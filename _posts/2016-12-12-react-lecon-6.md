@@ -1,25 +1,29 @@
 ---
 layout: post
-title:  "Naviguer dans son application React"
+title: 'Naviguer dans son application React'
 author: Gkueny
 date: Mon Dec 12 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
 comments: true
 timerArticle: Mon Dec 12 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Thu Dec 16 2016 20:00:00 GMT+0100 (CET)
-keywords: "react, redux, tutorial, react lecon 6, routing, react-router, react-router-redux"
+keywords: 'react, redux, tutorial, react lecon 6, routing, react-router, react-router-redux'
 subtitle: react - leçon 6
 excerpt_separator: <!-- more -->
 ---
+
 Une application `React` c'est cool, mais pouvoir naviguer entre plusieurs pages c'est mieux non ?
+
 <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : </b>
 [github lecon 5](https://github.com/gkueny/HappyDrink/tree/Lecon_5){:target="\_blank"}
 
-*[12/12/2016]* Petite info avant de commencer : J'ai fait une petite erreur (maintenant corrigée) dans le fichier `./src/reducers/establishmensReducer.js` lors de la dernière leçon, ainsi il faut écrire :
+_[12/12/2016]_ Petite info avant de commencer : J'ai fait une petite erreur (maintenant corrigée) dans le fichier `./src/reducers/establishmensReducer.js` lors de la dernière leçon, ainsi il faut écrire :
 
 {% highlight javascript %}
 // Fichier : ./src/reducers/establishmensReducer.js [extrait]
@@ -50,51 +54,51 @@ const establishmentsReducer = (state = initialState, action) => {
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -130,7 +134,6 @@ Le second, quant à lui, nous permet de synchroniser tout cela avec `Redux`.
 
 ### Implémentation
 
-
 Nous allons avoir besoin de modifier le point d'entrée de notre application afin de mettre en place le `routing` :
 
 {% highlight javascript %}
@@ -138,8 +141,8 @@ Nous allons avoir besoin de modifier le point d'entrée de notre application afi
 
 ...
 
-import { Router, Route,IndexRoute, browserHistory }     from 'react-router'
-import { syncHistoryWithStore }                         from 'react-router-redux'
+import { Router, Route,IndexRoute, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 const store = createStore(allReducers, undefined, autoRehydrate())
 
@@ -151,8 +154,9 @@ persistStore(store)
 ReactDOM.render(
 
     <Provider store={ store }>
-{/*  On créé notre router en lui passant en paramètre notre historique modifié \*/}
-        <Router history={history}>
+
+{/\* On créé notre router en lui passant en paramètre notre historique modifié \*/}
+<Router history={history}>
 
             {/* On définit notre route \*/}
             <Route path="/" component={(props) => <AppContainer {...props} title="HappyDrink"/>}></Route>
@@ -162,6 +166,7 @@ ReactDOM.render(
     </Provider>,
 
     document.getElementById('root')
+
 )
 
 {% endhighlight %}
@@ -185,19 +190,18 @@ Il ne nous manque plus qu'à mettre à jour notre `store` :
 
 ...
 
-import { routerReducer }  from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 
 const allReducers = combineReducers({
-    app : appReducer,
-    establishments : establishmentReducer,
-    routing : routerReducer
+app : appReducer,
+establishments : establishmentReducer,
+routing : routerReducer
 })
 
 export default allReducers
 {% endhighlight %}
 
 Avec ceci, nous aurons accès au `state` de notre `routing` :).
-
 
 #### Route imbriqué
 
@@ -220,7 +224,7 @@ import HomeContainer from './containers/homeContainer';
 ...
 
 ReactDOM.render(
-    <Provider store={ store }>
+<Provider store={ store }>
 
         <Router history={history}>
             <Route path="/" component={(props) => <HomeContainer {...props} title="HappyDrink"/>}>
@@ -232,12 +236,12 @@ ReactDOM.render(
     </Provider>,
 
     document.getElementById('root')
+
 )
 {% endhighlight %}
 
 Nous définissons une route d'url `/` lié au `container` `HomeContainer` qui sera notre "template" ( on construira tout de suite après le `HomeContainer` et son `component`). <br/>
 Ensuite, à l'intérieur de celle-ci, nous définissons les routes "enfants" (`IndexRoute` permet de définir la route par défaut).
-
 
 Ainsi, pour chacunes des urls "enfants", ce sera le `component` parent qui sera appelé. <br/>
 Pour afficher le contenu du `component` "enfant" lié à l'url appelée (c'est quand même ce que l'on veut faire), il sera nécessaire d'utiliser la variable `this.props.children` dans le `component` parent.
@@ -249,25 +253,25 @@ Voyons tout de suite cela en application.
 {% highlight javascript %}
 // Fichier : ./src/containers/homeContainer.js [nouveau fichier]
 
-import { connect }  from 'react-redux'
+import { connect } from 'react-redux'
 
-import Home         from '../components/home'
+import Home from '../components/home'
 
 const mapStateToProps = (state) => {
-    return {
-        state: {
-            app : state.app
-        }
-    }
+return {
+state: {
+app : state.app
+}
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+return {}
 }
 
 const HomeContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(Home)
 
 export default HomeContainer
@@ -277,7 +281,7 @@ export default HomeContainer
 // Fichier : ./src/components/home.js [nouveau fichier]
 
 import React, { Component } from 'react'
-import logo                 from '../assets/logo.svg'
+import logo from '../assets/logo.svg'
 import '../css/App.css'
 
 class Home extends Component {
@@ -301,6 +305,7 @@ class Home extends Component {
             </div>
         );
     }
+
 }
 
 export default Home;
@@ -342,6 +347,7 @@ render() {
         </div>
 
     )
+
 }
 
 ...
@@ -352,7 +358,6 @@ Et voilà ! On se retrouve avec le même affichage que la leçon précédente, m
 
 ![Application](assets/HappyDrink_Lecon_6_1.gif)
 
-
 ### 4. Les happy-hours
 
 Première étape : mettre à jour nos `fixtures` :
@@ -361,33 +366,33 @@ Première étape : mettre à jour nos `fixtures` :
 // Fichier : ./src/components/establishments/fixtures.js
 
 export const establishments = [
-    {
-        id          : "0890786GH",
-        name        : "Tonton",
-        description : "Un super bar étudiant",
-        happyhour   : {
-            text        : "Des verres gratuits jusqu'au bout de la nuit",
-            time        : "20H00 - 02H00"
-        }
-    },
-    {
-        id          : "0890786GD",
-        name        : "The Londow Town",
-        description : "Un super bar à bière",
-        happyhour   : {
-            text        : "Une bierre achetée, une bière offerte",
-            time        : "21H30 - 23H00"
-        }
-    },
-    {
-        id          : "MJLMH0389",
-        name        : "Australian Bar",
-        description : "Un super bar dansant",
-        happyhour   : {
-            text        : "10 shots pour le prix d'un",
-            time        : "22H00 - 22H30"
-        }
-    }
+{
+id : "0890786GH",
+name : "Tonton",
+description : "Un super bar étudiant",
+happyhour : {
+text : "Des verres gratuits jusqu'au bout de la nuit",
+time : "20H00 - 02H00"
+}
+},
+{
+id : "0890786GD",
+name : "The Londow Town",
+description : "Un super bar à bière",
+happyhour : {
+text : "Une bierre achetée, une bière offerte",
+time : "21H30 - 23H00"
+}
+},
+{
+id : "MJLMH0389",
+name : "Australian Bar",
+description : "Un super bar dansant",
+happyhour : {
+text : "10 shots pour le prix d'un",
+time : "22H00 - 22H30"
+}
+}
 ]
 
 {% endhighlight %}
@@ -399,21 +404,20 @@ ainsi que notre reducer `establishmentReducer` :
 
 ...
 
-
 establishments.map((establishment) => {
-    initialState.push({
-        id              : establishment.id,
-        name            : establishment.name,
-        description     : establishment.description,
-        happyhour       : establishment.happyhour,
-        isLiked         : false,
-        isDisliked      : false,
-        likeCounter     : 0,
-        dislikeCounter  : 0,
-        favori          : false,
-        visible         : true
-    })
-    return establishment
+initialState.push({
+id : establishment.id,
+name : establishment.name,
+description : establishment.description,
+happyhour : establishment.happyhour,
+isLiked : false,
+isDisliked : false,
+likeCounter : 0,
+dislikeCounter : 0,
+favori : false,
+visible : true
+})
+return establishment
 })
 
 ...
@@ -434,12 +438,12 @@ Maintenant que nos données sont prêtes, ajoutons la nouvelle route :
 
 ...
 
-import HappyhourContainer   from './containers/happyhourContainer' // On va le créer par la suite
+import HappyhourContainer from './containers/happyhourContainer' // On va le créer par la suite
 
 ...
 
 ReactDOM.render(
-    <Provider store={ store }>
+<Provider store={ store }>
 
         <Router history={history}>
             <Route path="/" component={(props) => <HomeContainer {...props} title="HappyDrink"/>}>
@@ -453,6 +457,7 @@ ReactDOM.render(
     </Provider>,
 
     document.getElementById('root')
+
 )
 {% endhighlight %}
 
@@ -496,6 +501,7 @@ class Establishment extends Component {
             </div>
         );
     }
+
 }
 
 export default Establishment;
@@ -509,25 +515,25 @@ Créons maintenant le `container` et le `component` qui se chargeront d'afficher
 {% highlight javascript %}
 // Fichier : ./src/containers/happyhourContainer.js
 
-import { connect }  from 'react-redux'
+import { connect } from 'react-redux'
 
-import Happyhour    from '../components/establishments/Happyhour'
+import Happyhour from '../components/establishments/Happyhour'
 
 const mapStateToProps = (state) => {
-    return {
-        state: {
-            establishments : state.establishments
-        }
-    }
+return {
+state: {
+establishments : state.establishments
+}
+}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+return {}
 }
 
 const HappyhourContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(Happyhour)
 
 export default HappyhourContainer
@@ -559,10 +565,10 @@ class Happyhour extends Component {
             </div>
         );
     }
+
 }
 
 export default Happyhour;
-
 
 {% endhighlight %}
 
@@ -578,70 +584,68 @@ Et voilà une bonne chose de faite !
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |   |
-|   |   |___Happyhour.js
-|   |
-|   |___App.js
-|   |
-|   |___home.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| | |
+| | |**_Happyhour.js
+| |
+| |_**App.js
+| |
+| |**_home.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
-|   |
-|   |____HappyHourContainer.js
-|   |
-|   |___homeContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
+| |
+| |\_**_HappyHourContainer.js
+| |
+| |_**homeContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
-
 
 ### Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `filtrer` la liste.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
-
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 On a fini notre application !!!
 

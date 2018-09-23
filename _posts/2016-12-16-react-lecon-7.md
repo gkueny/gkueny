@@ -1,16 +1,20 @@
 ---
 layout: post
-title:  "Un dernier mot sur React"
+title: 'Un dernier mot sur React'
 author: Gkueny
 date: Thu Dec 16 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
 comments: true
 subtitle: react - leçon 7
-keywords: "react, redux, tutorial, react lecon 7, middlewares, middleware"
+keywords: 'react, redux, tutorial, react lecon 7, middlewares, middleware'
 excerpt_separator: <!-- more -->
 ---
+
 Notre application `React` est finie ! Ou pas ?
+
 <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
@@ -21,59 +25,59 @@ Notre application `React` est finie ! Ou pas ?
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |   |
-|   |   |___Happyhour.js
-|   |
-|   |___App.js
-|   |
-|   |___home.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| | |
+| | |**_Happyhour.js
+| |
+| |_**App.js
+| |
+| |**_home.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
-|   |
-|   |____HappyHourContainer.js
-|   |
-|   |___homeContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
+| |
+| |\_**_HappyHourContainer.js
+| |
+| |_**homeContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -89,7 +93,7 @@ Dans un premier temps, perfectionnons notre petite application :).
 
 ### a. Une vraie API
 
-Depuis le début de cette série de leçons, nous utilisons des données écrites en dur dans notre application. Mais une "vraie" application fait appel à une API pour cela ( question du jour : quelle est la définition d'une vraie application ? ;) ).  <br/>
+Depuis le début de cette série de leçons, nous utilisons des données écrites en dur dans notre application. Mais une "vraie" application fait appel à une API pour cela ( question du jour : quelle est la définition d'une vraie application ? ;) ). <br/>
 
 ##### json-server
 
@@ -106,41 +110,41 @@ Créons le fichier `db.json` qui contiendra celle-ci :
 // Fichier : ./db.json [nouveau fichier]
 
 {
-  "establishments": [
-    {
-      "id": "0890786GH",
-      "name": "Tonton",
-      "description": "Un super bar étudiant",
-      "like": 124,
-      "dislike": 3,
-      "happyhour": {
-        "text": "Des verres gratuits jusqu'au bout de la nuit",
-        "time": "20H00 - 02H00"
-      }
-    },
-    {
-      "id": "0890786GD",
-      "name": "The Londow Town",
-      "description": "Un super bar à bière",
-      "like": 24,
-      "dislike": 432,
-      "happyhour": {
-        "text": "Une bierre acheté, une bière offerte",
-        "time": "21H30 - 23H00"
-      }
-    },
-    {
-      "id": "MJLMH0389",
-      "name": "Australian Bar",
-      "like": 324,
-      "dislike": 23,
-      "description": "Un super bar dansant",
-      "happyhour": {
-        "text": "10 shot pour le prix d'un",
-        "time": "22H00 - 22H30"
-      }
-    }
-  ]
+"establishments": [
+{
+"id": "0890786GH",
+"name": "Tonton",
+"description": "Un super bar étudiant",
+"like": 124,
+"dislike": 3,
+"happyhour": {
+"text": "Des verres gratuits jusqu'au bout de la nuit",
+"time": "20H00 - 02H00"
+}
+},
+{
+"id": "0890786GD",
+"name": "The Londow Town",
+"description": "Un super bar à bière",
+"like": 24,
+"dislike": 432,
+"happyhour": {
+"text": "Une bierre acheté, une bière offerte",
+"time": "21H30 - 23H00"
+}
+},
+{
+"id": "MJLMH0389",
+"name": "Australian Bar",
+"like": 324,
+"dislike": 23,
+"description": "Un super bar dansant",
+"happyhour": {
+"text": "10 shot pour le prix d'un",
+"time": "22H00 - 22H30"
+}
+}
+]
 }
 {% endhighlight %}
 
@@ -159,7 +163,7 @@ Maintenant que nous avons notre propre API, il va nous être nécessaire de modi
 
 Nous allons également en profiter pour récupérer le nombre de `like` et `dislike` depuis l'API.
 
-*Note :* je vous invite également à enlever tout ce qui concerne l'appel API `https://jsonplaceholder.typicode.com/posts/`, qui n'est plus d'actualité. (dans les fichiers : `./src/components/App.js`, `./src/containers/appContainer.js`, `./src/reducers/appReducer`, `./src/actions/actionsTypes.js` et  `./src/actions/appActions.js`)
+_Note :_ je vous invite également à enlever tout ce qui concerne l'appel API `https://jsonplaceholder.typicode.com/posts/`, qui n'est plus d'actualité. (dans les fichiers : `./src/components/App.js`, `./src/containers/appContainer.js`, `./src/reducers/appReducer`, `./src/actions/actionsTypes.js` et `./src/actions/appActions.js`)
 
 ##### Actions et reducers
 
@@ -171,7 +175,7 @@ Mettons donc à jour nos `actions` et nos `reducers` :
 // Fichier : ./src/actions/actionsTypes.js [extrait]
 
 // establishments
-export const ADDESTABLISHMENT   = "ADDESTABLISHMENT"
+export const ADDESTABLISHMENT = "ADDESTABLISHMENT"
 
 ...
 {% endhighlight %}
@@ -189,6 +193,7 @@ export function addEstablishment(establishment) {
             establishment : establishment
         }
     }
+
 }
 {% endhighlight %}
 
@@ -200,10 +205,10 @@ export function addEstablishment(establishment) {
 let initialState = []
 
 // establishments.map((establishment) => {
-//     initialState.push({
-//        ...
-//     })
-//     return establishment
+// initialState.push({
+// ...
+// })
+// return establishment
 // }) // On supprime cette partie
 
 const establishment = (state = {}, action) => {
@@ -252,8 +257,8 @@ const establishment = (state = {}, action) => {
 
         ...
     }
-}
 
+}
 
 const establishmentsReducer = (state = initialState, action) => {
 
@@ -281,9 +286,9 @@ export default establishmentsReducer
 ...
 
 const initialState = {
-    loadingStorage  : true,
-    pseudo          : "Inconnu",
-    textFilter      : ""
+loadingStorage : true,
+pseudo : "Inconnu",
+textFilter : ""
 }
 
 const appReducer = (state = initialState, action) => {
@@ -309,10 +314,10 @@ const appReducer = (state = initialState, action) => {
 
         ...
     }
+
 }
 
 export default appReducer
-
 
 {% endhighlight %}
 
@@ -322,39 +327,39 @@ Dans `appReducer`, nous ajoutons la variable `loadingStorage`. Celle-ci nous per
 
 Maintenant que tout est prêt pour ajouter les établissements récupérés depuis l'API, mettons à jour nos `containers`/`components`.
 
-
 Dans un premier temps appelons notre API dans nos containers :
 
 {% highlight javascript %}
 // Fichier : ./src/containers/appContainer.js [extrait]
 
-import * as establishmentActions  from '../actions/establishmentActions' // ajout
+import \* as establishmentActions from '../actions/establishmentActions' // ajout
 
 ...
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        getEstablishmentsFromApi : () => {
-            fetch('http://localhost:3000/establishments')
-                .then((response) => response.json())
-                .then((establishments) => {
-                    console.log("Download establishments")
-                    establishments.forEach((establishment) => {
-                        dispatch(establishmentActions.addEstablishment(establishment))
-                    })
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        },
+return {
+getEstablishmentsFromApi : () => {
+fetch('http://localhost:3000/establishments')
+.then((response) => response.json())
+.then((establishments) => {
+console.log("Download establishments")
+establishments.forEach((establishment) => {
+dispatch(establishmentActions.addEstablishment(establishment))
+})
+})
+.catch((error) => {
+console.error(error);
+});
+},
 
         ...
     }
+
 }
 
 const AppContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+mapStateToProps,
+mapDispatchToProps
 )(App)
 
 export default AppContainer
@@ -369,7 +374,7 @@ Et on met à jour nos fonctions `like` et `dislike` :
 ...
 
 const mapDispatchToProps = (dispatch) => {
-    return {
+return {
 
         like : (establishment, isLiked)    => {
 
@@ -399,7 +404,7 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-		},
+    	},
         dislike : (establishment, isDisliked)    => {
 
             var data = JSON.stringify({
@@ -428,10 +433,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         ...
     }
+
 }
 
 ...
-
 
 {% endhighlight %}
 
@@ -460,6 +465,7 @@ class App extends Component {
 
 
     ...
+
 }
 
 export default App
@@ -494,13 +500,12 @@ class Establishment extends Component {
             </div>
         );
     }
+
 }
 
 export default Establishment;
 
 {% endhighlight %}
-
-
 
 N'oubliez pas de purger votre `store` afin de mettre de le mettre à jour :
 
@@ -555,6 +560,7 @@ class Home extends Component {
             ...
         )
     }
+
 }
 
 export default Home
@@ -562,49 +568,47 @@ export default Home
 
 On met également à jour notre css :
 
-
 {% highlight css %}
-/* Fichier : ./src/css/index.css [extrait] \*/
+/\* Fichier : ./src/css/index.css [extrait] \*/
 
 ...
 
 html, body, #root{
-    height : 100%;
+height : 100%;
 }
 {% endhighlight %}
 
 {% highlight css %}
-/* Fichier : ./src/css/App.css [extrait] \*/
+/\* Fichier : ./src/css/App.css [extrait] \*/
 
 ...
 
 .loader {
-    display         : flex;
-    align-items     : center;
-    justify-content : center;
-    height: 100%;
+display : flex;
+align-items : center;
+justify-content : center;
+height: 100%;
 }
 .loader-gif {
-    width: 50px;
-    height: 50px;
+width: 50px;
+height: 50px;
 }
 
 {% endhighlight %}
-
 
 Maintenant que notre `component` n'est créé qu'après le chargement des données locales, il nous est nécessaire de faire notre appel API dans la fonction `componentDidMount`, `componentDidUpdate` n’étant pas appelé la première fois.
 
 {% highlight javascript %}
 // Fichhier : ./src/components/App.js [extrait]
 
- ...
+...
 
 componentDidMount()
 {
-    // Plus besoin de faire d'autres vérifications, car cette fonction ne sera appelée qu'une seule fois et toujours après avoir récupéré les données locales.
-    if ( this.props.state.establishments.length === 0 ) {
-        this.props.getEstablishmentsFromApi()
-    }
+// Plus besoin de faire d'autres vérifications, car cette fonction ne sera appelée qu'une seule fois et toujours après avoir récupéré les données locales.
+if ( this.props.state.establishments.length === 0 ) {
+this.props.getEstablishmentsFromApi()
+}
 }
 
 // On supprime la fonction componentDidUpdate()
@@ -613,14 +617,13 @@ componentDidMount()
 
 {% endhighlight %}
 
-
-*Note :* afin de voir plus longtemps le loader :
+_Note :_ afin de voir plus longtemps le loader :
 
 {% highlight javascript %}
 // Fichier : ./src/index.js [extrait]
 
 setTimeout(() => {
-    persistStore(store)
+persistStore(store)
 }, 1500)
 {% endhighlight %}
 
@@ -638,7 +641,7 @@ Il nous suffit de rajouter une variable booléenne et de réaliser, plus ou moin
 ...
 
 // App
-export const ENDDOWNLOAD    = 'ENDDOWNLOAD'
+export const ENDDOWNLOAD = 'ENDDOWNLOAD'
 
 {% endhighlight %}
 
@@ -649,9 +652,9 @@ export const ENDDOWNLOAD    = 'ENDDOWNLOAD'
 
 // Cette action nous servira à mettre à jour notre variable booléenne
 export function endDownload(text) {
-    return {
-        type: types.ENDDOWNLOAD
-    }
+return {
+type: types.ENDDOWNLOAD
+}
 }
 {% endhighlight %}
 
@@ -661,10 +664,10 @@ export function endDownload(text) {
 ...
 
 const initialState = {
-    loadingAPI      : true,
-    loadingStorage  : true,
-    pseudo          : "Inconnu",
-    textFilter      : ""
+loadingAPI : true,
+loadingStorage : true,
+pseudo : "Inconnu",
+textFilter : ""
 }
 
 const appReducer = (state = initialState, action) => {
@@ -698,6 +701,7 @@ const appReducer = (state = initialState, action) => {
           ...
 
     }
+
 }
 
 export default appReducer
@@ -710,8 +714,8 @@ export default appReducer
 ...
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        getEstablishmentsFromApi : () => {
+return {
+getEstablishmentsFromApi : () => {
 
             fetch('http://localhost:3000/establishments')
                 .then((response) => response.json())
@@ -735,10 +739,10 @@ const mapDispatchToProps = (dispatch) => {
         endDownload : () => dispatch(appActions.endDownload()),
 
         ...
+
 }
 
 ...
-
 
 {% endhighlight %}
 
@@ -791,15 +795,14 @@ class App extends Component {
             </div>
         )
     }
+
 }
 
 export default App
 
 {% endhighlight %}
 
-
 ![ScreenShot 3](/assets/HappyDrink_Lecon_7_3.gif)
-
 
     Fiouuuuu ! Fini :)
 
@@ -819,17 +822,17 @@ Exemple typique :
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 
 function increment() {
-  return {
-    type: INCREMENT_COUNTER
-  };
+return {
+type: INCREMENT_COUNTER
+};
 }
 
 function incrementAsync() {
-    return dispatch => {
-        setTimeout(() => {
-            dispatch(increment());
-        }, 1000);
-    }
+return dispatch => {
+setTimeout(() => {
+dispatch(increment());
+}, 1000);
+}
 }
 {% endhighlight %}
 
@@ -845,80 +848,78 @@ Voici les principaux liens de mes sources, n'hésitez pas à les visiter pour en
 - [react-router-redux : github](https://github.com/reactjs/react-router-redux){:target="\_blank"}
 - [redux-persist : github](https://github.com/rt2zz/redux-persist){:target="\_blank"}
 
-
 ## 4. Récapitulatif
 
 ### Organisation du projet
 
 {% highlight cli %}
 src
-|___actions
-|   |
-|   |___actionsTypes.js
-|   |
-|   |___appActions.js
-|   |
-|   |___establishmentActions.js
+|**_actions
+| |
+| |_**actionsTypes.js
+| |
+| |**_appActions.js
+| |
+| |_**establishmentActions.js
 |
-|___assets
-|   |
-|   |___logo.svg
-|   |
-|   |___ring.gif
+|**_assets
+| |
+| |_**logo.svg
+| |
+| |**_ring.gif
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___Happyhour.js
-|   |
-|   |___App.js
-|   |
-|   |___home.js
+|_**components
+| |
+| |**_establishments
+| | |
+| | |_**establishments.js
+| | |
+| | |**_Happyhour.js
+| |
+| |_**App.js
+| |
+| |**_home.js
 |
-|___containers
-|   |
-|   |___appContainer.js
-|   |
-|   |___establishmentContainer.js
-|   |
-|   |____HappyHourContainer.js
-|   |
-|   |___homeContainer.js
+|_**containers
+| |
+| |**_appContainer.js
+| |
+| |_**establishmentContainer.js
+| |
+| |\_**_HappyHourContainer.js
+| |
+| |_**homeContainer.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|**_css
+| |
+| |_**App.css
+| |
+| |**_index.css
 |
-|___reducers
-|   |
-|   |___appReducer.js
-|   |
-|   |___establishmentReducer.js
-|   |
-|   |___index.js
+|_**reducers
+| |
+| |**_appReducer.js
+| |
+| |_**establishmentReducer.js
+| |
+| |**_index.js
 |
-|___App.test.js
+|_**App.test.js
 |
-|___index.js
+|\_\_\_index.js
 {% endhighlight %}
-
 
 ### Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `filtrer` la liste.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 ##### Bonus
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   Afficher un `loader` lors du chargement de la page.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Afficher un `loader` lors du chargement de la page.
 
 <b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_7](https://github.com/gkueny/HappyDrink/tree/Lecon_7){:target="\_blank"}
 
@@ -930,4 +931,4 @@ J'espère vous avoir convaincu que `React`, ainsi que `Redux`, c'est génial et 
     À plus !
 </center>
 
-*ps : N'hésitez pas à me faire part de vos retours ! C'est la première fois que je m'essaye à l'exercice du tutoriel et tout ce qui peut m'aider à m'améliorer est le bienvenu !!*
+_ps : N'hésitez pas à me faire part de vos retours ! C'est la première fois que je m'essaye à l'exercice du tutoriel et tout ce qui peut m'aider à m'améliorer est le bienvenu !!_

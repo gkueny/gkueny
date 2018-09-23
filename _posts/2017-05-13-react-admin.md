@@ -1,17 +1,19 @@
 ---
 layout: post
-title:  "Protéger son application"
+title: 'Protéger son application'
 author: Gkueny
-date:   2017-05-13 19:00:00 +0200
+date: 2017-05-13 19:00:00 +0200
 featured_image: /assets/background-admin.jpg
 comments: true
-keywords: "react, redux, firebase, admin, protect, protection, admin react, react admin"
+keywords: 'react, redux, firebase, admin, protect, protection, admin react, react admin'
 excerpt: "Lorsque l’on code une application `React`, on est vite amené à protéger l’accès à une partie de celle-ci. Je vais vous montrer ici ma technique préférée afin de `filtrer l'accès` à certains composants."
 ---
+
+**Attention, cet article n'est pas à jour.**
+
 <b>[Article initialement publié sur [FrenchReact](http://frenchreact.fr/proteger-son-application/)]</b>
 
 Lorsque l’on code une application `React`, on est vite amené à protéger l’accès à une partie de celle-ci. Je vais vous montrer ici ma technique préférée afin de `filtrer l'accès` à certains composants.
-
 
 ```
 Cette technique est applicable autant pour React que pour React-Native, mais pour les besoins de l’article, je prendrai seulement exemple sur une application React.
@@ -20,7 +22,6 @@ Cette technique est applicable autant pour React que pour React-Native, mais pou
 <div id="toc"></div>
 
 ## Principe général
-
 
 Afin d’interdire l’accès à certain composant si l’utilisateur n’est pas authentifié ou n’a pas les bons droits, nous allons englober ceux-ci dans un `super-composant`. Il n’aura qu’un seul but :
 
@@ -60,7 +61,6 @@ Au lieu de cela, nous allons construire un `composant` qui englobera les composa
 Ici, à chaque fois qu’une des routes géré par `ProtectedRoute` est appelée, la fonction `componentWillReceiveProps()` sera exécutée, car le composant `Router` définit dans `index.js` « re-rend » notre composant lors d’un changement de route.
 
 On profite donc de cette fonction pour vérifier les droits de l’utilisateur et afficher ou non la route demandée.
-
 
 ## Intégration du super-composant
 

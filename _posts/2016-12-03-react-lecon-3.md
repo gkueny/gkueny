@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "En savoir un peu plus sur le cycle de vie d'un composant React"
+title: "En savoir un peu plus sur le cycle de vie d'un composant React"
 author: Gkueny
 date: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
 comments: true
 timerArticle: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Tue Dec 06 2016 20:00:00 GMT+0100 (CET)
-keywords: "react, tutorial, react lecon 3, state, lifecycle, cycle de vie"
+keywords: 'react, tutorial, react lecon 3, state, lifecycle, cycle de vie'
 subtitle: react - leçon 3
 excerpt_separator: <!-- more -->
 ---
+
 Aller ! Aujourd'hui, on va avancer notre superbe application :)
+
 <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
@@ -24,29 +28,29 @@ Mais tout d'abord, voyons comment réaliser les différentes tâches laissées e
 
 {% highlight cli %}
 src
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|_**css
+| |
+| |**_App.css
+| |
+| |_**index.css
 |
-|___App.test.js
+|**_App.test.js
 |
-|___index.js
+|_**index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -55,7 +59,6 @@ On n'oublie pas de lancer l'application afin de voir les changements dans notre 
 $ cd HappyDrink
 $ npm start
 {% endhighlight %}
-
 
 ## 2. Proposition de correction
 
@@ -137,6 +140,7 @@ class Establishment extends Component {
             </div>
         );
     }
+
 }
 
 export default Establishment;
@@ -145,29 +149,29 @@ export default Establishment;
 on met à jour notre css :
 
 {% highlight css %}
-/* Fichier : ./src/css/App.css [extrait]*/
+/_ Fichier : ./src/css/App.css [extrait]_/
 ...
 .establishment {
-    display             : flex;
-    align-items         : center;
-    background-color    : gray;
-    padding             : 10px;
-    margin              : 5px 30px;
-    border-radius       : 8px;
+display : flex;
+align-items : center;
+background-color : gray;
+padding : 10px;
+margin : 5px 30px;
+border-radius : 8px;
 }
 .establishment-description {
-    flex : 0.8;
+flex : 0.8;
 }
 .establishmentLikeDislike {
-    flex            : 0.2;
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
+flex : 0.2;
+display : flex;
+flex-direction : column;
+align-items : center;
 }
 .establishmentLikeDislike button {
-    background  : none;
-    border      : none;
-    color       : white;
+background : none;
+border : none;
+color : white;
 }
 
 {% endhighlight %}
@@ -175,6 +179,7 @@ on met à jour notre css :
 Et le fichier `index.html` afin d'utiliser `Font-Answome` :
 
 {% highlight html %}
+
 <!-- Fichier : ./public/index.html -->
 
 <!doctype html>
@@ -194,11 +199,10 @@ Et le fichier `index.html` afin d'utiliser `Font-Answome` :
         <div id="root"></div>
 
     </body>
+
 </html>
 
-
 {% endhighlight %}
-
 
 ![Screenshot 1](/assets/HappyDrink_Lecon_3_1.gif)
 
@@ -241,6 +245,7 @@ like = () =>
         likeCounter     : likeCounter,
         dislikeCounter  : dislikeCounter
     })
+
 }
 
 dislike = () =>
@@ -259,6 +264,7 @@ dislike = () =>
         likeCounter     : likeCounter,
         dislikeCounter  : dislikeCounter
     })
+
 }
 
 render() {
@@ -280,12 +286,12 @@ render() {
 
         </div>
     );
+
 }
 
 ...
 
 {% endhighlight %}
-
 
 ![Screenshot 2](/assets/HappyDrink_Lecon_3_2.gif)
 
@@ -317,9 +323,9 @@ constructor(props) {
 ...
 favori = () =>
 {
-    this.setState({
-        favori  : !this.state.favori
-    })
+this.setState({
+favori : !this.state.favori
+})
 }
 ...
 
@@ -352,37 +358,37 @@ render() {
 
         </div>
     );
+
 }
 {% endhighlight %}
 
 Et on met à jour le css :
 
 {% highlight css %}
-/* Fichier : ./src/css/App.css [extrait]*/
+/_ Fichier : ./src/css/App.css [extrait]_/
 ...
 .establishment-favori {
-    flex : 0.1;
+flex : 0.1;
 }
 .establishment-description {
-    flex : 0.7;
+flex : 0.7;
 }
 .establishmentLikeDislike {
-    flex            : 0.2;
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
+flex : 0.2;
+display : flex;
+flex-direction : column;
+align-items : center;
 }
 .establishment button {
-    background  : none;
-    border      : none;
-    color       : white;
+background : none;
+border : none;
+color : white;
 }
 
 .favoriIcon {
-    color: yellow;
+color: yellow;
 }
 {% endhighlight %}
-
 
 ![Screenshot 3](/assets/HappyDrink_Lecon_3_3.gif)
 
@@ -393,15 +399,15 @@ Et on met à jour le css :
 Jetons un coup d'oeil aux fonctions, de notre `component`, qui sont appelées par `React` à l'initialisation de celui-ci :
 
 {% highlight cli %}
-\__constructor()
+\_\_constructor()
 |
-|__componentWillMount()
+|**componentWillMount()
 |
-|__render()
+|**render()
 |
-|__componentDidMount()
+|**componentDidMount()
 |
-|__componentWillUnmount()
+|**componentWillUnmount()
 {% endhighlight %}
 
 Avec `componentWillMount`, vous pourrez réaliser des opérations avant que votre `component` ne soit rendu. <br/>
@@ -445,6 +451,7 @@ class App extends Component {
     }
 
     ...
+
 }
 
 ...
@@ -465,22 +472,22 @@ componentDidMount
 
 {% highlight cli %}
 |
-|__componentWillReceiveProps(nextProps)
+|**componentWillReceiveProps(nextProps)
 |
-|__shouldComponentUpdate(nextProps, nextState)
+|**shouldComponentUpdate(nextProps, nextState)
 |
-|__componentWillUpdate(nextProps, nextState)
+|**componentWillUpdate(nextProps, nextState)
 |
-|__render
+|**render
 |
-|__componentDidUpdate(prevProps, prevState)
+|\_\_componentDidUpdate(prevProps, prevState)
 {% endhighlight %}
 
 `componentWillReceiveProps(nextProps)` est appelée lorsqu'un `component`, qui est déjà initialisé, reçoit de nouvelles `props`. <br/>
 Dans cette fonction, on peut comparer les nouvelles `props` (ici contenues dans l'objet `nextProps`), avec les anciennes (`this.props`).
 
 La fonction `shouldComponentUpdate(nextProps, nextState)` est appelée à chaque changement du `state`. On utilise cette fonction afin de faire savoir à `React` si, oui ou non, le `component` est affecté par le changement en retournant `true` ou `false`.
-Si l'on retourne `false`, les méthodes  `componentWillUpdate()`, `render(),` et `componentDidUpdate()` ne seront pas appelées.
+Si l'on retourne `false`, les méthodes `componentWillUpdate()`, `render(),` et `componentDidUpdate()` ne seront pas appelées.
 
 `componentWillUpdate(nextProps, nextState)` est appelée par `React` juste avant que les nouvelles `props` et le nouveau `state` ne soit rendues.
 
@@ -535,6 +542,7 @@ class Establishment extends Component {
     }
 
     ...
+
 }
 
 ...
@@ -545,33 +553,31 @@ Et l'affichage console correspondant (lors du clic sur l'élément "favori" par 
 
 {% highlight cli %}
 shouldComponentUpdate
-    this.props :  Object {establishment: Object}
-    nextProps  :  Object {establishment: Object}
-    this.state :  Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
-    nextState  :  Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: true}
+this.props : Object {establishment: Object}
+nextProps : Object {establishment: Object}
+this.state : Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
+nextState : Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: true}
 componentWillUpdate
-    this.props :  Object {establishment: Object}
-    nextProps  :  Object {establishment: Object}
-    this.state :  Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
-    nextState  :  Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: true}
+this.props : Object {establishment: Object}
+nextProps : Object {establishment: Object}
+this.state : Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
+nextState : Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: true}
 componentDidUpdate
-        prevProps :  Object {establishment: Object}
-        prevState :  Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
+prevProps : Object {establishment: Object}
+prevState : Object {isLiked: false, isDisliked: false, likeCounter: 0, dislikeCounter: 0, favori: false}
 {% endhighlight %}
 
 ## 4. Récapitulatif
 
 Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `filtrer` la liste.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `visualiser l'happy-hour` de celui-ci.
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>   `Liker/disliker` ce bar.
-
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 On a bien avancé cette fois-ci !
-
 
 <b>Vous pourrez retrouver les sources de cette leçon à l'adresse suivante : </b>[github lecon_3](https://github.com/gkueny/HappyDrink/tree/Lecon_3){:target="\_blank"}
 
@@ -585,12 +591,12 @@ Je vous propose la chose suivante :
 
 - utiliser Jquery pour faire un appel API :
 
-     npm install --save jquery
+  npm install --save jquery
 
 et
 
 {% highlight javascript %}
-    var $ = require('jquery');
+var $ = require('jquery');
 {% endhighlight %}
 
 pour utiliser "$" dans un `component`

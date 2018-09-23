@@ -1,15 +1,19 @@
 ---
 layout: post
-title:  "Utiliser Firebase avec React"
+title: 'Utiliser Firebase avec React'
 author: Gkueny
-date:   2017-01-06 23:00:00 +0200
+date: 2017-01-06 23:00:00 +0200
 featured_image: /assets/react-firebase.png
 comments: true
-keywords: "react, redux, firebase, chat, tchat, redux, real-time database, react with firebase, react avec firebase, react et firebase, realtime, database, realtime-database, state"
+keywords: 'react, redux, firebase, chat, tchat, redux, real-time database, react with firebase, react avec firebase, react et firebase, realtime, database, realtime-database, state'
 excerpt_separator: <!--more-->
 ---
+
 Avec `React`, vous savez persister les données de l'utilisateur, mais une nouvelle question se pose. Comment en partager une partie avec les autres utilisateurs? Dans le cadre d'un tchat par exemple?
+
 <!--more-->
+
+**Attention, cet article n'est pas à jour.**
 
 C'est ce que nous allons voir en utilisant `firebase`.
 
@@ -18,7 +22,6 @@ C'est ce que nous allons voir en utilisant `firebase`.
 <div id="toc"></div>
 
 ![react and firebase tchat](assets/react-tchat.gif)
-
 
 ## 1. Firebase
 

@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "Découverte du state"
+title: 'Découverte du state'
 author: Gkueny
 date: Wed Nov 30 2016 20:00:00 GMT+0100 (CET)
 featured_image: /assets/react_lecon_2.png
 comments: true
 timerArticle: Wed Nov 30 2016 20:00:00 GMT+0100 (CET)
 timerNextArticle: Sat Dec 03 2016 20:00:00 GMT+0100 (CET)
-keywords: "react, tutorial, react lecon 2, state, setState"
+keywords: 'react, tutorial, react lecon 2, state, setState'
 subtitle: react - leçon 2
-excerpt_separator:  <!-- more -->
+excerpt_separator: <!-- more -->
 ---
-C'est parti pour découvrir le *state* d'un composant React !
+
+C'est parti pour découvrir le _state_ d'un composant React !
+
  <!-- more -->
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
@@ -20,14 +24,12 @@ Mais tout d'abord, voyons une façon de réaliser les deux points laissés en su
 
 <b>Vous pourrez retrouver les sources de la leçon précédente à l'adresse suivante : <b> [github lecon_1](https://github.com/gkueny/HappyDrink/tree/Lecon_1){:target="\_blank"}
 
-
 ## 1. Proposition de correction
 
 Rappel de ce que nous cherchons à faire :
 
 - créer un nouveau `component` "Establishment", en vous inspirant d' `App`, qui s'occupera de l'affichage d'un établissement dans notre liste.
 - utiliser ce même `component` "Establishment" dans la fonction `map` vu précédemment.
-
 
 Voici un exemple de ce à quoi pourrait ressembler le `component` "Establishment" :
 
@@ -49,6 +51,7 @@ class Establishment extends Component {
             </div>
         );
     }
+
 }
 
 export default Establishment;
@@ -73,6 +76,7 @@ const Establishment = ({establishment}) => {
 
         </div>
     );
+
 }
 
 export default Establishment;
@@ -97,10 +101,10 @@ Nous utilisons notre `component` Establishment de la façon suivante dans le `co
 
 ...
 
-import Establishment         from './establishments/Establishment'
+import Establishment from './establishments/Establishment'
 
 ...
-    render() {
+render() {
 
         const listEstablishment = establishments.map( (establishment) => {
             return (
@@ -121,29 +125,29 @@ import Establishment         from './establishments/Establishment'
 
 {% highlight cli %}
 src
-|___assets
-|   |
-|   |___logo.svg
+|**_assets
+| |
+| |_**logo.svg
 |
-|___components
-|   |
-|   |___establishments
-|   |   |
-|   |   |___establishments.js
-|   |   |
-|   |   |___fixtures.js
-|   |
-|   |___App.js
+|**_components
+| |
+| |_**establishments
+| | |
+| | |**_establishments.js
+| | |
+| | |_**fixtures.js
+| |
+| |**_App.js
 |
-|___css
-|   |
-|   |___App.css
-|   |
-|   |___index.css
+|_**css
+| |
+| |**_App.css
+| |
+| |_**index.css
 |
-|___App.test.js
+|**_App.test.js
 |
-|___index.js
+|_**index.js
 {% endhighlight %}
 
 On n'oublie pas de lancer l'application afin de voir les changements dans notre navigateur.
@@ -157,7 +161,7 @@ $ npm start
 
 Bon, j'avoue, je vous ai menti...
 
-Nous n'allons pas, ici,  utiliser la méthode `getInitialState`, car celle-ci est seulement supportée par les classes créées avec `React.createClass`. Or nous utilisons une "simple" classe JavaScript.
+Nous n'allons pas, ici, utiliser la méthode `getInitialState`, car celle-ci est seulement supportée par les classes créées avec `React.createClass`. Or nous utilisons une "simple" classe JavaScript.
 
 Du coup, dans notre cas, nous allons procéder autrement :
 
@@ -237,34 +241,33 @@ export default App;
 
 Et voilà ! Simple n'est-ce pas ?
 
-
 ![Screenshot 1](/assets/HappyDrink_Lecon_2.gif)
 
 #### Qu'avons-nous vu d'important à retenir ?
 
 ##### Initialisation du `state` de notre component
 
-* On initialise l'objet `state` avec :
-    * pour `clé` : les différents noms de variables que vous voulez garder dans le `state`
-    * et en `valeur` : la valeur de ces variables.
+- On initialise l'objet `state` avec :
+  - pour `clé` : les différents noms de variables que vous voulez garder dans le `state`
+  - et en `valeur` : la valeur de ces variables.
 
 ##### Modifier le `state` de notre component
 
-* On fait appel à la fonction `setState`, et on lui passe en argument un nouvel objet ayant :
-    * pour `clé` : le nom des variables du `state` que l'on veut modifier
-    * et en `valeur` : la nouvelle valeur de la variable.
+- On fait appel à la fonction `setState`, et on lui passe en argument un nouvel objet ayant :
+  - pour `clé` : le nom des variables du `state` que l'on veut modifier
+  - et en `valeur` : la nouvelle valeur de la variable.
 
 ##### Exemple Rapide :
 
 {% highlight javascript %}
 state = {
-    pseudo  : "test",
-    age     : 18
+pseudo : "test",
+age : 18
 }
 
 //Ici je ne passe en paramètre que ce que je souhaite modifier
 this.setState({
-    pseudo : "randomPseudo"
+pseudo : "randomPseudo"
 })
 {% endhighlight %}
 
@@ -279,11 +282,11 @@ C'est cela qui nous permet de voir le changement du pseudo lors de chaque clic.
 
 Quand vous construisez un component, posez-vous ces questions :
 
-* Ma variable m'est passée par mon parent via les `props` ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
-* Ma variable n'est pas amenée à changer dans le temps ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
-* Ma variable peut être créée à partir d'autres variables du `state` ou des `props` ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
+- Ma variable m'est passée par mon parent via les `props` ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
+- Ma variable n'est pas amenée à changer dans le temps ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
+- Ma variable peut être créée à partir d'autres variables du `state` ou des `props` ? <i class="fa fa-times" style="color: red" aria-hidden="true"></i> Ne la mettez pas dans le `state`
 
-* Ma variable ne remplie aucun des cas ci-dessus ? <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Alors sa place est surement dans le `state`
+- Ma variable ne remplie aucun des cas ci-dessus ? <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Alors sa place est surement dans le `state`
 
 En savoir plus : [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html){:target="\_blank"}
 
@@ -291,15 +294,15 @@ En savoir plus : [Thinking in React](https://facebook.github.io/react/docs/think
 
 Regardons un peu l'avancement de notre projet HappyDrink :
 
-- <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  `Lister` les bars.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `filtrer` la liste.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>   `mettre en favori` un bar.
-- <i class="fa fa-times" style="color: red" aria-hidden="true"></i>  `visualiser l'happy-hour` de celui-ci.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> `Lister` les bars.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `filtrer` la liste.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `mettre en favori` un bar.
+- <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `visualiser l'happy-hour` de celui-ci.
 - <i class="fa fa-times" style="color: red" aria-hidden="true"></i> `Liker/disliker` ce bar.
 
 Bonus :
 
-* <i class="fa fa-check" style="color: green" aria-hidden="true"></i>  Afficher un pseudo random.
+- <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Afficher un pseudo random.
 
 <p class="comment">
     Mais... On n'a pas avancé là ! Remboursez !

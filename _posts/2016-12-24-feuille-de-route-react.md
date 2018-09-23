@@ -7,10 +7,14 @@ featured_image: /assets/react_nowwwel.png
 comments: true
 excerpt_separator: <!-- more -->
 ---
+
 Lorsque j'ai commencé à coder une application `React`, j'ai passé un petit bout de temps à `googler` "React c'est quoi ?", "Quelle librairie utiliser pour le routing ?" etc... C'est pourquoi je vous livre ici, une petite feuille de route pour réaliser votre première application `React` sans vous perdre dans les méandres de `google` :).
+
 <!-- more -->
 
 cc [#nowwwel](https://twitter.com/search?f=tweets&vertical=default&q=%23nowwwel) ;)
+
+**Attention, cet article n'est pas à jour.**
 
 <div id="toc"></div>
 
