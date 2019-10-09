@@ -4,77 +4,79 @@ description: "Web & Mobile Developer in Toulouse"
 ---
 
 <div id="homepage-intro-wrapper">
-    <div class="container">
-        <div class="wrapper">
-            <div id="homepage-intro" class="col-md-16">
-                <h1 style="text-align: center;">Web developer</h1>
-                <p style="text-align: center;"><a href="https://monkees.fr/">Monkees</a>
-                <p style="text-align: center;"> #react, #react-native, #wordpress, #prestashop, #woocomerce.</p>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="wrapper">
+      <div id="homepage-intro" class="col-md-16">
+        <h1 style="text-align: center;">Web developer</h1>
+        <p style="text-align: center;">
+          <a href="https://occitech.fr/">Occitech</a>
+        </p>
+        <p style="text-align: center;">
+          #react, #react-native, #wordpress, #prestashop, #woocomerce.
+        </p>
+        <div class="clearfix"></div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- <div class="wrapper"> -->
 
 <div id="content" class="col-md-24 isotope" role="main">
+  <div id="index-content" class="row" style="position: relative; ">
+    {% for post in paginator.posts %}
 
+    <div class="col-md-12 p-normal col-sm-24 blog-listing anim fadeInUp ">
+      <article
+        class="article post type-post status-publish format-standard hentry category-thoughts tag-blogging tag-writing "
+      >
+        <a
+          style="display: block;"
+          href="{{ post.url | prepend: site.baseurl }}"
+        >
+          <div class="entry-content ">
+            <h2>
+              {{ post.title }}
+            </h2>
 
-    <div id="index-content" class="row" style="position: relative; ">
-        {% for post in paginator.posts %}
+            <span class="post-meta "
+              >{{ post.date | date: " %-d/%m/%Y " }} par {{ post.author }}</span
+            >
+            {% if post.subtitle %}
+            <span class="post-meta left">{{ post.subtitle }}</span>
+            {% endif %}
 
-            <div class="col-md-12 p-normal col-sm-24 blog-listing anim fadeInUp ">
-                <article class="article post type-post status-publish format-standard hentry category-thoughts tag-blogging tag-writing ">
-
-                    <a style="display: block;" href="{{ post.url | prepend: site.baseurl }}">
-
-                        <div class="entry-content ">
-
-                            <h2>
-                                {{ post.title }}
-                            </h2>
-
-                            <span class="post-meta ">{{ post.date | date: " %-d/%m/%Y " }} par {{ post.author }}</span>
-                            {% if post.subtitle %}
-                                <span class="post-meta left">{{ post.subtitle }}</span>
-                            {% endif %}
-
-                            <p style="color: black;">
-                                {{ post.excerpt }}
-                            </p>
-
-                        </div>
-
-                    </a>
-
-                </article>
-            </div>
-
-        {% endfor %}
-
-
+            <p style="color: black;">
+              {{ post.excerpt }}
+            </p>
+          </div>
+        </a>
+      </article>
     </div>
 
-    <!-- Pager -->
-    {% if paginator.total_pages > 1 %}
-        <ul class="pager">
-        {% if paginator.previous_page %}
-            <li class="previous">
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Précédent</a>
-            </li>
-        {% endif %}
-        {% if paginator.next_page %}
-            <li class="next">
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Suivant &rarr;</a>
-            </li>
-        {% endif %}
-        </ul>
+    {% endfor %}
+  </div>
+
+  <!-- Pager -->
+  {% if paginator.total_pages > 1 %}
+  <ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+      <a
+        href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+        >&larr; Précédent</a
+      >
+    </li>
+    {% endif %} {% if paginator.next_page %}
+    <li class="next">
+      <a
+        href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+        >Suivant &rarr;</a
+      >
+    </li>
     {% endif %}
-
-
-
+  </ul>
+  {% endif %}
 </div>
-
 
 <!-- </div> -->
