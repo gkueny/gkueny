@@ -11,7 +11,8 @@ const IndexPage = ({ data: { prismicHomePage } }) => {
       <SEO title={data.title_seo.text} description={data.description_seo} />
       <Profil
         name={data.title.text}
-        subtitle={data.subtitle.text}
+        company={data.company}
+        companyLink={data.company_link}
         hashtags={data.hashtags}
       />
     </Layout>
@@ -27,8 +28,10 @@ export const pageQuery = graphql`
         title {
           text
         }
-        subtitle {
-          text
+        company
+        company_link {
+          target
+          url
         }
         hashtags {
           hashtag

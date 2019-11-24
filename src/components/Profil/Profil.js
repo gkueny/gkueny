@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import ArticlesList from "../Articles/List";
 
-const Profil = ({ name, subtitle, hashtags }) => {
+const Profil = ({ name, company, companyLink, hashtags }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "profil.jpg" }) {
@@ -26,7 +26,20 @@ const Profil = ({ name, subtitle, hashtags }) => {
         />
         <div className="text-4xl">
           <h1 className="text-gray-900 leading-relaxed">
-            {name} <span className="text-2xl">- {subtitle}</span>
+            {name}{" "}
+            <span className="text-2xl text-blue-500 hover:text-blue-800">
+              {companyLink.target === "_blank" ? (
+                <a
+                  target="_blank"
+                  href={companyLink.url}
+                  rel="noopener noreferrer"
+                >
+                  {company}
+                </a>
+              ) : (
+                <Link to={companyLink.url}>{company}</Link>
+              )}
+            </span>
           </h1>
           <p className="text-base text-gray-600">
             {hashtags.map(node => `#${node.hashtag} `)}
@@ -42,7 +55,11 @@ const Profil = ({ name, subtitle, hashtags }) => {
 
 Profil.propTypes = {
   name: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  companyLink: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    target: PropTypes.string.isRequired,
+  }).isRequired,
   hashtags: PropTypes.arrayOf(
     PropTypes.shape({
       hashtag: PropTypes.string.isRequired,
