@@ -36,9 +36,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-prismic",
       options: {
@@ -65,15 +63,14 @@ module.exports = {
         schemas: {
           // Your custom types mapped to schemas
         },
-
         // See: https://prismic.io/docs/javascript/query-the-api/query-by-language
         lang: "*",
         // This defaults to always return true.
         shouldNormalizeImage: ({ node, key, value }) => {
           // Return true to normalize the image or false to skip.
-          return true
+          return true;
         },
       },
     },
   ],
-}
+};
