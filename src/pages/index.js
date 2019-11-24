@@ -4,8 +4,9 @@ import Layout from "../components/Layout";
 import Profil from "../components/Profil";
 import SEO from "../components/Seo";
 
-const IndexPage = ({ data: { prismicHomePage } }) => {
+const IndexPage = ({ data: { prismicHomePage, allPrismicArticle } }) => {
   const { data } = prismicHomePage;
+  const { nodes: dataArticles } = allPrismicArticle;
   return (
     <Layout>
       <SEO title={data.title_seo.text} description={data.description_seo} />
@@ -14,6 +15,7 @@ const IndexPage = ({ data: { prismicHomePage } }) => {
         company={data.company}
         companyLink={data.company_link}
         hashtags={data.hashtags}
+        articles={dataArticles}
       />
     </Layout>
   );
@@ -40,6 +42,19 @@ export const pageQuery = graphql`
           text
         }
         description_seo
+      }
+    }
+    allPrismicArticle(limit: 3) {
+      nodes {
+        data {
+          title {
+            text
+          }
+          summary
+          categories {
+            category_title
+          }
+        }
       }
     }
   }

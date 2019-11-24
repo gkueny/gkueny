@@ -1,31 +1,20 @@
 import React from "react";
-import Article from "./Article";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import Article from "./Article";
 
-const ArticlesList = () => {
+const ArticlesList = ({ articles }) => {
   return (
     <ul className="flex flex-col h-full justify-around py-24">
-      <li className="my-4">
-        <Article
-          title="Protéger son application"
-          description="Lorsque l’on code une application React, on est vite amené à protéger l’accès à une partie de celle-ci. Je vais vous montrer ici ma technique préférée afin de filtrer l'accès à certains composants."
-          categories={[{ title: "react" }, { title: "security" }]}
-        />
-      </li>
-      <li className="my-4">
-        <Article
-          title="Utiliser Firebase avec React"
-          description="Avec React, vous savez persister les données de l’utilisateur, mais une nouvelle question se pose. Comment en partager une partie avec les autres utilisateurs? Dans le cadre d’un tchat par exemple?"
-          categories={[{ title: "react" }, { title: "firebase" }]}
-        />
-      </li>
-      <li className="my-4">
-        <Article
-          title="Feuille de route d'une application React"
-          description="Lorsque j’ai commencé à coder une application React, j’ai passé un petit bout de temps à googler “React c’est quoi ?”, “Quelle librairie utiliser pour le routing ?” etc… C’est pourquoi je vous livre ici, une petite feuille de route pour réaliser votre première application React sans vous perdre dans les méandres de google :)."
-          categories={[{ title: "react" }]}
-        />
-      </li>
+      {articles.map(article => (
+        <li className="my-4">
+          <Article
+            title={article.data.title}
+            summary={article.data.summary}
+            categories={article.data.categories}
+          />
+        </li>
+      ))}
       <li className="my-4 w-14">
         <Link
           to="/blog"
@@ -44,6 +33,23 @@ const ArticlesList = () => {
       </li>
     </ul>
   );
+};
+
+ArticlesList.propTypes = {
+  name: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  companyLink: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    target: PropTypes.string.isRequired,
+  }).isRequired,
+  hashtags: PropTypes.arrayOf(
+    PropTypes.shape({
+      hashtag: PropTypes.string.isRequired,
+    })
+  ),
+  articles: PropTypes.arrayOf(
+    PropTypes.shape(PropTypes.shape({ data: Article.propTypes })).isRequired
+  ),
 };
 
 export default ArticlesList;

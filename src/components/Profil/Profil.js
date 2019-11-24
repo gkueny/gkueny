@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import ArticlesList from "../Articles/List";
 
-const Profil = ({ name, company, companyLink, hashtags }) => {
+const Profil = ({ name, company, companyLink, hashtags, articles }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "profil.jpg" }) {
@@ -47,7 +47,7 @@ const Profil = ({ name, company, companyLink, hashtags }) => {
         </div>
       </section>
       <section className="flex flex-1 flex-col items-center justify-center">
-        <ArticlesList />
+        <ArticlesList articles={articles} />
       </section>
     </div>
   );
@@ -65,6 +65,7 @@ Profil.propTypes = {
       hashtag: PropTypes.string.isRequired,
     })
   ),
+  articles: ArticlesList.propTypes,
 };
 
 export default Profil;
