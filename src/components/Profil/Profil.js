@@ -28,21 +28,13 @@ const Profil = ({ name, company, companyLink, hashtags, articles }) => {
           <h1 className="text-gray-900 leading-relaxed">
             {name}{" "}
             <span className="text-2xl text-blue-500 hover:text-blue-800">
-              {companyLink.target === "_blank" ? (
-                <a
-                  target="_blank"
-                  href={companyLink.url}
-                  rel="noopener noreferrer"
-                >
-                  {company}
-                </a>
-              ) : (
-                <Link to={companyLink.url}>{company}</Link>
-              )}
+              <a target="_blank" href={companyLink} rel="noopener noreferrer">
+                {company}
+              </a>
             </span>
           </h1>
           <p className="text-base text-gray-600">
-            {hashtags.map(node => `#${node.hashtag} `)}
+            {hashtags.map(hashtag => `#${hashtag} `)}
           </p>
         </div>
       </section>
@@ -56,16 +48,9 @@ const Profil = ({ name, company, companyLink, hashtags, articles }) => {
 Profil.propTypes = {
   name: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
-  companyLink: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    target: PropTypes.string.isRequired,
-  }).isRequired,
-  hashtags: PropTypes.arrayOf(
-    PropTypes.shape({
-      hashtag: PropTypes.string.isRequired,
-    })
-  ),
-  articles: ArticlesList.propTypes,
+  companyLink: PropTypes.string.isRequired,
+  hashtags: PropTypes.arrayOf(PropTypes.string.isRequired),
+  articles: ArticlesList.propTypes.articles,
 };
 
 export default Profil;

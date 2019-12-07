@@ -7,11 +7,9 @@ const ArticlesList = ({ articles }) => {
   return (
     <ul className="flex flex-col h-full justify-around py-24">
       {articles.map(article => (
-        <li className="my-4">
+        <li key={article.id} className="my-4">
           <Article
-            title={article.data.title}
-            summary={article.data.summary}
-            categories={article.data.categories}
+            {...article}
           />
         </li>
       ))}
@@ -36,20 +34,7 @@ const ArticlesList = ({ articles }) => {
 };
 
 ArticlesList.propTypes = {
-  name: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  companyLink: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    target: PropTypes.string.isRequired,
-  }).isRequired,
-  hashtags: PropTypes.arrayOf(
-    PropTypes.shape({
-      hashtag: PropTypes.string.isRequired,
-    })
-  ),
-  articles: PropTypes.arrayOf(
-    PropTypes.shape(PropTypes.shape({ data: Article.propTypes })).isRequired
-  ),
+  articles: PropTypes.array.isRequired,
 };
 
 export default ArticlesList;
