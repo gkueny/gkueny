@@ -10,13 +10,14 @@ import MarkdownParagraphRender from "../../../helpers/markdownParagraphRender";
 import MarkdownListRender from "../../../helpers/markdownListRender";
 import MarkdownBlockquoteRender from "../../../helpers/markdownBlockquoteRender";
 import MarkdownLinkRender from "../../../helpers/markdownLinkRender";
+import Header from "../../Header";
 import "./article.css";
 
 const Article = ({ data: { article } }) => {
   const { title, excerpt, text } = article;
 
   return (
-    <Layout>
+    <Layout header={<Header title={title} />} padding>
       <SEO title={title} description={excerpt} />
       <article className="flex justify-center">
         <div className="max-w-3xl w-full leading-loose">
