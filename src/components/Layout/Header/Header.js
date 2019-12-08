@@ -8,7 +8,7 @@ const Header = ({ title, titleLink }) => {
     query {
       placeholderImage: file(relativePath: { eq: "profil.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 200) {
+          fluid(maxWidth: 48) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -23,6 +23,7 @@ const Header = ({ title, titleLink }) => {
     >
       <div className="flex flex-1 items-center justify-start max-w-3xl">
         <Link to="/">
+          <meta name="name" content="Accueil" />
           <Img
             className="w-12 h-12 mr-6 rounded-full"
             fluid={data.placeholderImage.childImageSharp.fluid}

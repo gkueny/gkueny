@@ -10,11 +10,12 @@ import MarkdownParagraphRender from "../../../helpers/markdownParagraphRender";
 import MarkdownListRender from "../../../helpers/markdownListRender";
 import MarkdownBlockquoteRender from "../../../helpers/markdownBlockquoteRender";
 import MarkdownLinkRender from "../../../helpers/markdownLinkRender";
+import MarkdownImageRender from "../../../helpers/markdownImageRender";
 import Header from "../../Layout/Header";
 import "./article.css";
 
 const Article = ({ data: { article } }) => {
-  const { title, excerpt, text } = article;
+  const { title, excerpt, text, images } = article;
 
   return (
     <Layout header={<Header title={title} />} padding>
@@ -32,6 +33,12 @@ const Article = ({ data: { article } }) => {
               list: MarkdownListRender,
               blockquote: MarkdownBlockquoteRender,
               link: MarkdownLinkRender,
+              image: props => {
+                const imageData = images.find(
+                  image => image.intialImage === `(${props.src})`
+                );
+                return <MarkdownImageRender {...props} imageData={imageData} />;
+              },
             }}
           />
         </div>
@@ -47,6 +54,16 @@ export const query = graphql`
       title
       excerpt
       text
+      images {
+        intialImage
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
 `;

@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MarkdownParagraphRender = ({ children }) => {
+const MarkdownInlineCodeRender = ({ children }) => {
   return <span className="text-red-500 font-bold">{children}</span>;
 };
 
-MarkdownParagraphRender.propTypes = {
-  children: PropTypes.array.isRequired,
+MarkdownInlineCodeRender.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
 };
 
-export default MarkdownParagraphRender;
+export default MarkdownInlineCodeRender;

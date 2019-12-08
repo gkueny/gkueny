@@ -12,9 +12,17 @@ article pre code {
   line-height: 1.8rem !important;
 }
 
-article img {
+article .article-image {
+  text-align: center;
+}
+
+article .article-image > img,
+article .article-image > .gatsby-image-wrapper {
   margin: 2em calc(((100vw - 100%) / 2) * -1) !important;
-  display: flex;
-  align-content: center;
   max-width: 100vw;
+  display: inline-block;
+}
+
+article .article-image--gatsby {
+  display: grid;
 }

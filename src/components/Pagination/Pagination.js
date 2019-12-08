@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 
 const Pagination = ({ currentPage, nbPages }) => {
   const pages = [...Array(nbPages)];
-  const previousLink = currentPage > 2 ? `/${currentPage - 1}` : "";
 
   return (
     <footer className="flex justify-center">
