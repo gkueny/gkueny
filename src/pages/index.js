@@ -46,7 +46,7 @@ export const pageQuery = graphql`
     #     description_seo
     #   }
     # }
-    allArticle(limit: 3) {
+    allArticle(limit: 3, sort: { fields: [date], order: DESC }) {
       nodes {
         id
         title

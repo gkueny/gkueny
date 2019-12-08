@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const MarkdownParagraphRender = ({ children }) => {
-  return <span className="text-black font-bold">{children}</span>;
+  return <span className="text-red-500 font-bold">{children}</span>;
 };
 
 MarkdownParagraphRender.propTypes = {

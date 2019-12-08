@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pages = await graphql(`
     {
-      allArticle {
+      allArticle(sort: { fields: [date], order: DESC }) {
         nodes {
           id
           slug
@@ -70,7 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   const posts = pages.data.allArticle.nodes;
-  const postsPerPage = 6;
+  const postsPerPage = 3;
   const numPages = Math.ceil(posts.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {

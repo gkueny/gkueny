@@ -10,7 +10,7 @@ import MarkdownParagraphRender from "../../../helpers/markdownParagraphRender";
 import MarkdownListRender from "../../../helpers/markdownListRender";
 import MarkdownBlockquoteRender from "../../../helpers/markdownBlockquoteRender";
 import MarkdownLinkRender from "../../../helpers/markdownLinkRender";
-import Header from "../../Header";
+import Header from "../../Layout/Header";
 import "./article.css";
 
 const Article = ({ data: { article } }) => {

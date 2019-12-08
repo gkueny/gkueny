@@ -10,14 +10,15 @@ const Article = ({ title, excerpt, slug, keywords = "" }) => {
         <p className="text-gray-700 text-base">{excerpt}</p>
       </Link>
       <div className="px-6 py-4">
-        {keywords.split(",").map((keyword, i) => (
-          <span
-            key={i}
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-          >
-            #{keyword}
-          </span>
-        ))}
+        {keywords &&
+          keywords.split(",").map((keyword, i) => (
+            <span
+              key={i}
+              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+            >
+              #{keyword}
+            </span>
+          ))}
       </div>
     </section>
   );
@@ -27,7 +28,7 @@ Article.propTypes = {
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
+  keywords: PropTypes.string,
 };
 
 export default Article;
