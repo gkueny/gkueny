@@ -6,6 +6,19 @@ const MarkdownParagraphRender = ({ children }) => {
     children.length === 1 &&
     children[0].props.alt &&
     children[0].props.src &&
+    children[0].props.src.includes(".mp4")
+  ) {
+    return (
+      <div className="article-video article-image--gatsby text-grey-darker text-lg mt-2">
+        {children}
+      </div>
+    );
+  }
+
+  if (
+    children.length === 1 &&
+    children[0].props.alt &&
+    children[0].props.src &&
     !children[0].props.src.includes("http")
   ) {
     return (

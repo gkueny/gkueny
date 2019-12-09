@@ -186,13 +186,16 @@ const downloadMediaFiles = async (
   return {
     ...content,
     images: fileNodes.map((fileNode, i) => {
-      return { image___NODE: fileNode.id, intialImage: images[i].name };
+      return {
+        image___NODE: fileNode.id,
+        ...images[i],
+      };
     }),
   };
 };
 
 const getImagesFromMarkdown = (text, contentSlug) => {
-  const regex = /\((.)*\.png\)/g;
+  const regex = /\((.)*\.(png|jpeg|jpg|mp4)\)/g;
   const found = text.match(regex);
 
   if (!found) {
@@ -205,7 +208,8 @@ const getImagesFromMarkdown = (text, contentSlug) => {
         1,
         image.length - 1
       )}`,
-      name: image,
+      intialImage: image,
+      isVideo: image.includes(".mp4)"),
     };
   });
 
