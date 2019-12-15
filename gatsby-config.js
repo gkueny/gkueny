@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gaëtan Kueny`,
-    description: `Développeur depuis maintenant 2 ans et demi, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.`,
-    author: `@gkueny`,
+    title: "Gaëtan Kueny",
+    description:
+      "Développeur depuis maintenant 2 ans et demi, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
+    author: "@gkueny",
+    siteUrl: "https://gkuenygithubio.gaetankueny.now.sh",
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-plugin-sass",
       options: {
         postCssPlugins: [
           require("tailwindcss"),
@@ -14,29 +16,30 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: "images",
+        path: "${__dirname}/src/images",
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `gkueny`,
-        short_name: `gkueny`,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#fff`,
-        display: `minimal-ui`,
-        icon: `src/images/profil.jpg`,
+        name: "gkueny",
+        short_name: "gkueny",
+        start_url: "/",
+        background_color: "#fff",
+        theme_color: "#fff",
+        display: "minimal-ui",
+        icon: "src/images/profil.jpg",
       },
     },
-    `gatsby-plugin-offline`,
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-source-grav",
       options: {
@@ -44,7 +47,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-csp`,
+      resolve: "gatsby-plugin-csp",
       options: {
         disableOnDev: false,
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
