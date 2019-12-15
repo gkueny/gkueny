@@ -18,7 +18,7 @@ const Profil = ({ name, company, companyLink, hashtags, articles }) => {
   `);
 
   return (
-    <div className="flex flex-col h-screen py-12 lg:flex-row  lg:py-0">
+    <div className="flex flex-col h-full py-12 lg:h-screen lg:flex-row lg:py-0">
       <section className="flex flex-1 items-center justify-center">
         <Img
           alt="gkueny"
