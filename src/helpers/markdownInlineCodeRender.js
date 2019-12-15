@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const MarkdownInlineCodeRender = ({ children }) => {
-  return <span className="text-red-500 font-bold">{children}</span>;
+  return <span className="text-red-600 font-bold">{children}</span>;
 };
 
 MarkdownInlineCodeRender.propTypes = {
