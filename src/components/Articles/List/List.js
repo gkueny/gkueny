@@ -5,7 +5,7 @@ import Article from "./Article";
 
 const ArticlesList = ({ articles, withLink = true }) => {
   return (
-    <ul className="flex flex-col h-full justify-between py-12 px-1 lg:overflow-y-auto article-list">
+    <ul className="flex flex-col h-full justify-center py-12 px-1 lg:overflow-y-auto article-list">
       {articles.map(article => (
         <li key={article.id} className="my-4">
           <Article {...article} />
