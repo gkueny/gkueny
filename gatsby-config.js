@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gkueny`,
+        short_name: `gkueny`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
