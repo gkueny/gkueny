@@ -33,6 +33,10 @@ article .article-image--gatsby {
   display: grid;
 }
 
+article .video {
+  width: 100%;
+}
+
 article .article-video {
   display: flex;
   justify-content: center;
