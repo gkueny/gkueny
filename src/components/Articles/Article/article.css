@@ -24,17 +24,12 @@ article .article-image {
 article .video,
 article .article-image > img,
 article .article-image > .gatsby-image-wrapper {
-  margin: 2em calc(((100vw - 100%) / 2) * -1) !important;
-  max-width: 100vw;
+  width: 100%;
   display: inline-block;
 }
 
 article .article-image--gatsby {
   display: grid;
-}
-
-article .video {
-  width: 100%;
 }
 
 article .article-video {
