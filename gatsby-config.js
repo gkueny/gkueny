@@ -43,5 +43,15 @@ module.exports = {
         url: "https://gkueny-admin.herokuapp.com",
       },
     },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        directives: {
+          "script-src": "'self'",
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data: gkueny-admin.herokuapp.com",
+        },
+      },
+    },
   ],
 };
