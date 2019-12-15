@@ -20,7 +20,7 @@ const Article = ({ data: { article } }) => {
   return (
     <Layout header={<Header title={title} homeLink="/blog" />} padding>
       <SEO title={title} description={excerpt} />
-      <article className="flex justify-center">
+      <article className="flex justify-center px-4">
         <div className="max-w-3xl w-full leading-loose">
           <ReactMarkdown
             source={content}

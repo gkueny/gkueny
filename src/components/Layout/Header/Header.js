@@ -17,10 +17,7 @@ const Header = ({ title, titleLink, homeLink = "/" }) => {
   `);
 
   return (
-    <header
-      className="flex py-4 justify-center "
-      style={{ marginLeft: "-9rem" }}
-    >
+    <header className="flex py-4 justify-center header">
       <div className="flex flex-1 items-center justify-start max-w-3xl">
         <Link to={homeLink}>
           <meta name="name" content="Accueil" />

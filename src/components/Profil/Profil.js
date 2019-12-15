@@ -22,7 +22,7 @@ const Profil = ({ name, company, companyLink, hashtags, articles }) => {
       <section className="flex flex-1 items-center justify-center">
         <Img
           alt="gkueny"
-          className="w-48 h-48 mr-6 rounded-full"
+          className="w-12 h-12 mr-1 px-1 lg:px-0 lg:w-48 lg:h-48 lg:mr-6 rounded-full"
           fluid={data.placeholderImage.childImageSharp.fluid}
         />
         <div className="text-4xl">
