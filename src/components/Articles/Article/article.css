@@ -14,7 +14,7 @@ article pre code {
   max-width: 48rem;
   width: 100%;
   border-radius: 0;
-  line-height: 1.8rem !important;
+  line-height: 1.4rem !important;
 }
 
 article .article-image {
@@ -39,4 +39,10 @@ article .article-video {
 
 article .video {
   height: intrinsic;
+}
+
+@media (min-width: 1024px) {
+  article pre code {
+    line-height: 1.8rem !important;
+  }
 }
