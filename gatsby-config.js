@@ -46,9 +46,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-csp`,
       options: {
+        disableOnDev: false,
+        mergeScriptHashes: false, // you can disable scripts sha256 hashes
+        mergeStyleHashes: false, // you can disable styles sha256 hashes
         directives: {
           "script-src": "'self'",
-          "style-src": "'self' 'unsafe-inline'",
+          "style-src": "'self' 'unsafe-inline' blob:",
           "img-src": "'self' data: gkueny-admin.herokuapp.com",
         },
       },
