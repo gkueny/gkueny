@@ -15,15 +15,15 @@ import Header from "../../Layout/Header";
 import "./article.css";
 
 const Article = ({ data: { article } }) => {
-  const { title, excerpt, text, images } = article;
+  const { title, excerpt, content, markdownImages, markdownVideos } = article;
 
   return (
-    <Layout header={<Header title={title} />} padding>
+    <Layout header={<Header title={title} homeLink="/blog" />} padding>
       <SEO title={title} description={excerpt} />
       <article className="flex justify-center">
         <div className="max-w-3xl w-full leading-loose">
           <ReactMarkdown
-            source={text}
+            source={content}
             escapeHtml={false}
             renderers={{
               code: MarkdownCodeRender,
@@ -34,10 +34,19 @@ const Article = ({ data: { article } }) => {
               blockquote: MarkdownBlockquoteRender,
               link: MarkdownLinkRender,
               image: props => {
-                const imageData = images.find(
-                  image => image.intialImage === `(${props.src})`
+                const markdownImage = markdownImages.find(
+                  image => image.initialUrl === `(${props.src})`
                 );
-                return <MarkdownImageRender {...props} imageData={imageData} />;
+                const markdownVideo = markdownVideos.find(
+                  video => video.initialUrl === `(${props.src})`
+                );
+                return (
+                  <MarkdownImageRender
+                    {...props}
+                    markdownImage={markdownImage}
+                    markdownVideo={markdownVideo}
+                  />
+                );
               },
             }}
           />
@@ -53,11 +62,10 @@ export const query = graphql`
     article(id: { eq: $id }) {
       title
       excerpt
-      text
-      images {
-        intialImage
-        isVideo
-        url
+      content
+      markdownImages {
+        id
+        initialUrl
         image {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
@@ -65,6 +73,11 @@ export const query = graphql`
             }
           }
         }
+      }
+      markdownVideos {
+        id
+        initialUrl
+        url
       }
     }
   }

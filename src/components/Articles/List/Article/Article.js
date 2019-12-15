@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 const Article = ({ title, excerpt, slug, keywords = "" }) => {
   return (
-    <section className="max-w-xl rounded overflow-hidden shadow-lg">
+    <section className="max-w-xl rounded overflow-hidden shadow-lg border border-gray-200">
       <Link to={slug} className="block px-6 py-4">
         <h3 className="font-bold text-xl mb-2">{title}</h3>
         <p className="text-gray-700 text-base">{excerpt}</p>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-const Header = ({ title, titleLink }) => {
+const Header = ({ title, titleLink, homeLink = "/" }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "profil.jpg" }) {
@@ -22,7 +22,7 @@ const Header = ({ title, titleLink }) => {
       style={{ marginLeft: "-9rem" }}
     >
       <div className="flex flex-1 items-center justify-start max-w-3xl">
-        <Link to="/">
+        <Link to={homeLink}>
           <meta name="name" content="Accueil" />
           <Img
             className="w-12 h-12 mr-6 rounded-full"
@@ -48,6 +48,7 @@ const Header = ({ title, titleLink }) => {
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   titleLink: PropTypes.string,
+  homeLink: PropTypes.string,
 };
 
 export default Header;

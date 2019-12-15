@@ -26,26 +26,6 @@ const IndexPage = ({ data: { allArticle } }) => {
 export default IndexPage;
 export const pageQuery = graphql`
   query HomePage {
-    # prismicHomePage {
-    #   id
-    #   data {
-    #     title {
-    #       text
-    #     }
-    #     company
-    #     company_link {
-    #       target
-    #       url
-    #     }
-    #     hashtags {
-    #       hashtag
-    #     }
-    #     title_seo {
-    #       text
-    #     }
-    #     description_seo
-    #   }
-    # }
     allArticle(limit: 3, sort: { fields: [date], order: DESC }) {
       nodes {
         id
