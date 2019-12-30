@@ -13,6 +13,7 @@ const Pagination = ({ currentPage, nbPages }) => {
           const link = i > 0 ? `/${page}` : "";
           return (
             <li
+              key={page}
               className={`relative block leading-tight bg-white border border-gray-300 text-blue-700  hover:bg-gray-200${
                 currentPage === page ? " bg-gray-200" : ""
               }${page === 1 ? " rounded-l" : ""}${

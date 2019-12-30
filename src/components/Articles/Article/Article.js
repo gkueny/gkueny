@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import ReactMarkdown from "react-markdown/with-html";
+import format from "date-fns/format";
+import locale from "date-fns/locale/fr";
 import Layout from "../../Layout";
 import SEO from "../../Seo";
 import MarkdownCodeRender from "../../../helpers/markdownCodeRender";
@@ -15,13 +17,54 @@ import Header from "../../Layout/Header";
 import "./article.css";
 
 const Article = ({ data: { article } }) => {
-  const { title, excerpt, content, markdownImages, markdownVideos } = article;
+  const {
+    title,
+    slug,
+    date,
+    excerpt,
+    content,
+    keywords,
+    markdownImages,
+    markdownVideos,
+  } = article;
 
   return (
-    <Layout header={<Header title={title} homeLink="/blog" />} padding>
+    <Layout
+      header={
+        <Header
+          title={title}
+          link={`/${slug}`}
+          breadcrumb={[
+            {
+              title: "Accueil",
+              link: "/",
+            },
+            {
+              title: "Blog",
+              link: "/blog",
+            },
+          ]}
+        />
+      }
+      padding
+    >
       <SEO title={title} description={excerpt} />
-      <article className="flex justify-center px-4">
-        <div className="max-w-3xl w-full leading-loose">
+      <article className="flex justify-center px-6">
+        <div className="max-w-3xl w-full leading-normal lg:leading-loose">
+          <span className="text-gray-700 text-xs">
+            Publié le {format(new Date(date), "dd MMMM yyyy", { locale })}
+          </span>
+          <div className="py-4">
+            {keywords &&
+              keywords.split(",").map((keyword, i) => (
+                <span
+                  key={i}
+                  className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 mr-2"
+                >
+                  #{keyword}
+                </span>
+              ))}
+          </div>
           <ReactMarkdown
             source={content}
             escapeHtml={false}
@@ -63,6 +106,9 @@ export const query = graphql`
       title
       excerpt
       content
+      slug
+      date
+      keywords
       markdownImages {
         id
         initialUrl

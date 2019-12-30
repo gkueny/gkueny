@@ -13,12 +13,25 @@ const BlogPage = ({
   const { nodes: articles } = allArticle;
   return (
     <Layout
-      header={<Header title={"Blog"} titleLink="/blog" />}
+      header={
+        <Header
+          breadcrumb={[
+            {
+              title: "Accueil",
+              link: "/",
+            },
+            {
+              title: "Blog",
+              link: "/blog",
+            },
+          ]}
+        />
+      }
       footer={<Pagination currentPage={currentPage} nbPages={nbPages} />}
       padding
     >
       <SEO
-        title="gkueny"
+        title="Blog"
         description="Développeur depuis maintenant 2 ans et demi, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php."
       />
       <section className="flex flex-1 flex-col items-center justify-center">
@@ -41,6 +54,7 @@ export const query = graphql`
         id
         title
         excerpt
+        date
         slug
         keywords
       }

@@ -16,7 +16,7 @@ module.exports = ({ actions }) => {
     type Article implements Node {
       title: String!
       url: String!
-      date: String!
+      date: Date!
       excerpt: String!
       keywords: String!
       content: String!

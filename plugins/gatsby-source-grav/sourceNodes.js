@@ -86,8 +86,8 @@ const fetchArticles = async URL => {
       return {
         id: contentSlug,
         title: article.header.title,
+        date: new Date(article.header.date),
         slug: contentSlug,
-        date: article.header.date,
         excerpt: article.header.excerpt,
         keywords: article.header.keywords,
         content: article.content,

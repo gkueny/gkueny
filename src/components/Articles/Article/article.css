@@ -5,6 +5,7 @@ article {
 
 article pre {
   margin: 2em calc(((100vw - 100%) / 2) * -1) !important;
+  border-radius: 0 !important;
   padding: 4rem 0.5rem !important;
   display: flex;
   justify-content: center;
@@ -15,6 +16,7 @@ article pre code {
   width: 100%;
   border-radius: 0;
   line-height: 1.4rem !important;
+  padding: 0 1rem;
 }
 
 article .article-image {
@@ -44,5 +46,6 @@ article .video {
 @media (min-width: 1024px) {
   article pre code {
     line-height: 1.8rem !important;
+    padding: 0;
   }
 }

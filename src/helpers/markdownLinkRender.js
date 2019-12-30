@@ -5,7 +5,10 @@ import { Link } from "gatsby";
 const MarkdownLinkRender = ({ href, children }) => {
   if (href && href[0] === "/") {
     return (
-      <Link to={href} className="text-lg text-blue-500 hover:text-blue-800">
+      <Link
+        to={href}
+        className="text-lg text-blue-700 hover:text-blue-800 hover:underline"
+      >
         {children}
       </Link>
     );
@@ -15,7 +18,7 @@ const MarkdownLinkRender = ({ href, children }) => {
       target="_blank"
       rel="noopener noreferrer"
       href={href}
-      className="text-lg text-blue-500 hover:text-blue-800"
+      className="text-lg text-blue-700 hover:text-blue-800 hover:underline"
     >
       {children}
     </a>
