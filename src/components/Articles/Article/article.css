@@ -43,6 +43,15 @@ article .video {
   height: intrinsic;
 }
 
+.go-top {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.go-top:hover {
+  box-shadow: 1px 1px 5px #53535385;
+}
+
 @media (min-width: 1024px) {
   article pre code {
     line-height: 1.8rem !important;
