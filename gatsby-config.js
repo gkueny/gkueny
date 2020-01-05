@@ -55,8 +55,10 @@ module.exports = {
         directives: {
           "script-src": "'self' 'unsafe-inline'",
           "style-src": "'self' 'unsafe-inline' blob:",
-          "img-src": "'self' data: gkueny-admin.herokuapp.com",
-          "media-src": "'self' data: gkueny-admin.herokuapp.com",
+          "img-src":
+            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
+          "media-src":
+            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
         },
       },
     },
