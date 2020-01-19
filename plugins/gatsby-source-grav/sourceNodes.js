@@ -55,31 +55,6 @@ const processResult = (
   return nodeData;
 };
 
-module.exports = async (
-  { actions, createNodeId, createContentDigest },
-  pluginOptions
-) => {
-  const URL = pluginOptions.url;
-  const { createNode } = actions;
-
-  const data = await fetchArticles(URL);
-
-  let i = 1;
-  for (const result of data) {
-    const nodeData = processResult(
-      result,
-      i,
-      types.ARTICLE,
-      createNodeId,
-      createContentDigest
-    );
-    createNode(nodeData);
-    i++;
-  }
-
-  return;
-};
-
 const fetchArticles = async URL => {
   try {
     const response = await axios.get(`${URL}`, {
@@ -106,3 +81,30 @@ const fetchArticles = async URL => {
     throw error;
   }
 };
+
+module.exports = async (
+  { actions, createNodeId, createContentDigest },
+  pluginOptions
+) => {
+  const URL = pluginOptions.url;
+  const { createNode } = actions;
+
+  const data = await fetchArticles(URL);
+
+  let i = 1;
+  for (const result of data) {
+    const nodeData = processResult(
+      result,
+      i,
+      types.ARTICLE,
+      createNodeId,
+      createContentDigest
+    );
+    createNode(nodeData);
+    i++;
+  }
+
+  return;
+};
+
+
