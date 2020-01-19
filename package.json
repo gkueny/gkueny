@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "fs-extra": "^8.1.0",
+    "gatsby-plugin-purgecss": "^4.0.1",
     "glob": "^7.1.6",
     "prettier": "^1.18.2",
     "sharp": "^0.24.0"

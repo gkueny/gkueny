@@ -16,6 +16,22 @@ module.exports = {
         ],
       },
     },
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        develop: true,
+        printRejected: false, 
+        tailwind: true, 
+        whitelist: [
+          'pre',
+          'strong',
+          'article',
+          'code',
+          'article-image',
+          'gatsby-image-wrapper'
+        ]
+      }
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
