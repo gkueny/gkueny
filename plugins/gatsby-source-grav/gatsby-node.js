@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   const articles = pages.data.allArticle.nodes;
-  const articlesPerPage = 3;
+  const articlesPerPage = 5;
   const numPages = Math.ceil(articles.length / articlesPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
