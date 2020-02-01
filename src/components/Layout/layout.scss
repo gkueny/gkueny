@@ -1,0 +1,29 @@
+@import "~tailwindcss/base";
+
+@import "~tailwindcss/components";
+
+@import "~tailwindcss/utilities";
+
+.article-list ul {
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    .bloc {
+      margin-left: -9rem;
+    }
+  }
+
+  .article-list ul {
+    max-height: 950px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.1;
+}

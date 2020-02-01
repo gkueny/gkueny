@@ -1,15 +1,11 @@
-# gkueny.github.io
+# gkueny.fr
 
-Site personnel sous `Jekyll`.
+Web developer @Occitech
 
-## Compiler le site
+> #react, #react-native, #wordpress, #prestashop, #woocomerce.
 
-```bash
-$ bundle exec jekyll build  
-```
+## **Run project**
 
-## Compiler le site pour le développement 
-
-```bash
-$ bundle exec jekyll build --watch
+```shell
+gatsby develop
 ```
