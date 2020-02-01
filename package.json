@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "@gkueny <gaetankueny@gmail.com>",
   "dependencies": {
-    "date-fns": "^2.8.1",
+    "date-fns": "^2.9.0",
     "gatsby": "^2.18.25",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-csp": "^1.1.3",
