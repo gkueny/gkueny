@@ -27,12 +27,20 @@ exports.createPages = async ({ actions }) => {
       oldUrl: "react-admin",
       newUrl: "proteger-son-application",
     },
+    {
+      oldUrl: "cv",
+      newUrl: "",
+    },
+    {
+      oldUrl: "my-github",
+      newUrl: "",
+    },
   ];
 
   redirections.forEach(({ oldUrl, newUrl }) => {
     createRedirect({
       fromPath: `/${oldUrl}`,
-      toPath: `/${newUrl}`,
+      toPath: newUrl ? `/${newUrl}` : "",
       isPermanent: true,
     });
   });
