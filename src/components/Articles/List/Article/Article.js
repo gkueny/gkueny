@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import format from "date-fns/format";
 import locale from "date-fns/locale/fr";
+import Markdown from "../../../Markdown";
 
 const Article = ({ title, excerpt, slug, date, keywords = "" }) => {
   return (
@@ -14,7 +15,9 @@ const Article = ({ title, excerpt, slug, date, keywords = "" }) => {
             Publié le {format(new Date(date), "dd MMMM yyyy", { locale })}
           </span>
         )}
-        <p className="text-gray-900 text-base mt-2">{excerpt}</p>
+        <p className="text-gray-900 text-base mt-2">
+          <Markdown source={excerpt} escapeHtml={false} />
+        </p>
       </Link>
       <div className="px-6 py-4">
         {keywords &&

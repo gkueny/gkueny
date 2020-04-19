@@ -1,19 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import ReactMarkdown from "react-markdown/with-html";
 import format from "date-fns/format";
 import locale from "date-fns/locale/fr";
+import Markdown from "../../Markdown";
 import Layout from "../../Layout";
 import SEO from "../../Seo";
-import MarkdownCodeRender from "../../../helpers/markdownCodeRender";
-import MarkdownInlineCodeRender from "../../../helpers/markdownInlineCodeRender";
-import MarkdownHeadingRender from "../../../helpers/markdownHeadingRender";
-import MarkdownParagraphRender from "../../../helpers/markdownParagraphRender";
-import MarkdownListRender from "../../../helpers/markdownListRender";
-import MarkdownBlockquoteRender from "../../../helpers/markdownBlockquoteRender";
-import MarkdownLinkRender from "../../../helpers/markdownLinkRender";
-import MarkdownImageRender from "../../../helpers/markdownImageRender";
 import Header from "../../Layout/Header";
 import "./article.css";
 
@@ -91,33 +83,11 @@ const Article = ({ data: { article, profilImage } }) => {
                 </span>
               ))}
           </div>
-          <ReactMarkdown
+          <Markdown
+            markdownImages={markdownImages}
+            markdownVideos={markdownVideos}
             source={content}
             escapeHtml={false}
-            renderers={{
-              code: MarkdownCodeRender,
-              inlineCode: MarkdownInlineCodeRender,
-              heading: MarkdownHeadingRender,
-              paragraph: MarkdownParagraphRender,
-              list: MarkdownListRender,
-              blockquote: MarkdownBlockquoteRender,
-              link: MarkdownLinkRender,
-              image: props => {
-                const markdownImage = markdownImages.find(
-                  image => image.initialUrl === `(${props.src})`
-                );
-                const markdownVideo = markdownVideos.find(
-                  video => video.initialUrl === `(${props.src})`
-                );
-                return (
-                  <MarkdownImageRender
-                    {...props}
-                    markdownImage={markdownImage}
-                    markdownVideo={markdownVideo}
-                  />
-                );
-              },
-            }}
           />
         </div>
       </article>
