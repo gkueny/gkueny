@@ -14,7 +14,12 @@ const MarkdownImageRender = ({
   }
 
   if (markdownImage) {
-    return <Img alt={alt} fluid={markdownImage.image.childImageSharp.fluid} />;
+    return (
+      <>
+        <Img alt={alt} fluid={markdownImage.image.childImageSharp.fluid} />
+        <span className="italic text-base">{alt}</span>
+      </>
+    );
   }
 
   return <img src={src} alt={alt} />;

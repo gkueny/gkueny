@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Développeur depuis maintenant 2 ans et demi, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
     author: "@gkueny",
-    siteUrl: "https://gkuenygithubio.gaetankueny.now.sh",
+    siteUrl: "https://gkueny.fr",
   },
   plugins: [
     {
@@ -55,6 +55,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-robots-txt",
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-source-grav",
@@ -78,5 +79,6 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-meta-redirect",
   ],
 };
