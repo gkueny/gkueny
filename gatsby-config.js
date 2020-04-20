@@ -86,6 +86,10 @@ module.exports = {
             "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
           "media-src":
             "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+          "default-src":
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+          "connect-src":
+            "'self' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
         },
       },
     },
