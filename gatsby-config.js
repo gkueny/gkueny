@@ -71,28 +71,28 @@ module.exports = {
         siteUrl: "https://gkueny.fr",
       },
     },
-    {
-      resolve: "gatsby-plugin-csp",
-      options: {
-        disableOnDev: false,
-        mergeScriptHashes: false, // you can disable scripts sha256 hashes
-        mergeStyleHashes: false, // you can disable styles sha256 hashes
-        directives: {
-          "script-src":
-            "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws",
-          "style-src":
-            "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws blob:",
-          "img-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
-          "media-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
-          "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
-          "connect-src":
-            "'self' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-csp",
+    //   options: {
+    //     disableOnDev: false,
+    //     mergeScriptHashes: false, // you can disable scripts sha256 hashes
+    //     mergeStyleHashes: false, // you can disable styles sha256 hashes
+    //     directives: {
+    //       "script-src":
+    //         "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws",
+    //       "style-src":
+    //         "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws blob:",
+    //       "img-src":
+    //         "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+    //       "media-src":
+    //         "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+    //       "default-src":
+    //         "'self' 'unsafe-inline' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+    //       "connect-src":
+    //         "'self' gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
+    //     },
+    //   },
+    // },
     "gatsby-plugin-meta-redirect",
   ],
 };
