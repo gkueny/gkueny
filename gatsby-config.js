@@ -64,6 +64,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-matomo",
+      options: {
+        siteId: "1",
+        matomoUrl: "http://df13b600975f42a5bf463389721c4631.yatu.ws",
+        siteUrl: "https://gkueny.fr",
+      },
+    },
+    {
       resolve: "gatsby-plugin-csp",
       options: {
         disableOnDev: false,
