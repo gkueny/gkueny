@@ -78,12 +78,14 @@ module.exports = {
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         directives: {
-          "script-src": "'self' 'unsafe-inline'",
-          "style-src": "'self' 'unsafe-inline' blob:",
+          "script-src":
+            "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws",
+          "style-src":
+            "'self' 'unsafe-inline' df13b600975f42a5bf463389721c4631.yatu.ws blob:",
           "img-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
+            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
           "media-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
+            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888 df13b600975f42a5bf463389721c4631.yatu.ws",
         },
       },
     },
