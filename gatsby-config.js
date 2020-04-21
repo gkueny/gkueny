@@ -63,14 +63,14 @@ module.exports = {
         url: "https://gkueny-admin.herokuapp.com",
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-matomo",
-    //   options: {
-    //     siteId: "1",
-    //     matomoUrl: "http://df13b600975f42a5bf463389721c4631.yatu.ws",
-    //     siteUrl: "https://gkueny.fr",
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-matomo",
+      options: {
+        siteId: "1",
+        matomoUrl: "https://matomo.gkueny.fr",
+        siteUrl: "https://gkueny.fr",
+      },
+    },
     {
       resolve: "gatsby-plugin-csp",
       options: {
