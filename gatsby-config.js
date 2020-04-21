@@ -74,20 +74,19 @@ module.exports = {
     {
       resolve: "gatsby-plugin-csp",
       options: {
-        disableOnDev: false,
+        disableOnDev: true,
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         directives: {
-          "script-src": "'self' 'unsafe-inline' matomo.gkueny.fr",
-          "style-src": "'self' 'unsafe-inline' blob:",
-          "img-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
-          "media-src":
-            "'self' data: gkueny-admin.herokuapp.com admin.gkueny.test:8888",
+          "script-src": "'self' 'unsafe-inline' *.gkueny.fr",
+          "style-src": "'self' 'unsafe-inline' *.gkueny.fr blob:",
+          "img-src": "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr",
+          "media-src": "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr",
           "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com admin.gkueny.test:8888 matomo.gkueny.fr",
-          "connect-src":
-            "'self' gkueny-admin.herokuapp.com admin.gkueny.test:8888 matomo.gkueny.fr",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr",
+          "connect-src": "'self' gkueny-admin.herokuapp.com *.gkueny.fr",
+          "default-src":
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr",
         },
       },
     },
