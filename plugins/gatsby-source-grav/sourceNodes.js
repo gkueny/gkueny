@@ -2,7 +2,7 @@ const axios = require("axios").default;
 const createSlug = require("slug");
 const types = require("./types");
 
-const ADMIN_URL = "https://gkueny-admin.herokuapp.com";
+const ADMIN_URL = "http://admin.gkueny.test:8888";
 
 const getImagesFromMarkdown = (text, contentSlug, index) => {
   const regex = /\((.)*\.(png|jpeg|jpg|mp4)\)/g;
@@ -12,9 +12,9 @@ const getImagesFromMarkdown = (text, contentSlug, index) => {
     return [];
   }
 
-  const images = found.map(image => {
+  const images = found.map((image, i) => {
     return {
-      id: contentSlug,
+      id: `${contentSlug}-${i}`,
       url: `${ADMIN_URL}/user/pages/01.home/${
         index < 10 ? `0${index}` : index
       }.${contentSlug}/${image.substring(1, image.length - 1)}`,
@@ -42,6 +42,16 @@ const processResult = (
     ...result,
     images: medias.filter(media => !media.isVideo),
     videos: medias.filter(media => media.isVideo),
+    image: result.image
+      ? {
+          id: "image-article",
+          url: `${ADMIN_URL}/user/pages/01.home/${
+            index < 10 ? `0${index}` : index
+          }.${result.slug}/${result.image}`,
+          initialUrl: result.image,
+          isVideo: false,
+        }
+      : null,
     id: nodeId,
     parent: null,
     children: [],
@@ -73,6 +83,8 @@ const fetchArticles = async URL => {
         slug: contentSlug,
         excerpt: article.header.excerpt,
         keywords: article.header.keywords,
+        image: article.header.image ? article.header.image : null,
+        credit: article.header.credit ? article.header.credit : null,
         content: article.content,
       };
     });
@@ -106,4 +118,3 @@ module.exports = async (
 
   return;
 };
-

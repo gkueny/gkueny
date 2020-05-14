@@ -20,6 +20,8 @@ module.exports = ({ actions }) => {
       excerpt: String!
       keywords: String!
       content: String!
+      image: MarkdownImage
+      credit: String
       markdownImages: [MarkdownImage]
       markdownVideos: [MarkdownVideo]
     }

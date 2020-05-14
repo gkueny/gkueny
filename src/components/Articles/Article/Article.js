@@ -42,6 +42,8 @@ const Article = ({ data: { article, profilImage } }) => {
     excerpt,
     content,
     keywords,
+    image,
+    credit,
     markdownImages,
     markdownVideos,
   } = article;
@@ -67,31 +69,51 @@ const Article = ({ data: { article, profilImage } }) => {
       padding
     >
       <SEO title={title} description={excerpt} />
-      <article className="flex justify-center px-6">
-        <div className="max-w-3xl w-full leading-normal lg:leading-loose">
-          <span className="text-gray-700 text-xs">
-            Publié le {format(new Date(date), "dd MMMM yyyy", { locale })}
-          </span>
-          <div className="py-4">
-            {keywords &&
-              keywords.split(",").map((keyword, i) => (
-                <span
-                  key={i}
-                  className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 mr-2"
-                >
-                  #{keyword}
-                </span>
-              ))}
+      <article className="flex flex-col">
+        {image && (
+          <div
+            className="text-center w-full"
+            style={{
+              maxWidth: "70rem",
+              margin: "auto",
+            }}
+          >
+            <Img alt={credit} fluid={image.image.childImageSharp.fluid} />
           </div>
-          <Markdown
-            markdownImages={markdownImages}
-            markdownVideos={markdownVideos}
-            source={content}
-            escapeHtml={false}
-          />
+        )}
+        <div className="flex justify-center px-6">
+          <div className="max-w-3xl w-full leading-normal lg:leading-loose">
+            <span className="text-gray-700 text-xs">
+              Publié le {format(new Date(date), "dd MMMM yyyy", { locale })}
+            </span>
+            <div className="py-4">
+              {keywords &&
+                keywords.split(",").map((keyword, i) => (
+                  <span
+                    key={i}
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 mr-2"
+                  >
+                    #{keyword}
+                  </span>
+                ))}
+            </div>
+
+            <Markdown
+              markdownImages={markdownImages}
+              markdownVideos={markdownVideos}
+              source={content}
+              escapeHtml={false}
+            />
+          </div>
         </div>
       </article>
-      <section className="flex flex-1 justify-start my-12">
+      <section className="max-w-3xl w-full my-8 mx-6 pl-2 border-l-4 border-gray-500">
+        <span
+          className="italic text-base"
+          dangerouslySetInnerHTML={{ __html: credit }}
+        ></span>
+      </section>
+      <section className="flex flex-1 justify-start my-12 px-2">
         <div className="flex items-center max-w-3xl w-full mx-auto">
           <Img
             alt="gkueny"
@@ -154,6 +176,17 @@ export const query = graphql`
       slug
       date
       keywords
+      credit
+      image {
+        id
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1120, maxHeight: 600, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
       markdownImages {
         id
         initialUrl

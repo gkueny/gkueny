@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        develop: true,
+        develop: false,
         printRejected: false,
         tailwind: true,
         whitelist: [
@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: "gatsby-source-grav",
       options: {
-        url: "https://gkueny-admin.herokuapp.com",
+        url: "http://admin.gkueny.test:8888",
       },
     },
     {

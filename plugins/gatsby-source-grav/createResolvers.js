@@ -61,11 +61,20 @@ module.exports = ({
           videos.map(video => videoResolvers(video, createNodeId)),
       },
       url: { resolve: ({ slug }) => "/" + slug },
-      title: { resolve: ({ title }) => title },
-      date: { resolve: ({ date }) => date },
-      excerpt: { resolve: ({ excerpt }) => excerpt },
-      keywords: { resolve: ({ keywords }) => keywords },
-      content: { resolve: ({ content }) => content },
+      credit: { resolve: ({ credit }) => credit },
+      image: {
+        resolve: ({ image }) =>
+          image
+            ? imageResolvers(
+                image,
+                store,
+                cache,
+                createNode,
+                createNodeId,
+                reporter
+              )
+            : null,
+      },
     },
   });
 };
