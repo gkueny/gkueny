@@ -134,10 +134,9 @@ const Article = ({ data: { article, profilImage } }) => {
               </span>
             </h2>
             <p className="flex flex-1 flex-col items-center justify-center text-gray-800">
-              Développeur depuis maintenant 2 ans et demi, j'ai une grande
-              affinité avec le front-end et les tests bien fait. Pas full-stack
-              mais touche à tout, je suis également à l'aise sur du Symfony /
-              php.
+              Développeur depuis maintenant 4 ans, j'ai une grande affinité avec
+              le front-end et les tests bien fait. Pas full-stack mais touche à
+              tout, je suis également à l'aise sur du Symfony / php.
             </p>
           </div>
         </div>
