@@ -2,7 +2,7 @@ const axios = require("axios").default;
 const createSlug = require("slug");
 const types = require("./types");
 
-const ADMIN_URL = "http://admin.gkueny.test";
+const ADMIN_URL = "https://gkueny-admin.herokuapp.com";
 
 const getImagesFromMarkdown = (text, contentSlug, index) => {
   const regex = /\((.)*\.(png|jpeg|jpg|mp4)\)/g;
