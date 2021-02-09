@@ -7,30 +7,9 @@ module.exports = {
     siteUrl: "https://gkueny.fr",
   },
   plugins: [
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-sass",
-      options: {
-        postCssPlugins: [
-          require("tailwindcss"),
-          require("./tailwind.config.js"),
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        develop: false,
-        printRejected: false,
-        tailwind: true,
-        whitelist: [
-          "pre",
-          "strong",
-          "article",
-          "code",
-          "article-image",
-          "gatsby-image-wrapper",
-        ],
-      },
     },
     "gatsby-plugin-react-helmet",
     {
