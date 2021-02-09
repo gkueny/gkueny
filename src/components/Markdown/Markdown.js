@@ -27,12 +27,12 @@ const Markdown = ({
         list: MarkdownListRender,
         blockquote: MarkdownBlockquoteRender,
         link: MarkdownLinkRender,
-        image: props => {
+        image: (props) => {
           const markdownImage = markdownImages.find(
-            image => image.initialUrl === `(${props.src})`
+            (image) => image.initialUrl === `(${props.src})`
           );
           const markdownVideo = markdownVideos.find(
-            video => video.initialUrl === `(${props.src})`
+            (video) => video.initialUrl === `(${props.src})`
           );
           return (
             <MarkdownImageRender

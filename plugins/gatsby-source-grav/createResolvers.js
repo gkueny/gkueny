@@ -45,7 +45,7 @@ module.exports = ({
     Article: {
       markdownImages: {
         resolve: ({ images }) =>
-          images.map(image =>
+          images.map((image) =>
             imageResolvers(
               image,
               store,
@@ -58,7 +58,7 @@ module.exports = ({
       },
       markdownVideos: {
         resolve: ({ videos }) =>
-          videos.map(video => videoResolvers(video, createNodeId)),
+          videos.map((video) => videoResolvers(video, createNodeId)),
       },
       url: { resolve: ({ slug }) => "/" + slug },
       credit: { resolve: ({ credit }) => credit },

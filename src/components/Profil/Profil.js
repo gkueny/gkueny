@@ -35,7 +35,7 @@ const Profil = ({ name, company, companyLink, hashtags, articles = null }) => {
             </span>
           </h1>
           <p className="text-base text-gray-600">
-            {hashtags.map(hashtag => `#${hashtag} `)}
+            {hashtags.map((hashtag) => `#${hashtag} `)}
           </p>
         </div>
       </section>
