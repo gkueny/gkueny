@@ -8,8 +8,8 @@
   "author": "gkueny",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
-    "gatsby-node-helpers": "^0.3.0",
-    "slug": "^1.1.0"
+    "axios": "^0.21.1",
+    "gatsby-node-helpers": "^1.0.3",
+    "slug": "^4.0.2"
   }
 }
