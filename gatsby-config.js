@@ -57,15 +57,17 @@ module.exports = {
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         directives: {
-          "script-src": "'self' 'unsafe-inline' *.gkueny.fr",
+          "script-src": "'self' 'unsafe-inline' *.gkueny.fr *.splitbee.io",
           "style-src": "'self' 'unsafe-inline' *.gkueny.fr blob:",
-          "img-src": "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr",
+          "img-src":
+            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
           "media-src": "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr",
           "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr",
-          "connect-src": "'self' gkueny-admin.herokuapp.com *.gkueny.fr",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
+          "connect-src":
+            "'self' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
           "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
         },
       },
     },
