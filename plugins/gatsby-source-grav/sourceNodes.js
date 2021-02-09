@@ -2,7 +2,7 @@ const axios = require("axios").default;
 const createSlug = require("slug");
 const types = require("./types");
 
-const ADMIN_URL = "http://admin.gkueny.test:8888";
+const ADMIN_URL = "http://admin.gkueny.test";
 
 const getImagesFromMarkdown = (text, contentSlug, index) => {
   const regex = /\((.)*\.(png|jpeg|jpg|mp4)\)/g;
@@ -40,8 +40,8 @@ const processResult = (
 
   const nodeData = {
     ...result,
-    images: medias.filter(media => !media.isVideo),
-    videos: medias.filter(media => media.isVideo),
+    images: medias.filter((media) => !media.isVideo),
+    videos: medias.filter((media) => media.isVideo),
     image: result.image
       ? {
           id: "image-article",
@@ -65,7 +65,7 @@ const processResult = (
   return nodeData;
 };
 
-const fetchArticles = async URL => {
+const fetchArticles = async (URL) => {
   try {
     const response = await axios.get(`${URL}`, {
       params: {
@@ -73,7 +73,7 @@ const fetchArticles = async URL => {
       },
     });
 
-    return response.data.children.map(article => {
+    return response.data.children.map((article) => {
       const contentSlug = `${createSlug(article.header.title)}`.toLowerCase();
 
       return {

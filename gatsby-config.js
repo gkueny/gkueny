@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: "gatsby-source-grav",
       options: {
-        url: "http://admin.gkueny.test:8888",
+        url: "http://admin.gkueny.test",
       },
     },
     {
