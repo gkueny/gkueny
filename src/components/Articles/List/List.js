@@ -5,17 +5,17 @@ import Article from "./Article";
 
 const ArticlesList = ({ articles, withLink = true }) => {
   return (
-    <ul className="flex flex-col h-full justify-center py-12 px-1 lg:overflow-y-auto article-list">
+    <ul className="flex flex-col h-full justify-center py-12 px-1 lg:justify-start lg:py-24 lg:overflow-y-auto article-list">
       {articles.map((article) => (
         <li key={article.id} className="my-4">
           <Article {...article} />
         </li>
       ))}
       {withLink && (
-        <li className="my-4 w-14">
+        <li className="my-4 w-auto">
           <Link
             to="/blog"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center justify-between"
+            className="text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center justify-between"
           >
             <span> Voir tous mes articles</span>
             <svg
