@@ -39,15 +39,7 @@ module.exports = {
     {
       resolve: "gatsby-source-grav",
       options: {
-        url: "https://gkueny-admin.herokuapp.com",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-matomo",
-      options: {
-        siteId: "1",
-        matomoUrl: "https://matomo.gkueny.fr",
-        siteUrl: "https://gkueny.fr",
+        url: "http://gkueny-admin.herokuapp.test:8888",
       },
     },
     {

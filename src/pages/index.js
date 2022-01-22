@@ -11,7 +11,7 @@ const IndexPage = ({ data: { allArticle } }) => {
       <SEO description="Développeur depuis maintenant 4 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php." />
       <Profil
         name="gkueny"
-        company="@Occitech"
+        company="- Lead Dev @Occitech"
         companyLink="https://www.occitech.fr"
         hashtags={["react", "react-native", "symfony", "magento2"]}
         articles={dataArticles}
