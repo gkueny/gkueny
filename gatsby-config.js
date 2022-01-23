@@ -2,11 +2,14 @@ module.exports = {
   siteMetadata: {
     title: "Gaëtan Kueny",
     description:
-      "Développeur depuis maintenant 4 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
+      "Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
     author: "@gkueny",
     siteUrl: "https://gkueny.fr",
   },
   plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-sass",
@@ -40,14 +43,6 @@ module.exports = {
       resolve: "gatsby-source-grav",
       options: {
         url: "https://gkueny-admin.herokuapp.com",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-matomo",
-      options: {
-        siteId: "1",
-        matomoUrl: "https://matomo.gkueny.fr",
-        siteUrl: "https://gkueny.fr",
       },
     },
     {

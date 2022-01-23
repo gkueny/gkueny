@@ -2,9 +2,7 @@ const axios = require("axios").default;
 const createSlug = require("slug");
 const types = require("./types");
 
-const ADMIN_URL = "https://gkueny-admin.herokuapp.com";
-
-const getImagesFromMarkdown = (text, contentSlug, index) => {
+const getImagesFromMarkdown = (URL, text, contentSlug, index) => {
   const regex = /\((.)*\.(png|jpeg|jpg|mp4)\)/g;
   const found = text.match(regex);
 
@@ -15,7 +13,7 @@ const getImagesFromMarkdown = (text, contentSlug, index) => {
   const images = found.map((image, i) => {
     return {
       id: `${contentSlug}-${i}`,
-      url: `${ADMIN_URL}/user/pages/01.home/${
+      url: `${URL}/user/pages/01.home/${
         index < 10 ? `0${index}` : index
       }.${contentSlug}/${image.substring(1, image.length - 1)}`,
       initialUrl: image,
@@ -27,6 +25,7 @@ const getImagesFromMarkdown = (text, contentSlug, index) => {
 };
 
 const processResult = (
+  URL,
   result,
   index,
   nodeType,
@@ -36,7 +35,7 @@ const processResult = (
   const nodeId = createNodeId(`${nodeType}${result.id}`);
   const nodeContent = JSON.stringify(result);
 
-  const medias = getImagesFromMarkdown(result.content, result.slug, index);
+  const medias = getImagesFromMarkdown(URL, result.content, result.slug, index);
 
   const nodeData = {
     ...result,
@@ -45,7 +44,7 @@ const processResult = (
     image: result.image
       ? {
           id: "image-article",
-          url: `${ADMIN_URL}/user/pages/01.home/${
+          url: `${URL}/user/pages/01.home/${
             index < 10 ? `0${index}` : index
           }.${result.slug}/${result.image}`,
           initialUrl: result.image,
@@ -106,6 +105,7 @@ module.exports = async (
   let i = 1;
   for (const result of data) {
     const nodeData = processResult(
+      URL,
       result,
       i,
       types.ARTICLE,
