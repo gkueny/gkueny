@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Video from "../components/Video";
 
 const MarkdownImageRender = ({
@@ -14,12 +14,10 @@ const MarkdownImageRender = ({
   }
 
   if (markdownImage) {
-    return (
-      <>
-        <Img alt={alt} fluid={markdownImage.image.childImageSharp.fluid} />
-        <span className="italic text-base">{alt}</span>
-      </>
-    );
+    return <>
+      <GatsbyImage image={markdownImage.image.childImageSharp.gatsbyImageData} alt={alt} />
+      <span className="italic text-base">{alt}</span>
+    </>;
   }
 
   return <img src={src} alt={alt} />;

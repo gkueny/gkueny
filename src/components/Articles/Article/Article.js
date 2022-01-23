@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import format from "date-fns/format";
 import locale from "date-fns/locale/fr";
 import Markdown from "../../Markdown";
 import Layout from "../../Layout";
-import SEO from "../../Seo";
+import Seo from "../../Seo";
 import Header from "../../Layout/Header";
 import "./article.css";
 
@@ -68,7 +68,7 @@ const Article = ({ data: { article, profilImage } }) => {
       }
       padding
     >
-      <SEO title={title} description={excerpt} />
+      <Seo title={title} description={excerpt} />
       <article className="flex flex-col">
         {image && (
           <div
@@ -78,7 +78,7 @@ const Article = ({ data: { article, profilImage } }) => {
               margin: "auto",
             }}
           >
-            <Img alt={credit} fluid={image.image.childImageSharp.fluid} />
+            <GatsbyImage image={image.image.childImageSharp.gatsbyImageData} alt={credit} />
           </div>
         )}
         <div className="flex justify-center px-6">
@@ -115,11 +115,10 @@ const Article = ({ data: { article, profilImage } }) => {
       </section>
       <section className="flex flex-1 justify-start my-12 px-2">
         <div className="flex items-center max-w-3xl w-full mx-auto">
-          <Img
+          <GatsbyImage
+            image={profilImage.childImageSharp.gatsbyImageData}
             alt="gkueny"
-            className="flex-none w-20 h-20 mr-5 px-1 rounded-full"
-            fluid={profilImage.childImageSharp.fluid}
-          />
+            className="flex-none w-20 h-20 mr-5 px-1 rounded-full" />
           <div className="flex flex-col">
             <h2 className="text-gray-900 text-xl leading-relaxed">
               À propos de l'auteur - gkueny{" "}
@@ -166,49 +165,42 @@ const Article = ({ data: { article, profilImage } }) => {
 };
 
 export default Article;
-export const query = graphql`
-  query ArticlePage($id: String!) {
-    article(id: { eq: $id }) {
-      title
-      excerpt
-      content
-      slug
-      date
-      keywords
-      credit
+export const query = graphql`query ArticlePage($id: String!) {
+  article(id: {eq: $id}) {
+    title
+    excerpt
+    content
+    slug
+    date
+    keywords
+    credit
+    image {
+      id
       image {
-        id
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1120, maxHeight: 600, quality: 90) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
-      }
-      markdownImages {
-        id
-        initialUrl
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-      markdownVideos {
-        id
-        initialUrl
-        url
       }
     }
-    profilImage: file(relativePath: { eq: "profil.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 80) {
-          ...GatsbyImageSharpFluid
+    markdownImages {
+      id
+      initialUrl
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
+    }
+    markdownVideos {
+      id
+      initialUrl
+      url
     }
   }
+  profilImage: file(relativePath: {eq: "profil.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 80, layout: CONSTRAINED)
+    }
+  }
+}
 `;

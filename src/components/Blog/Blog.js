@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../Layout";
 import Header from "../Layout/Header";
 import ArticlesList from "../Articles/List";
-import SEO from "../Seo";
+import Seo from "../Seo";
 import Pagination from "../Pagination";
 
 const BlogPage = ({
@@ -30,9 +30,9 @@ const BlogPage = ({
       footer={<Pagination currentPage={currentPage} nbPages={nbPages} />}
       padding
     >
-      <SEO
+      <Seo
         title="Blog"
-        description="Développeur depuis maintenant 4 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php."
+        description="Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php."
       />
       <section className="flex flex-1 flex-col items-center justify-center">
         <ArticlesList articles={articles} withLink={false} />
