@@ -57,18 +57,18 @@ module.exports = {
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         directives: {
-          "script-src": "'self' 'unsafe-inline' *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com",
+          "script-src": "'self' 'unsafe-inline' *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com *.vercel-analytics.com",
           "style-src": "'self' 'unsafe-inline' *.gkueny.fr blob:",
           "img-src":
-            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com",
+            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com *.vercel-analytics.com",
           "media-src":
-            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr giphy.com *.vercel-insights.com",
+            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr giphy.com *.vercel-insights.com *.vercel-analytics.com",
           "connect-src":
-            "'self' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com",
+            "'self' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com *.vercel-analytics.com",
           "frame-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com *.vercel-analytics.com",
           "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io giphy.com *.vercel-insights.com *.vercel-analytics.com",
         },
       },
     },
