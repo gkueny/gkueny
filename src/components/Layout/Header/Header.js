@@ -1,26 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ title = null, breadcrumb = [] }) => {
-  const data = useStaticQuery(graphql`{
-  placeholderImage: file(relativePath: {eq: "profil.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 48, layout: CONSTRAINED)
-    }
-  }
-}
-`);
-
   return (
     <header className="flex flex-col py-4 px-6 justify-center header lg:px-0">
       <div className="flex flex-1 items-center justify-start max-w-3xl w-full mx-auto">
         <Link to="/">
           <meta name="name" content="Accueil" />
-          <GatsbyImage
-            image={data.placeholderImage.childImageSharp.gatsbyImageData}
-            className="w-12 h-12 mr-6 rounded-full" />
+          <StaticImage
+            src="../../../images/profil.jpg"
+            alt="gkueny"
+            width={48}
+            className="w-12 h-12 mr-6 rounded-full"
+          />
         </Link>
 
         {breadcrumb.map((path, i) => {

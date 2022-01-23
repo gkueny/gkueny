@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import format from "date-fns/format";
 import locale from "date-fns/locale/fr";
 import Markdown from "../../Markdown";
@@ -115,9 +115,10 @@ const Article = ({ data: { article, profilImage } }) => {
       </section>
       <section className="flex flex-1 justify-start my-12 px-2">
         <div className="flex items-center max-w-3xl w-full mx-auto">
-          <GatsbyImage
-            image={profilImage.childImageSharp.gatsbyImageData}
+          <StaticImage
+            src="../../../images/profil.jpg"
             alt="gkueny"
+            width={80}
             className="flex-none w-20 h-20 mr-5 px-1 rounded-full" />
           <div className="flex flex-col">
             <h2 className="text-gray-900 text-xl leading-relaxed">
@@ -195,11 +196,6 @@ export const query = graphql`query ArticlePage($id: String!) {
       id
       initialUrl
       url
-    }
-  }
-  profilImage: file(relativePath: {eq: "profil.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 80, layout: CONSTRAINED)
     }
   }
 }
