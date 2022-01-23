@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Gaëtan Kueny",
     description:
-      "Développeur depuis maintenant 4 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
+      "Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.",
     author: "@gkueny",
     siteUrl: "https://gkueny.fr",
   },
