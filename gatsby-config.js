@@ -55,14 +55,15 @@ module.exports = {
           "script-src": "'self' 'unsafe-inline' *.gkueny.fr *.splitbee.io",
           "style-src": "'self' 'unsafe-inline' *.gkueny.fr blob:",
           "img-src":
-            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
-          "media-src": "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr",
-          "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
+            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io, *.giphy.com",
+          "media-src":
+            "'self' data: gkueny-admin.herokuapp.com *.gkueny.fr, *.giphy.com",
           "connect-src":
             "'self' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
+          "frame-src":
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io, *.giphy.com",
           "default-src":
-            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io",
+            "'self' 'unsafe-inline' gkueny-admin.herokuapp.com *.gkueny.fr *.splitbee.io, *.giphy.com",
         },
       },
     },
