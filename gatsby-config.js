@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: "gatsby-source-grav",
       options: {
-        url: "http://gkueny-admin.herokuapp.test:8888",
+        url: "https://gkueny-admin.herokuapp.com",
       },
     },
     {
