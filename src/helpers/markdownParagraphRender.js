@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 const MarkdownParagraphRender = ({ children }) => {
   if (
     children.length === 1 &&
-    children[0].props.alt &&
-    children[0].props.src &&
-    children[0].props.src.includes(".mp4")
+    children[0]?.props?.alt &&
+    children[0]?.props?.src &&
+    children[0]?.props?.src.includes(".mp4")
   ) {
     return (
       <div className="article-video article-image--gatsby text-grey-darker text-lg mt-2">
@@ -17,9 +17,9 @@ const MarkdownParagraphRender = ({ children }) => {
 
   if (
     children.length === 1 &&
-    children[0].props.alt &&
-    children[0].props.src &&
-    !children[0].props.src.includes("http")
+    children[0]?.props?.alt &&
+    children[0]?.props?.src &&
+    !children[0]?.props?.src.includes("http")
   ) {
     return (
       <div className="article-image article-image--gatsby text-grey-darker text-lg mt-2">
@@ -28,7 +28,7 @@ const MarkdownParagraphRender = ({ children }) => {
     );
   }
 
-  if (children.length === 1 && children[0].props.alt && children[0].props.src) {
+  if (children.length === 1 && children[0]?.props?.alt && children[0]?.props?.src) {
     return (
       <div className="article-image flex justify-center text-grey-darker text-lg mt-2">
         {children}

@@ -1,12 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MarkdownInlineCodeRender = ({ children }) => {
+const MarkdownInlineCodeRender = ({ inline, children }) => {
+  if(!inline) {
+      return children;
+  }
+
   return <span className="text-red-600 font-bold">{children}</span>;
 };
 
 MarkdownInlineCodeRender.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
+  inline: PropTypes.bool,
 };
 
 export default MarkdownInlineCodeRender;
