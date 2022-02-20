@@ -28,7 +28,11 @@ const MarkdownParagraphRender = ({ children }) => {
     );
   }
 
-  if (children.length === 1 && children[0]?.props?.alt && children[0]?.props?.src) {
+  if (
+    children.length === 1 &&
+    children[0]?.props?.alt &&
+    children[0]?.props?.src
+  ) {
     return (
       <div className="article-image flex justify-center text-grey-darker text-lg mt-2">
         {children}

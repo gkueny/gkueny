@@ -32,15 +32,7 @@ const Article = ({ data: { article, profilImage } }) => {
     document.documentElement.scrollTop = 0;
   };
 
-  const {
-    title,
-    slug,
-    date,
-    content,
-    keywords,
-    image,
-    credit,
-  } = article;
+  const { title, slug, date, content, keywords, image, credit } = article;
 
   return (
     <Layout
@@ -91,10 +83,7 @@ const Article = ({ data: { article, profilImage } }) => {
                 ))}
             </div>
 
-            <Markdown
-              source={content}
-              escapeHtml={false}
-            />
+            <Markdown source={content} escapeHtml={false} />
           </div>
         </div>
       </article>

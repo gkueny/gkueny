@@ -11,8 +11,9 @@ import styles from "./styles/app.css";
 export function meta() {
   const title = "Gaëtan Kueny";
   const author = "@gkueny";
-  const description = "Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.";
-  return { 
+  const description =
+    "Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.";
+  return {
     title,
     description,
     author,
