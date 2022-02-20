@@ -14,9 +14,9 @@ const Article = ({ title, excerpt, slug, date, keywords = "" }) => {
             Publié le {format(new Date(date), "dd MMMM yyyy", { locale })}
           </span>
         )}
-        <p className="text-gray-900 text-base mt-2">
+        <div className="text-gray-900 text-base mt-2">
           <Markdown source={excerpt} escapeHtml={false} />
-        </p>
+        </div>
       </Link>
       <div className="px-6 py-4">
         {keywords &&

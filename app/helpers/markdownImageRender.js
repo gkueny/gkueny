@@ -7,9 +7,9 @@ const MarkdownImageRender = ({ baseArticleUrl, src, alt = "" }) => {
   }
 
   return (
-    <div class="article-image article-image--gatsby text-grey-darker text-lg mt-2">
+    <div className="article-image article-image--gatsby text-grey-darker text-lg mt-2">
       <img src={`${baseArticleUrl}/${src}`} alt={alt} />
-      <span class="italic text-base">Explain MariaDB 10.3</span>
+      <span className="italic text-base">{alt}</span>
     </div>
   );
 };
