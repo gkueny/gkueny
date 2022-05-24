@@ -32,7 +32,7 @@ const BlogPage = ({
     >
       <Seo
         title="Blog"
-        description="Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php."
+        description="Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le mobile et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php."
       />
       <section className="flex flex-1 flex-col items-center justify-center">
         <ArticlesList articles={articles} withLink={false} />
