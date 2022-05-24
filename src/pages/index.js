@@ -8,12 +8,12 @@ const IndexPage = ({ data: { allArticle } }) => {
   const { nodes: dataArticles } = allArticle;
   return (
     <Layout>
-      <Seo description="Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php." />
+      <Seo description="Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le mobile et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php." />
       <Profil
         name="gkueny"
-        company="- Lead Dev @Occitech"
-        companyLink="https://www.occitech.fr"
-        hashtags={["react", "react-native", "symfony", "magento2"]}
+        company="- Mobile developer @ZEBet"
+        companyLink="https://www.linkedin.com/company/groupe-zeturf/mycompany/"
+        hashtags={["react-native", "react", "symfony"]}
         articles={dataArticles}
       />
     </Layout>

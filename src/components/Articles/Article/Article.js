@@ -126,10 +126,10 @@ const Article = ({ data: { article, profilImage } }) => {
               <span className="text-lg text-blue-500 hover:text-blue-800">
                 <a
                   target="_blank"
-                  href="https://www.occitech.fr"
+                  href="https://www.linkedin.com/company/groupe-zeturf/mycompany/"
                   rel="noopener noreferrer"
                 >
-                  @Occitech
+                  @ZEBet
                 </a>
               </span>
             </h2>

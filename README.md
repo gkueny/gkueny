@@ -1,8 +1,8 @@
 # gkueny.fr
 
-Web developer @Occitech
+Mobile developer @ZEBet
 
-> #react, #react-native, #wordpress, #prestashop, #woocomerce.
+> #react-native, #react, #symfony.
 
 ## **Run project**
 
