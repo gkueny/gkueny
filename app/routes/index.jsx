@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Profil from "../components/Profil";
-import { useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
 import { getArticles } from "../loaders/articles.server";
 import Profile from "../images/profil-index.webp";
 

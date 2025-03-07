@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Article from "./Article";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const ArticlesList = ({ articles, withLink = true }) => {
   return (

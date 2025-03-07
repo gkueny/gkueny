@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const Pagination = ({ currentPage, nbPages }) => {
   const pages = [...Array(nbPages)];

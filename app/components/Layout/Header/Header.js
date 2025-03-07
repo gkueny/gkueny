@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 import Profil from "../../../images/profil-blog.webp";
 
 const Header = ({ title = null, breadcrumb = [] }) => {

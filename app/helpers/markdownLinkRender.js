@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const MarkdownLinkRender = ({ href, children }) => {
   if (href && href[0] === "/") {

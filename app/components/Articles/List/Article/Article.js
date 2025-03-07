@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import format from "date-fns/format";
-import locale from "date-fns/locale/fr";
+import format from "date-fns/format/index.js";
+import locale from "date-fns/locale/fr/index.js";
 import Markdown from "../../../Markdown";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const Article = ({ title, excerpt, slug, date, keywords = "" }) => {
   return (

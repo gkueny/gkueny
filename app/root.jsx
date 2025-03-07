@@ -5,7 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "remix";
+} from "@remix-run/react";
 import styles from "./styles/app.css";
 
 export function meta() {
@@ -13,18 +13,43 @@ export function meta() {
   const author = "@gkueny";
   const description =
     "Développeur depuis maintenant 6 ans, j'ai une grande affinité avec le front-end et les tests bien fait. Pas full-stack mais touche à tout, je suis également à l'aise sur du Symfony / php.";
-  return {
-    title,
-    description,
-    author,
-    "og:title": title,
-    "og:description": description,
-    "og:type": "website",
-    "twitter:card": "summary",
-    "twitter:creator": author,
-    "twitter:title": title,
-    "twitter:description": description,
-  };
+  return [{
+    title},
+    {name: "description",
+      content: description,}
+    ,
+    {name: "author",
+      content: author,}
+    ,
+    {
+      property: "og:title",
+      content: title,
+    },
+    {
+      property: "og:description",
+      content: description,
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "twitter:card",
+      content: "summary",
+    },
+    {
+      property: "twitter:creator",
+      content: author,
+    },
+    {
+      property: "twitter:title",
+      content: title,
+    },
+    {
+      property: "twitter:description",
+      content: description,
+    },
+  ];
 }
 
 export function links() {

@@ -1,7 +1,7 @@
 import React from "react";
-import { useLoaderData } from "remix";
-import locale from "date-fns/locale/fr";
-import format from "date-fns/format";
+import { useLoaderData } from "@remix-run/react";
+import locale from "date-fns/locale/fr/index.js";
+import format from "date-fns/format/index.js";
 import Layout from "../components/Layout";
 import Markdown from "../components/Markdown";
 import Header from "../components/Layout/Header";
@@ -22,14 +22,19 @@ export const links = () => {
 export function meta({ data: { article } }) {
   const title = article.title;
   const description = article.excerpt;
-  return {
-    title,
-    description,
-    "og:title": title,
-    "og:description": description,
-    "twitter:title": title,
-    "twitter:description": description,
-  };
+  return [
+    {
+      title,
+    },
+    {
+      name: "description",
+      content: description,
+    },
+    {
+      property: "og:title",
+      content: title,
+    },
+  ];
 }
 
 export function headers() {

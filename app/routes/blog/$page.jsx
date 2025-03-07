@@ -1,4 +1,4 @@
-import { useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
 import Layout from "../../components/Layout";
 import Header from "../../components/Layout/Header";
 import ArticlesList from "../../components/Articles/List";
@@ -18,11 +18,19 @@ export const links = () => {
 
 export function meta({ params }) {
   const title = "Blog | Gaëtan Kueny";
-  return {
-    title: params.page ? `Blog page ${params.page} | Gaëtan Kueny` : title,
-    "og:title": title,
-    "twitter:title": title,
-  };
+  return [
+    {
+      title: params.page ? `Blog page ${params.page} | Gaëtan Kueny` : title,
+    },
+    {
+      property: "og:title",
+      content: title,
+    },
+    {
+      property: "twitter:title",
+      content: title,
+    },
+  ];
 }
 
 export function headers() {

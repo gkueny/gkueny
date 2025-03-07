@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import format from "date-fns/format";
-import locale from "date-fns/locale/fr";
+import format from "date-fns/format/index.js/index.js";
+import locale from "date-fns/locale/fr/index.js";
 import Markdown from "../../Markdown";
 import Layout from "../../Layout";
 import Seo from "../../Seo";
