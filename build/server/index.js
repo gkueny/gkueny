@@ -420,13 +420,13 @@ const getArticles = async () => {
   }).reverse();
 };
 const getArticle = async (slug) => {
-  const { article, index } = await fetchArticle(slug);
-  if (!article) {
+  const response = await fetchArticle(slug);
+  if (!response || !responsearticle) {
     throw new Response("Not Found", {
       status: 404
     });
   }
-  return formatArticle(article);
+  return formatArticle(response.article, response.index);
 };
 function headers$2() {
   return {
