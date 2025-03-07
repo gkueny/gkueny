@@ -421,7 +421,7 @@ const getArticles = async () => {
 };
 const getArticle = async (slug) => {
   const response = await fetchArticle(slug);
-  if (!response || !responsearticle) {
+  if (!response || !response.article) {
     throw new Response("Not Found", {
       status: 404
     });
