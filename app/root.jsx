@@ -1,12 +1,11 @@
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "./styles/app.css";
+import styles from "./styles/app.css?url";
 
 export function meta() {
   const title = "Gaëtan Kueny";
@@ -72,7 +71,6 @@ export default function App() {
         {process.env.NODE_ENV === "production" && (
           <script async src="https://cdn.splitbee.io/sb.js"></script>
         )}
-        {/* {process.env.NODE_ENV === "development" && <LiveReload />} */}
       </body>
     </html>
   );
