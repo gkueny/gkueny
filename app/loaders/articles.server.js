@@ -82,13 +82,13 @@ export const getArticles = async () => {
 };
 
 export const getArticle = async (slug) => {
-  const { article, index } = await fetchArticle(slug);
+  const response = await fetchArticle(slug);
 
-  if (!article) {
+  if (!response || !responsearticle) {
     throw new Response("Not Found", {
       status: 404,
     });
   }
 
-  return formatArticle(article, index);
+  return formatArticle(response.article, response.index);
 };
