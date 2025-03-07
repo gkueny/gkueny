@@ -3,11 +3,5 @@
     "env": {
       "ENABLE_FILE_SYSTEM_API": "1"
     }
-  },
-  "functions": {
-    "public/**": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
   }
 }
