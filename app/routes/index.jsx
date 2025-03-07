@@ -36,9 +36,9 @@ export default function Index() {
     <Layout>
       <Profil
         name="gkueny"
-        company="- Lead Dev @Occitech"
-        companyLink="https://www.occitech.fr"
-        hashtags={["react", "react-native", "symfony", "magento2"]}
+        company="- Lead mobile developer @ZETurf"
+        companyLink="https://apps.apple.com/fr/app/zeturf-paris-hippiques-turf/id1516592235"
+        hashtags={["react-native", "react", "symfony", "typescript"]}
         articles={articles}
       />
     </Layout>
