@@ -126,17 +126,19 @@ const Article = () => {
               <span className="text-lg text-blue-500 hover:text-blue-800">
                 <a
                   target="_blank"
-                  href="https://www.occitech.fr"
+                  href="https://apps.apple.com/fr/app/zeturf-paris-hippiques-turf/id1516592235"
                   rel="noopener noreferrer"
                 >
-                  @Occitech
+                  @ZETurf
                 </a>
               </span>
             </h2>
             <p className="flex flex-1 flex-col items-center justify-center text-gray-800">
-              Développeur depuis maintenant 6 ans, j'ai une grande affinité avec
-              le front-end et les tests bien fait. Pas full-stack mais touche à
-              tout, je suis également à l'aise sur du Symfony / php.
+              Développeur depuis maintenant 8 ans et à mon compte depuis 3 ans,
+              j'ai une grande affinité avec le front-end et les tests bien fait.
+              Pas full-stack mais touche à tout, je suis également à l'aise sur
+              le développement mobile avec react-native et le développement
+              backend Symfony / php.
             </p>
           </div>
         </div>
