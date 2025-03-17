@@ -1,6 +1,7 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { RemixServer, Meta, Links, Outlet, ScrollRestoration, Scripts, Link, useLoaderData } from "@remix-run/react";
+import { Analytics } from "@vercel/analytics/react";
 import PropTypes from "prop-types";
 import React from "react";
 import format from "date-fns/format/index.js";
@@ -35,14 +36,8 @@ function meta$2() {
     {
       title
     },
-    {
-      name: "description",
-      content: description
-    },
-    {
-      name: "author",
-      content: author
-    },
+    { name: "description", content: description },
+    { name: "author", content: author },
     {
       property: "og:title",
       content: title
@@ -85,6 +80,7 @@ function App() {
       /* @__PURE__ */ jsx(Links, {})
     ] }),
     /* @__PURE__ */ jsxs("body", { children: [
+      /* @__PURE__ */ jsx(Analytics, {}),
       /* @__PURE__ */ jsx(Outlet, {}),
       /* @__PURE__ */ jsx(ScrollRestoration, {}),
       /* @__PURE__ */ jsx(Scripts, {}),
@@ -779,7 +775,7 @@ const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   loader,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-BDajD-SV.js", "imports": ["/assets/components-DEsfW1mq.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-q5jIG7d5.js", "imports": ["/assets/components-DEsfW1mq.js"], "css": [] }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-DEm3WHbK.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/blog": { "id": "routes/blog", "parentId": "root", "path": "blog", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-CnmT0SPD.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_-CrmGMnUN.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js"], "css": [] }, "routes/blog/$page": { "id": "routes/blog/$page", "parentId": "root", "path": "blog/:page", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_page-CoV4emP0.js", "imports": ["/assets/index-CnmT0SPD.js", "/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-CnmT0SPD.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] } }, "url": "/assets/manifest-915a8974.js", "version": "915a8974" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-BDajD-SV.js", "imports": ["/assets/components-DEsfW1mq.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/root-DolE-HaO.js", "imports": ["/assets/components-DEsfW1mq.js"], "css": [] }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-DEm3WHbK.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/blog": { "id": "routes/blog", "parentId": "root", "path": "blog", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-CnmT0SPD.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_-CrmGMnUN.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js"], "css": [] }, "routes/blog/$page": { "id": "routes/blog/$page", "parentId": "root", "path": "blog/:page", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_page-CoV4emP0.js", "imports": ["/assets/index-CnmT0SPD.js", "/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/index-CnmT0SPD.js", "imports": ["/assets/components-DEsfW1mq.js", "/assets/Markdown-Dh-sYPXL.js", "/assets/Header-DA-2nZkL.js", "/assets/List-eksNQhAg.js"], "css": [] } }, "url": "/assets/manifest-87afa8e3.js", "version": "87afa8e3" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";
